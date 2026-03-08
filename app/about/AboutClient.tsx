@@ -1,20 +1,25 @@
+'use client'
+
 import { useState, useRef, useEffect } from "react";
-import Burger from "../components/Burger/Burger.js";
-import Menu from "../components/Menu/Menu.js";
-import Logo from "../components/Logo/Logo.js";
-import HeadInfo from "../components/HeadInfo/HeadInfo.js";
-
+import Burger from "../../components/Burger/Burger.js";
+import Menu from "../../components/Menu/Menu.js";
+import Logo from "../../components/Logo/Logo.js";
 import Image from "next/image";
-import { createClient } from "contentful";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../theme.js";
-import { useOnClickOutside } from "../hooks.js";
-import styles from "../styles/About.module.css";
-import useWindowSize from "../utils/useWindowSize";
+import { theme } from "../../theme.js";
+import { useOnClickOutside } from "../../hooks.js";
+import styles from "../../styles/About.module.css";
+import useWindowSize from "../../utils/useWindowSize";
 
-export default function About({ about, goodSpaces, store }) {
+interface AboutClientProps {
+  about: any;
+  goodSpaces: any[];
+  storeUrl: string;
+}
+
+export default function AboutClient({ about, goodSpaces, storeUrl }: AboutClientProps) {
   const [open, setOpen] = useState(false);
-  const node = useRef();
+  const node = useRef<HTMLDivElement>(null);
   useOnClickOutside(node, () => setOpen(false));
 
   const size = useWindowSize();
@@ -22,9 +27,11 @@ export default function About({ about, goodSpaces, store }) {
   useEffect(() => {
     if (size.width < 768) {
       const test = document.querySelector("body");
-      test.style.overflow = "auto";
-      test.style.overflowX = "hidden";
-      test.style.position = "initial";
+      if (test) {
+        test.style.overflow = "auto";
+        test.style.overflowX = "hidden";
+        test.style.position = "initial";
+      }
     }
   }, [size]);
 
@@ -35,26 +42,29 @@ export default function About({ about, goodSpaces, store }) {
     descriptionTwo,
     descriptionTitle,
     descriptionTitleFormat,
-  } = about[0].fields;
+  } = about.fields;
 
   useEffect(() => {
     if (open) {
       const test = document.querySelector("#__next");
-      test.style.overflow = "hidden";
-      test.style.height = "100vh";
+      if (test) {
+        (test as HTMLElement).style.overflow = "hidden";
+        (test as HTMLElement).style.height = "100vh";
+      }
     } else {
       const test = document.querySelector("#__next");
-      test.style.overflow = "visible";
-      test.style.height = "auto";
+      if (test) {
+        (test as HTMLElement).style.overflow = "visible";
+        (test as HTMLElement).style.height = "auto";
+      }
     }
   }, [setOpen, open]);
 
   return (
     <ThemeProvider theme={theme}>
-      <HeadInfo />
       <div>
         <div ref={node}>
-          <Menu open={open} setOpen={setOpen} store={store[0].fields.url} />
+          <Menu open={open} setOpen={setOpen} store={storeUrl} />
           <Burger open={open} setOpen={setOpen} /> <Logo />
         </div>
         <div className={`${styles.container} container fadeIn`}>
@@ -66,7 +76,7 @@ export default function About({ about, goodSpaces, store }) {
               <div className={styles.goodSpaces}>
                 <p> Good Spaces </p>
                 <ul>
-                  {goodSpaces.map((space) => {
+                  {goodSpaces.map((space: any) => {
                     return (
                       <li key={space.fields.title}>
                         <a
@@ -85,7 +95,7 @@ export default function About({ about, goodSpaces, store }) {
             </div>
             <div className={styles.flexTwo}>
               <div>
-                {description.content.map((paragraph) => (
+                {description.content.map((paragraph: any) => (
                   <p key={paragraph.content[0].value}>
                     {paragraph.content[0].value}
                   </p>
@@ -93,13 +103,13 @@ export default function About({ about, goodSpaces, store }) {
               </div>
               <div>
                 <h3 className={styles.descriptionTitle}>
-                  {descriptionTitleFormat.content.map((node) => (
+                  {descriptionTitleFormat.content.map((node: any) => (
                     <span key={node.content[0].value}>
                       {node.content[0].value}
                     </span>
                   ))}
                 </h3>
-                {descriptionTwo.content.map((paragraph) => (
+                {descriptionTwo.content.map((paragraph: any) => (
                   <p key={paragraph.content[0].value}>
                     {paragraph.content[0].value}
                   </p>
@@ -116,28 +126,4 @@ export default function About({ about, goodSpaces, store }) {
       </div>
     </ThemeProvider>
   );
-}
-
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  const data = await client.getEntries();
-
-  return {
-    props: {
-      about: data.items.filter(
-        (item) => item.sys.contentType.sys.id === "about"
-      ),
-      goodSpaces: data.items.filter(
-        (item) => item.sys.contentType.sys.id === "goodSpaces"
-      ),
-      store: data.items.filter(
-        (item) => item.sys.contentType.sys.id === "store"
-      ),
-    },
-    revalidate: 1,
-  };
 }

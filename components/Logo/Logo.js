@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { bool, func } from "prop-types";
 import { StyledLogo } from "./Logo.styled";

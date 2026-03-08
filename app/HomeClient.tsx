@@ -1,7 +1,7 @@
+'use client'
+
 import { useState, useEffect, useRef } from "react";
-import favicon from "../public/favicon.ico";
-import HeadInfo from "../components/HeadInfo/HeadInfo.js";
-import { createClient } from "contentful";
+import dynamic from "next/dynamic";
 import Burger from "../components/Burger/Burger.js";
 import Menu from "../components/Menu/Menu.js";
 import Logo from "../components/Logo/Logo.js";
@@ -10,12 +10,16 @@ import { GlobalStyles } from "../global";
 import { theme } from "../theme.js";
 import { useOnClickOutside } from "../hooks.js";
 import styles from "../styles/Home.module.css";
-import { Test } from "../components/Test.tsx";
 import useWindowSize from "../utils/useWindowSize";
 
-export default function Home({ store }) {
+const Test = dynamic(
+  () => import("../components/Test.tsx").then((mod) => ({ default: mod.Test })),
+  { ssr: false }
+);
+
+export default function HomeClient({ storeUrl }: { storeUrl: string }) {
   const [open, setOpen] = useState(false);
-  const node = useRef();
+  const node = useRef<HTMLDivElement>(null);
   useOnClickOutside(node, () => setOpen(false));
 
   const size = useWindowSize();
@@ -23,22 +27,23 @@ export default function Home({ store }) {
   useEffect(() => {
     if (size.width < 768) {
       const test = document.querySelector("body");
-      test.style.position = "relative";
-      test.style.margin = "0";
-      test.style.overflow = "hidden";
-      test.style.padding = "0";
-      test.style.height = "90vh";
+      if (test) {
+        test.style.position = "relative";
+        test.style.margin = "0";
+        test.style.overflow = "hidden";
+        test.style.padding = "0";
+        test.style.height = "90vh";
+      }
     }
   }, [size]);
 
   return (
     <ThemeProvider theme={theme}>
-      <HeadInfo />
       <div className="home">
         <h1>Good People Only</h1>
         <GlobalStyles />
         <div ref={node}>
-          <Menu open={open} setOpen={setOpen} store={store[0].fields.url} />
+          <Menu open={open} setOpen={setOpen} store={storeUrl} />
           <Burger open={open} setOpen={setOpen} />
           {/* <Logo /> */}
         </div>
@@ -48,22 +53,4 @@ export default function Home({ store }) {
       </div>
     </ThemeProvider>
   );
-}
-
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  const data = await client.getEntries();
-
-  return {
-    props: {
-      store: data.items.filter(
-        (item) => item.sys.contentType.sys.id === "store"
-      ),
-    },
-    revalidate: 1,
-  };
 }

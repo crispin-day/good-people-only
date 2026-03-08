@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        concurrentFeatures: true,
+    compiler: {
+        styledComponents: true,
     },
 }
 
