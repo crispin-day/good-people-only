@@ -13,7 +13,7 @@ import styles from "../styles/Home.module.css";
 import useWindowSize from "../utils/useWindowSize";
 
 const Test = dynamic(
-  () => import("../components/Test.tsx").then((mod) => ({ default: mod.Test })),
+  () => import("../components/Test").then((mod) => ({ default: mod.Test })),
   { ssr: false }
 );
 
@@ -25,7 +25,7 @@ export default function HomeClient({ storeUrl }: { storeUrl: string }) {
   const size = useWindowSize();
 
   useEffect(() => {
-    if (size.width < 768) {
+    if (size.width && size.width < 768) {
       const test = document.querySelector("body");
       if (test) {
         test.style.position = "relative";
@@ -43,7 +43,7 @@ export default function HomeClient({ storeUrl }: { storeUrl: string }) {
         <h1>Good People Only</h1>
         <GlobalStyles />
         <div ref={node}>
-          <Menu open={open} setOpen={setOpen} store={storeUrl} />
+          <Menu open={open} store={storeUrl} />
           <Burger open={open} setOpen={setOpen} />
           {/* <Logo /> */}
         </div>

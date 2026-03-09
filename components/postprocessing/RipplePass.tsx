@@ -1,9 +1,9 @@
-import React, { Suspense, useEffect, useMemo, useRef, VFC } from 'react';
+import React, { Suspense, useEffect, useMemo, useRef, FC } from 'react';
 import { ShaderPass } from 'three-stdlib';
 import { useTexture } from '@react-three/drei';
 import { extend, useFrame } from '@react-three/fiber';
-import { publicPath } from '../../utils/file.ts';
-import { RippleRenderer } from './ripple.ts';
+import { publicPath } from '../../utils/file';
+import { RippleRenderer } from './ripple';
 
 extend({ ShaderPass })
 
@@ -11,7 +11,7 @@ type RipplePassType = {
 	enabled?: boolean
 }
 
-export const RipplePass: VFC<RipplePassType> = props => {
+export const RipplePass: FC<RipplePassType> = props => {
 	const { enabled = true } = props
 
 	return (
@@ -22,11 +22,11 @@ export const RipplePass: VFC<RipplePassType> = props => {
 }
 
 // ========================================================
-// type RippleType = {
-// 	enabled?: boolean
-// }
+type RippleType = {
+	enabled?: boolean
+}
 
-const Ripple: VFC<RippleType> = () => {
+const Ripple: FC<RippleType> = () => {
 	// const { enabled = true } = props
 	const enabled = true
 
@@ -35,7 +35,7 @@ const Ripple: VFC<RippleType> = () => {
 	const rippleTexture = useTexture('/textures/brush.png');
 	const effect = useMemo(() => new RippleRenderer(rippleTexture), [rippleTexture])
 
-	const shader: THREE.Shader = useMemo(() => {
+	const shader: any = useMemo(() => {
 		return {
 			uniforms: {
 				tDiffuse: { value: null },
@@ -54,7 +54,7 @@ const Ripple: VFC<RippleType> = () => {
 		effect.update(gl, shaderRef.current!.uniforms.u_displacement)
 	})
 
-	return <shaderPass ref={shaderRef} attachArray="passes" args={[shader]} enabled={enabled} />
+	return <shaderPass ref={shaderRef} attach="passes-2" args={[shader]} enabled={enabled} />
 }
 
 // --------------------------------------------------------

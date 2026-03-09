@@ -41,7 +41,7 @@ export default function ConsultingClient({ consulting, storeUrl }: ConsultingCli
   const size = useWindowSize();
 
   useEffect(() => {
-    if (size.width < 768) {
+    if (size.width && size.width < 768) {
       const test = document.querySelector("body");
       if (test) {
         test.style.overflow = "auto";
@@ -55,7 +55,7 @@ export default function ConsultingClient({ consulting, storeUrl }: ConsultingCli
     <ThemeProvider theme={theme}>
       <div>
         <div ref={node}>
-          <Menu open={open} setOpen={setOpen} store={storeUrl} />
+          <Menu open={open} store={storeUrl} />
           <Burger open={open} setOpen={setOpen} /> <Logo />
         </div>
         <div className={`${styles.container} container fadeIn`}>

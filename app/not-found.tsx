@@ -20,7 +20,7 @@ export default function NotFound() {
       <HeadInfo />
       <div>
         <div ref={node}>
-          <Menu open={open} setOpen={setOpen} store="" />
+          <Menu open={open} store="" />
           <Burger open={open} setOpen={setOpen} />
           <Logo />
         </div>

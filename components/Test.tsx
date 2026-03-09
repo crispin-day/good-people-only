@@ -1,5 +1,5 @@
 import React, { VFC, useState, useEffect } from 'react';
-import { TCanvas } from './TCanvas.tsx';
+import { TCanvas } from './TCanvas';
 
 export const Test: VFC = () => {
 	const [loaded, setLoaded] = useState(false);

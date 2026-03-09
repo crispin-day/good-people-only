@@ -1,8 +1,8 @@
 import React, { Suspense, VFC, useEffect, useState } from 'react';
 import { OrbitControls, Stats } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Effect } from './Effect.tsx';
-import { ImagePlane } from './ImagePlane.tsx';
+import { Effect } from './Effect';
+import { ImagePlane } from './ImagePlane';
 import  useWindowSize  from '../utils/useWindowSize.js'
 
 export const TCanvas: VFC = () => {
@@ -11,7 +11,7 @@ export const TCanvas: VFC = () => {
 	return (
 		<Canvas
 			camera={{
-				position: [0, 0, size.width < 768 ? 2 : 1],
+				position: [0, 0, (size.width ?? 0) < 768 ? 2 : 1],
 				fov: 50,
 				aspect: window.innerWidth / window.innerHeight,
 				near: 0.1,
