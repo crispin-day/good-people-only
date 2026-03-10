@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from "react";
+import { ErrorBoundary } from "../components/ErrorBoundary";
 import dynamic from "next/dynamic";
 import Burger from "../components/Burger/Burger.js";
 import Menu from "../components/Menu/Menu.js";
@@ -47,7 +48,7 @@ export default function HomeClient({ storeUrl }: { storeUrl: string }) {
           <Burger open={open} setOpen={setOpen} />
           {/* <Logo /> */}
         </div>
-        <Test />
+        <ErrorBoundary><Test /></ErrorBoundary>
 
         <div className={styles.container}></div>
       </div>
