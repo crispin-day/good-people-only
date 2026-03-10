@@ -12,18 +12,16 @@ export const TCanvas: FC = () => {
 			camera={{
 				position: [0, 0, (size.width ?? 0) < 768 ? 2 : 1],
 				fov: 50,
+				aspect: window.innerWidth / window.innerHeight,
 				near: 0.1,
 				far: 2000
 			}}
-			dpr={typeof window !== 'undefined' ? window.devicePixelRatio : 1}
+			dpr={window.devicePixelRatio}
 			>
-			{/* canvas color */}
 			<color attach="background" args={['#000']} />
-			{/* object */}
 			<Suspense fallback={null}>
 				<ImagePlane />
 			</Suspense>
-			{/* effect */}
 			<Effect />
 		</Canvas>
 	)
