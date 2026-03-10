@@ -20,7 +20,8 @@ export const Effect: FC = () => {
 
 	return (
 		<effectComposer ref={composerRef} args={[gl]}>
-			<renderPass attach={(parent: any, self: any) => { parent.passes.push(self); return () => { const i = parent.passes.indexOf(self); if (i >= 0) parent.passes.splice(i, 1); }; }} args={[scene, camera]} />
+			{/* @ts-ignore - attachArray exists in R3F v7 */}
+			<renderPass attachArray="passes" args={[scene, camera]} />
 			<DistortionPass />
 			<RipplePass />
 		</effectComposer>
