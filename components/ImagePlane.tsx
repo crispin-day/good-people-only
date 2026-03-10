@@ -1,9 +1,9 @@
-import React, { VFC } from 'react';
+import React, { FC } from 'react';
 import * as THREE from 'three';
 import { Plane, useTexture, Box } from '@react-three/drei';
 // import { publicPath } from '../utils/file.ts';
 
-export const ImagePlane: VFC = () => {
+export const ImagePlane: FC = () => {
 	const path = (name: string) => `/images/${name}.png`;
 	const textures = useTexture([path('good')])
 
