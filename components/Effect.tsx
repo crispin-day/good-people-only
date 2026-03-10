@@ -26,6 +26,8 @@ export const Effect: FC = () => {
 
 	useFrame(() => {
 		if (composerRef.current) {
+			gl.autoClear = false
+			gl.clear()
 			composerRef.current.render()
 		}
 	}, 1)

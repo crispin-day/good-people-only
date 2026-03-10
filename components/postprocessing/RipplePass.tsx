@@ -82,7 +82,6 @@ void main() {
   vec2 dir = vec2(sin(theta), cos(theta));
   uv += dir * disp.r * 0.1;
 
-  uv = clamp(uv, 0.0, 1.0);
   vec4 color = texture2D(tDiffuse, uv);
 
   gl_FragColor = color;
