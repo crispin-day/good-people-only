@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ErrorBoundary } from "../components/ErrorBoundary";
 import dynamic from "next/dynamic";
 import Burger from "../components/Burger/Burger.js";
@@ -24,6 +24,15 @@ export default function HomeClient({ storeUrl }: { storeUrl: string }) {
   useOnClickOutside(node, () => setOpen(false));
 
   const size = useWindowSize();
+
+  // Close menu on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
 
   useEffect(() => {
     if (size.width && size.width < 768) {

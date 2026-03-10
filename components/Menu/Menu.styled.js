@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const StyledMenu = styled.nav `
+export const StyledMenu = styled.nav.withConfig({
+  shouldForwardProp: (prop) => prop !== 'open',
+})`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -29,12 +31,12 @@ export const StyledMenu = styled.nav `
     position: relative;
     text-decoration: none;
     transition: color 0.3s linear;
-    :nth-child(1) {
+    &:nth-child(1) {
       svg.circle {
         top: -15%;
       }
     }
-    :nth-child(5) {
+    &:nth-child(5) {
       svg.circle {
         top: -15%;
       }
@@ -57,7 +59,7 @@ export const StyledMenu = styled.nav `
       stroke-dashoffset: 1046.557861328125;
       transition: stroke-dashoffset 0.4s cubic-bezier(0.7, 0, 0.3, 1);
     }
-    svg.circle:hover {
+    &:hover svg.circle {
       stroke-dashoffset: 0;
       transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
       transition-duration: 0.3s;
@@ -67,7 +69,6 @@ export const StyledMenu = styled.nav `
       text-align: center;
     }
     &:hover {
-      // color: ${({ theme }) => theme.primaryHover};
     }
   }
   @media only screen and (max-width: 768px) {
