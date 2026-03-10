@@ -17,7 +17,6 @@ export const TCanvas: FC = () => {
 				far: 2000
 			}}
 			dpr={window.devicePixelRatio}
-			gl={{ autoClear: false }}
 			>
 			{/* canvas color */}
 			<color attach="background" args={['#000']} />

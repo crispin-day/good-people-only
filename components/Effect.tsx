@@ -15,7 +15,6 @@ export const Effect: FC = () => {
 	}, [size])
 
 	useFrame(() => {
-		gl.clear()
 		composerRef.current!.render()
 	}, 1)
 
