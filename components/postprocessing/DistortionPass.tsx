@@ -40,7 +40,7 @@ export const DistortionPass: FC<DistortionPassType> = () => {
 	return (
 		<shaderPass
 			ref={distortionRef}
-			attach="passes-1"
+			attach={(parent: any, self: any) => { parent.passes.push(self); return () => { const i = parent.passes.indexOf(self); if (i >= 0) parent.passes.splice(i, 1); }; }}
 			args={[shader]}
 			enabled={enabled}
 			uniforms-u_progress-value={progress}

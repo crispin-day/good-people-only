@@ -1,11 +1,11 @@
-import React, { Suspense, VFC, useEffect, useState } from 'react';
+import React, { Suspense, FC, useEffect, useState } from 'react';
 import { OrbitControls, Stats } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Effect } from './Effect';
 import { ImagePlane } from './ImagePlane';
 import  useWindowSize  from '../utils/useWindowSize.js'
 
-export const TCanvas: VFC = () => {
+export const TCanvas: FC = () => {
 	const size = useWindowSize();
 
 	return (

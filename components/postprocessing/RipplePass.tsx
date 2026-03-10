@@ -54,7 +54,7 @@ const Ripple: FC<RippleType> = () => {
 		effect.update(gl, shaderRef.current!.uniforms.u_displacement)
 	})
 
-	return <shaderPass ref={shaderRef} attach="passes-2" args={[shader]} enabled={enabled} />
+	return <shaderPass ref={shaderRef} attach={(parent: any, self: any) => { parent.passes.push(self); return () => { const i = parent.passes.indexOf(self); if (i >= 0) parent.passes.splice(i, 1); }; }} args={[shader]} enabled={enabled} />
 }
 
 // --------------------------------------------------------

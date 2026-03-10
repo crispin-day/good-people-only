@@ -1,7 +1,7 @@
-import React, { VFC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { TCanvas } from './TCanvas';
 
-export const Test: VFC = () => {
+export const Test: FC = () => {
 	const [loaded, setLoaded] = useState(false);
 
 	useEffect(() => {
