@@ -8,9 +8,15 @@ export const Test: FC = () => {
 		setLoaded(true)
 	}, [])
 
-
 	return (
-		<div className="hero" style={{ width: '100vw', height: '100vh', maxWidth: '1600px' }}>
+		<div className="hero" style={{ 
+			position: 'absolute',
+			top: 0,
+			left: 0,
+			width: '100vw', 
+			height: '100vh',
+			zIndex: 0
+		}}>
 			{loaded && <TCanvas />}			
 		</div>
 	)
