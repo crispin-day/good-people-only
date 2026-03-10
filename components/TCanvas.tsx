@@ -1,9 +1,8 @@
-import React, { Suspense, FC, useEffect, useState } from 'react';
-import { OrbitControls, Stats } from '@react-three/drei';
+import React, { Suspense, FC } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Effect } from './Effect';
 import { ImagePlane } from './ImagePlane';
-import  useWindowSize  from '../utils/useWindowSize.js'
+import useWindowSize from '../utils/useWindowSize.js'
 
 export const TCanvas: FC = () => {
 	const size = useWindowSize();
@@ -13,18 +12,13 @@ export const TCanvas: FC = () => {
 			camera={{
 				position: [0, 0, (size.width ?? 0) < 768 ? 2 : 1],
 				fov: 50,
-				aspect: window.innerWidth / window.innerHeight,
 				near: 0.1,
 				far: 2000
 			}}
-			dpr={window.devicePixelRatio}
+			dpr={typeof window !== 'undefined' ? window.devicePixelRatio : 1}
 			>
 			{/* canvas color */}
 			<color attach="background" args={['#000']} />
-			{/* camera controller */}
-			{/* <OrbitControls attach="orbitControls" /> */}
-			{/* helper */}
-			{/* <Stats /> */}
 			{/* object */}
 			<Suspense fallback={null}>
 				<ImagePlane />
