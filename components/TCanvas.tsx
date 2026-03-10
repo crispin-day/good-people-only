@@ -17,11 +17,15 @@ export const TCanvas: FC = () => {
 				far: 2000
 			}}
 			dpr={window.devicePixelRatio}
+			gl={{ autoClear: false }}
 			>
+			{/* canvas color */}
 			<color attach="background" args={['#000']} />
+			{/* object */}
 			<Suspense fallback={null}>
 				<ImagePlane />
 			</Suspense>
+			{/* effect */}
 			<Effect />
 		</Canvas>
 	)
