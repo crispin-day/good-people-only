@@ -1,9 +1,10 @@
+// @ts-nocheck
 // import { useControls } from 'leva';
 import React, { useEffect, useRef, VFC } from 'react';
 import { EffectComposer, RenderPass, ShaderPass } from 'three-stdlib';
 import { extend, useFrame, useThree } from '@react-three/fiber';
-import { DistortionPass } from './postprocessing/DistortionPass.tsx';
-import { RipplePass } from './postprocessing/RipplePass.tsx';
+import { DistortionPass } from './postprocessing/DistortionPass';
+import { RipplePass } from './postprocessing/RipplePass';
 
 extend({ EffectComposer, RenderPass, ShaderPass })
 

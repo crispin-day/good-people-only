@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --void: #0A0A0A;
+  --charcoal: #141414;
+  --bone: #E8E4DF;
+  --ember: #D4603A;
+  --smoke: #9A9A9A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--void);
+  color: var(--bone);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

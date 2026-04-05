@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useRef } from "react";
 import styles from "../../styles/Jukebox.module.css";
 

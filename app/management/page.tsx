@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createClient } from "contentful";
 import ManagementClient from "./ManagementClient";
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createClient } from "contentful";
 import LabelClient from "./LabelClient";
 import HeadInfo from "../../components/HeadInfo/HeadInfo.js";

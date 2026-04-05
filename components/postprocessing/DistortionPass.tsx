@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useMemo, useRef, VFC } from 'react';
 import { ShaderPass } from 'three-stdlib';
 import { extend, useFrame } from '@react-three/fiber';

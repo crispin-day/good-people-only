@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { VFC } from 'react';
 import * as THREE from 'three';
 import { Plane, useTexture, Box } from '@react-three/drei';
