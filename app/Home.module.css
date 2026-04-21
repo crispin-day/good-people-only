@@ -2,30 +2,27 @@
   max-width: var(--max-w);
   margin: 0 auto;
   width: 100%;
-  min-height: calc(100svh - 72px - 52px);
 }
 
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
-  padding: clamp(40px, 6vw, 80px) var(--page-pad-x);
+  justify-content: flex-start;
+  padding: clamp(48px, 8vw, 120px) var(--page-pad-x) clamp(64px, 10vw, 128px);
 }
 
 .tagline {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(88px, 20vw, 320px);
-  line-height: 0.86;
+  /* Mobile: small enough to stay on 2 lines max. Desktop: huge. */
+  font-size: clamp(56px, 14vw, 320px);
+  line-height: 0.88;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: var(--ink);
-  margin-bottom: 32px;
   overflow-wrap: break-word;
   word-break: break-word;
   max-width: 100%;
-  overflow: visible;
 }
 
 .period {
