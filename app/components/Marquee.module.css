@@ -26,15 +26,17 @@
   font-size: 16px;
   letter-spacing: var(--tr-wider);
   text-transform: uppercase;
-  padding: 0 24px;
+  /* Equal padding on both sides so items are evenly spaced around the dot */
+  padding: 0 28px;
   flex-shrink: 0;
 }
 
 .dot {
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: var(--paper);
-  opacity: 0.4;
+  opacity: 0.5;
   flex-shrink: 0;
+  /* No extra margin — item padding handles the spacing */
 }

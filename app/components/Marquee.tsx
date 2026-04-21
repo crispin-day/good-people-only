@@ -20,10 +20,10 @@ export default function Marquee() {
     <div className={styles.marquee} aria-hidden="true">
       <div className={styles.track}>
         {doubled.map((item, i) => (
-          <span key={i} className={styles.item}>
-            {item}
-            <span className={styles.dot} style={{ display: 'inline-block', margin: '0 0 1px 24px', verticalAlign: 'middle' }} />
-          </span>
+          <>
+            <span key={`item-${i}`} className={styles.item}>{item}</span>
+            <span key={`dot-${i}`} className={styles.dot} />
+          </>
         ))}
       </div>
     </div>
