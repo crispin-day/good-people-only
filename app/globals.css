@@ -6,6 +6,12 @@
   --bone: #E8E4DF;
   --ember: #D4603A;
   --smoke: #9A9A9A;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display);
 }
 
 * {
