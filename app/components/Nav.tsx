@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation'
 import styles from './Nav.module.css'
 
 const NAV_LINKS = [
-  { label: 'Management', href: '/roster' },
-  { label: 'Label', href: '/roster' },
+  { label: 'Management', href: '/management' },
+  { label: 'Label', href: '/label' },
   { label: 'Affiliates', href: '/affiliates' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -32,8 +32,7 @@ export default function Nav() {
               {NAV_LINKS.map((link) => {
                 const isActive =
                   pathname === link.href ||
-                  (link.href === '/roster' && pathname.startsWith('/roster')) ||
-                  (link.href === '/affiliates' && pathname.startsWith('/affiliates'))
+                  (link.href !== '/' && pathname.startsWith(link.href + '/'))
                 return (
                   <li key={link.label}>
                     <Link
