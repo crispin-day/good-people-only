@@ -27,7 +27,7 @@ export const ARTISTS: Artist[] = [
     sortOrder: 1,
     placeholderColor: '#1e1a0e',
     imgSrc: '/artist-jeremie-albino.png',
-    spotifyUrl: 'https://open.spotify.com/artist/jeremiealbino',
+    spotifyUrl: 'https://open.spotify.com/artist/69fOAbSc6FEOFmvvMzlNgY',
     instagramUrl: 'https://instagram.com/jeremiealbino',
   },
   {
@@ -40,7 +40,7 @@ export const ARTISTS: Artist[] = [
     sortOrder: 2,
     placeholderColor: '#1a1a2e',
     imgSrc: '/artist-good-kid.png',
-    spotifyUrl: 'https://open.spotify.com/artist/goodkid',
+    spotifyUrl: 'https://open.spotify.com/artist/38SKxCyfrmNWqWunb9wGHP',
     instagramUrl: 'https://instagram.com/goodkidband',
   },
   {
@@ -53,7 +53,7 @@ export const ARTISTS: Artist[] = [
     sortOrder: 3,
     placeholderColor: '#1a120e',
     imgSrc: '/artist-benjamin-dakota-rogers.png',
-    spotifyUrl: 'https://open.spotify.com/artist/benjamindakotarogers',
+    spotifyUrl: 'https://open.spotify.com/artist/255w1O3tp19jnUZPI6cMVL',
     instagramUrl: 'https://instagram.com/benjamindakotarogers',
   },
   {
@@ -66,7 +66,7 @@ export const ARTISTS: Artist[] = [
     sortOrder: 4,
     placeholderColor: '#1a1520',
     instagramUrl: 'https://instagram.com/iamtrevordaniel',
-    spotifyUrl: 'https://open.spotify.com/artist/trevordaniel',
+    spotifyUrl: 'https://open.spotify.com/artist/7uaIm6Pw7xplS8Dy06V6pT',
   },
   {
     name: 'Iluka',
@@ -77,6 +77,7 @@ export const ARTISTS: Artist[] = [
     featured: false,
     sortOrder: 5,
     placeholderColor: '#180e20',
+    spotifyUrl: 'https://open.spotify.com/artist/1QiAR2OBtc5ZsYQ5bPnpdO',
     instagramUrl: 'https://instagram.com/ilukamusic',
     websiteUrl: 'https://ilukamusic.com',
   },
@@ -89,6 +90,7 @@ export const ARTISTS: Artist[] = [
     featured: false,
     sortOrder: 6,
     placeholderColor: '#1a0e1a',
+    spotifyUrl: 'https://open.spotify.com/artist/0aap0g0NB08EJrS6FMDrdB',
     instagramUrl: 'https://instagram.com/glitterparty',
   },
   {
@@ -100,7 +102,7 @@ export const ARTISTS: Artist[] = [
     featured: false,
     sortOrder: 7,
     placeholderColor: '#0a1a0a',
-    spotifyUrl: 'https://open.spotify.com/artist/starbomb',
+    spotifyUrl: 'https://open.spotify.com/artist/1DLBs2535MM32RYqirYYY4',
     youtubeUrl: 'https://youtube.com/starbomb',
   },
   {
@@ -112,7 +114,7 @@ export const ARTISTS: Artist[] = [
     featured: false,
     sortOrder: 8,
     placeholderColor: '#0e0e1a',
-    spotifyUrl: 'https://open.spotify.com/artist/nsp',
+    spotifyUrl: 'https://open.spotify.com/artist/3jsyANBBy6gOZUSQhiGclx',
     youtubeUrl: 'https://youtube.com/ninjasexparty',
   },
   {
@@ -124,6 +126,7 @@ export const ARTISTS: Artist[] = [
     featured: false,
     sortOrder: 9,
     placeholderColor: '#1a0e0e',
+    spotifyUrl: 'https://open.spotify.com/artist/40rYcgQG8MPbjZDOfDMzyC',
     instagramUrl: 'https://instagram.com/sisterray',
   },
   {
@@ -135,6 +138,7 @@ export const ARTISTS: Artist[] = [
     featured: false,
     sortOrder: 10,
     placeholderColor: '#141414',
+    spotifyUrl: 'https://open.spotify.com/artist/36Bs5vvvt4AfdIvApt1Rid',
   },
 ]
 
