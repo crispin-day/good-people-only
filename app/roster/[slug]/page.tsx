@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Nav from '../../components/Nav'
+import Marquee from '../../components/Marquee'
 import Footer from '../../components/Footer'
 import { getArtistBySlug, ARTISTS } from '../../../lib/artists'
 import styles from './artist.module.css'
@@ -36,6 +37,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
   return (
     <div className={styles.page}>
       <Nav />
+      <Marquee />
       <div className={styles.inner}>
         <Link href="/roster" className={styles.backLink}>
           ← ROSTER

@@ -8,9 +8,7 @@
 }
 
 .inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--page-pad-x);
+  padding: 0 clamp(12px, 2vw, 24px);
   height: 100%;
   display: flex;
   align-items: center;

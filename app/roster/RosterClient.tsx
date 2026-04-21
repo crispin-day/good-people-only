@@ -13,9 +13,11 @@ type View = 'list' | 'tiles'
 
 interface RosterClientProps {
   artists: Artist[]
+  pageTitle?: string
+  kicker?: string
 }
 
-export default function RosterClient({ artists }: RosterClientProps) {
+export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker = '— GOOD PEOPLE ARTIST MANAGEMENT' }: RosterClientProps) {
   const [view, setView] = useState<View>('list')
 
   const sorted = [...artists].sort((a, b) => a.sortOrder - b.sortOrder)
@@ -26,8 +28,8 @@ export default function RosterClient({ artists }: RosterClientProps) {
       <Marquee />
       <main>
         <div className={styles.pageHeader}>
-          <p className={styles.kicker}>— GOOD PEOPLE ARTIST MANAGEMENT</p>
-          <h1 className={styles.title}>THE ROSTER</h1>
+          <p className={styles.kicker}>{kicker}</p>
+          <h1 className={styles.title}>{pageTitle}</h1>
           <p className={styles.subtitle}>
             A deliberately small group of artists. Genre-agnostic, Toronto-rooted, built for the long game.
           </p>

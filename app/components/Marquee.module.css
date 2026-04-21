@@ -2,7 +2,7 @@
   overflow: hidden;
   background: var(--ink);
   color: var(--paper);
-  height: 44px;
+  height: 52px;
   display: flex;
   align-items: center;
 }
@@ -11,15 +11,15 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
-  animation: gpo-mq-scroll 32s linear infinite;
+  animation: gpo-mq-scroll 24s linear infinite;
   will-change: transform;
 }
 
 .item {
   font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: var(--text-xs);
-  letter-spacing: var(--tr-widest);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: var(--tr-wider);
   text-transform: uppercase;
   padding: 0 24px;
   flex-shrink: 0;
