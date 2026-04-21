@@ -8,13 +8,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: clamp(48px, 8vw, 120px) var(--page-pad-x) clamp(64px, 10vw, 128px);
+  padding: clamp(40px, 7vw, 120px) var(--page-pad-x) clamp(40px, 7vw, 96px);
 }
 
 .tagline {
   font-family: var(--font-display);
   font-weight: 700;
-  /* Mobile: small enough to stay on 2 lines max. Desktop: huge. */
   font-size: clamp(56px, 14vw, 320px);
   line-height: 0.88;
   letter-spacing: -0.04em;
@@ -23,6 +22,20 @@
   overflow-wrap: break-word;
   word-break: break-word;
   max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 32px var(--page-pad-x) 40px;
+  }
+
+  .tagline {
+    /* On narrow phones, 14vw of 375px is ~53px — still too big per word.
+       Force a size where each word fits on its own line comfortably. */
+    font-size: clamp(40px, 11.5vw, 56px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+  }
 }
 
 .period {
