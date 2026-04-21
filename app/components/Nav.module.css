@@ -27,8 +27,8 @@
 
 .logoText {
   font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 14px;
   letter-spacing: var(--tr-widest);
   text-transform: uppercase;
   color: var(--ink);
@@ -54,8 +54,8 @@
   height: 100%;
   padding: 0 clamp(14px, 1.8vw, 24px);
   font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: var(--tr-widest);
   color: var(--fg-2);
