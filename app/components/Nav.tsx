@@ -62,6 +62,8 @@ export default function Nav() {
       <div
         className={`${styles.overlay} ${menuOpen ? styles.overlayOpen : ''}`}
         aria-hidden={!menuOpen}
+        // inert prevents focus on closed overlay — supported in all modern browsers
+        {...(!menuOpen ? { inert: '' } : {})}
       >
         <button
           className={styles.overlayClose}
