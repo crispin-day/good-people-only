@@ -148,23 +148,24 @@ export default function HomeClient() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-24 px-6 bg-[#141414]">
+      <section className="py-28 px-6 bg-[#0D0D0D]">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-14">
-            <h2 className="text-[#E8E4DF] text-3xl md:text-4xl font-bold uppercase tracking-[-0.02em] inline-block">
-              What We Do
-              <div className="h-0.5 w-12 bg-[#D4603A] mt-3" />
-            </h2>
+          <div className="mb-2">
+            <p className="text-[#D4603A] text-[11px] font-medium tracking-[0.25em] uppercase mb-16">What We Do</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
-            {SERVICES.map((service) => (
-              <div key={service.title} className="bg-[#141414] p-10">
-                <div className="h-0.5 w-8 bg-[#D4603A] mb-8" />
-                <h3 className="text-[#E8E4DF] text-xl font-bold uppercase tracking-[0.05em] mb-4">
+          <div className="divide-y divide-white/[0.06]">
+            {SERVICES.map((service, i) => (
+              <div key={service.title} className="flex flex-col md:flex-row gap-4 md:gap-0 py-12 md:py-14 group">
+                <span className="text-[#D4603A] text-[11px] font-medium tracking-[0.15em] md:w-24 shrink-0 mt-1">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="text-[#E8E4DF] text-sm font-semibold uppercase tracking-[0.14em] md:w-64 shrink-0 mt-1">
                   {service.title}
                 </h3>
-                <p className="text-[#9A9A9A] text-sm leading-relaxed">{service.description}</p>
+                <p className="text-[#9A9A9A] text-base leading-relaxed max-w-lg">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
