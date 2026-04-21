@@ -4,6 +4,11 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Good People Only",
   description: "Artist management, record label, studios and consulting. Toronto.",
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
 }
 
 export const viewport = {
@@ -12,11 +17,7 @@ export const viewport = {
   maximumScale: 1,
 }
 
-export const formatDetection = {
-  telephone: false,
-  email: false,
-  address: false,
-}
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
