@@ -11,17 +11,9 @@ export default function HomeClient() {
       <Nav />
       <Marquee />
       <div className={styles.heroWrap}>
-        <section
-          className={styles.hero}
-          data-hero-layout="stacked"
-          data-hero-theme="paper"
-        >
-          <div className={`${styles.tagline} gpo-fadeup`}>
-            <div>
-              GOOD PEOPLE ONLY<span className={styles.period}>.</span>
-            </div>
-          </div>
-        </section>
+        <div className={`${styles.tagline} gpo-fadeup`}>
+          GOOD PEOPLE ONLY<span className={styles.period}>.</span>
+        </div>
       </div>
       <Footer />
     </div>

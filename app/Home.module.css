@@ -1,27 +1,20 @@
-/* Full-height page wrapper */
+/* Homepage: cream paper fills the viewport, tagline centered, slim footer below */
 .page {
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  background: var(--ink);
-}
-
-.heroWrap {
-  flex: 1;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  width: 100%;
   display: flex;
   flex-direction: column;
   background: var(--paper);
 }
 
-.hero {
+.heroWrap {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: clamp(40px, 7vw, 120px) var(--page-pad-x) clamp(40px, 7vw, 96px);
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(40px, 8vw, 120px) var(--page-pad-x);
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
 }
 
 .tagline {
@@ -42,21 +35,6 @@
 }
 
 @media (max-width: 640px) {
-  /* On mobile: don't force full viewport height — let content be natural height */
-  .page {
-    min-height: unset;
-  }
-
-  .heroWrap {
-    flex: none;
-  }
-
-  .hero {
-    flex: none;
-    justify-content: flex-start;
-    padding: 28px var(--page-pad-x) 28px;
-  }
-
   .tagline {
     font-size: clamp(40px, 11.5vw, 56px);
     line-height: 0.9;
