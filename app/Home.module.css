@@ -9,21 +9,21 @@
 .heroWrap {
   flex: 1;
   display: flex;
-  /* Vertically centered in the cream area */
   align-items: center;
   justify-content: flex-start;
-  padding: clamp(32px, 6vw, 96px) var(--page-pad-x);
+  /* More vertical breathing room */
+  padding: clamp(64px, 12vw, 160px) var(--page-pad-x);
   max-width: var(--max-w);
   margin: 0 auto;
   width: 100%;
 }
 
 .tagline {
-  /* JetBrains Mono — moved here from nav header per Crispin */
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: clamp(56px, 14vw, 320px);
-  line-height: 0.88;
+  /* Dialled back: was clamp(56px, 14vw, 320px) — too large at desktop */
+  font-size: clamp(48px, 9vw, 160px);
+  line-height: 0.9;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--ink);
@@ -42,8 +42,12 @@
 }
 
 @media (max-width: 640px) {
+  .heroWrap {
+    padding: clamp(40px, 8vw, 80px) var(--page-pad-x);
+  }
+
   .tagline {
-    font-size: clamp(28px, 22vw, 56px);
+    font-size: clamp(28px, 18vw, 56px);
     line-height: 0.92;
     letter-spacing: -0.01em;
   }
