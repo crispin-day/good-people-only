@@ -16,12 +16,6 @@ const AFFILIATES = [
     blurb: 'A residential recording studio in Toronto. Live room, isolation booths, vintage chain.',
   },
   {
-    name: 'Good People Studio',
-    kind: 'Recording studio',
-    city: 'Toronto, ON',
-    blurb: 'In-house writing + production room. Where the GPO roster cuts demos.',
-  },
-  {
     name: 'Stay Level Records',
     kind: 'Record label',
     city: 'Toronto, ON',
@@ -32,6 +26,12 @@ const AFFILIATES = [
     kind: 'Distribution',
     city: 'Toronto, ON',
     blurb: 'Global digital + physical distribution for independent artists.',
+  },
+  {
+    name: 'Good Merch Only',
+    kind: 'Merchandise',
+    city: 'Toronto, ON',
+    blurb: 'The official GPO merch operation. Quality goods, no filler.',
   },
 ]
 

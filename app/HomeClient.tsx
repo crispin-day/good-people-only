@@ -17,7 +17,6 @@ export default function HomeClient() {
           data-hero-theme="paper"
         >
           <div className={`${styles.tagline} gpo-fadeup`}>
-            <span className={styles.overline}>— Surround yourself with</span>
             <div>
               GOOD PEOPLE ONLY<span className={styles.period}>.</span>
             </div>

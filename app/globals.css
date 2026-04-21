@@ -127,7 +127,7 @@
 
   --max-w: 1440px;
   --max-w-read: 680px;
-  --page-pad-x: clamp(20px, 4vw, 48px);
+  --page-pad-x: clamp(16px, 3vw, 40px);
 }
 
 *, *::before, *::after { box-sizing: border-box; }

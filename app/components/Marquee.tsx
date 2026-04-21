@@ -1,11 +1,16 @@
 import styles from './Marquee.module.css'
 
 const ITEMS = [
-  'GOOD KID',
   'JEREMIE ALBINO',
+  'GOOD KID',
   'BENJAMIN DAKOTA ROGERS',
-  'TORONTO',
-  'EST. 2016',
+  'TREVOR DANIEL',
+  'ILUKA',
+  'GLITTER PARTY',
+  'STARBOMB',
+  'NINJA SEX PARTY',
+  'SISTER RAY',
+  'BENJA',
 ]
 
 export default function Marquee() {
