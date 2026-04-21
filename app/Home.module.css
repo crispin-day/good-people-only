@@ -11,8 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* More vertical breathing room */
-  padding: clamp(64px, 12vw, 160px) var(--page-pad-x);
+  /* Tighter horizontal pad, generous vertical */
+  padding: clamp(64px, 12vw, 160px) clamp(12px, 2vw, 24px);
   max-width: var(--max-w);
   margin: 0 auto;
   width: 100%;

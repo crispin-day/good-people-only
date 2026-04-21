@@ -21,8 +21,8 @@
   gap: 10px;
   color: var(--ink);
   height: 100%;
-  padding-right: clamp(14px, 1.8vw, 24px);
-  border-right: 1px solid var(--border-1);
+  padding-right: 0;
+  border-right: none;
 }
 
 .logoText {
