@@ -4,9 +4,11 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const NAV_LINKS = [
-  { label: 'Roster', href: '/roster' },
+  { label: 'Management', href: '/management' },
+  { label: 'Label', href: '/label' },
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
+  { label: 'Store', href: '/store' },
+  { label: 'Consulting', href: '/consulting' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -27,21 +29,24 @@ export default function Nav() {
         <span className="block w-6 h-px bg-[#D8D8D8]" />
       </button>
 
-      {/* GPO wordmark — always visible */}
+      {/* GPO circular logo */}
       <Link
         href="/"
-        className="fixed z-50 text-[#D8D8D8] text-[13px] font-normal uppercase tracking-[0.25em] hover:opacity-70 transition-opacity duration-300"
+        className="fixed z-50 w-10 h-10 rounded-full border border-[#D8D8D8] flex items-center justify-center hover:opacity-70 transition-opacity duration-300"
         style={{ top: '43px', right: '80px' }}
+        aria-label="Good People Only — Home"
       >
-        GPO
+        <span
+          className="text-[#D8D8D8] font-normal text-center leading-none"
+          style={{ fontSize: '7px', letterSpacing: '0.05em' }}
+        >
+          GO<br />OD
+        </span>
       </Link>
 
       {/* Full-screen overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[#000000] transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) setMenuOpen(false)
-        }}
+        className={`fixed inset-0 z-40 bg-[#000000] flex flex-col items-center justify-center transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         {/* Close button */}
         <button
@@ -53,14 +58,14 @@ export default function Nav() {
           ✕
         </button>
 
-        <nav className="flex flex-col justify-center h-full pl-20 max-md:pl-8">
+        <nav className="flex flex-col items-center gap-2">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-[#D8D8D8] font-normal uppercase leading-tight hover:opacity-70 transition-opacity duration-300 ease-in-out"
-              style={{ fontSize: 'clamp(2rem, 8vw, 75px)', letterSpacing: '8px' }}
+              className="text-[#D8D8D8] font-normal uppercase hover:opacity-70 transition-opacity duration-300 ease-in-out"
+              style={{ fontSize: '4rem', letterSpacing: '0.3em' }}
             >
               {link.label}
             </Link>
