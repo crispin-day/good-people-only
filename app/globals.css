@@ -140,11 +140,17 @@ body {
 }
 
 body {
-  background: var(--bg-1);
+  /* Ink background so any overflow below page content is dark, not cream */
+  background: var(--ink);
   color: var(--fg-1);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* All pages render on paper; body is ink so overflow/gaps never show cream */
+main {
+  background: var(--paper);
 }
 
 a { color: inherit; text-decoration: none; }
