@@ -16,4 +16,5 @@
   color: var(--gray-400);
   text-transform: uppercase;
   letter-spacing: var(--tr-wider);
+  white-space: nowrap;
 }
