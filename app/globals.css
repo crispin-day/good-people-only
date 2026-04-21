@@ -1,19 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --void: #0A0A0A;
-  --charcoal: #141414;
-  --bone: #E8E4DF;
-  --ember: #D4603A;
-  --smoke: #9A9A9A;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Space Grotesk', system-ui, sans-serif;
-}
-
-.font-display {
-  font-family: var(--font-display);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,8 +11,13 @@ html {
 }
 
 body {
-  background-color: var(--void);
-  color: var(--bone);
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background-color: #000000;
+  color: #D8D8D8;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  to { opacity: 1; }
 }
