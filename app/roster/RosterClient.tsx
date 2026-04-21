@@ -23,7 +23,7 @@ export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker
   const sorted = [...artists].sort((a, b) => a.sortOrder - b.sortOrder)
 
   return (
-    <>
+    <div className="gpo-page-layout">
       <Nav />
       <Marquee />
       <main>
@@ -97,6 +97,6 @@ export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

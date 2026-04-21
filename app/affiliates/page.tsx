@@ -37,7 +37,7 @@ const AFFILIATES = [
 
 export default function AffiliatesPage() {
   return (
-    <>
+    <div className="gpo-page-layout">
       <Nav />
       <Marquee />
       <main>
@@ -64,6 +64,6 @@ export default function AffiliatesPage() {
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

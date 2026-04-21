@@ -9,13 +9,11 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="gpo-page-layout">
       <Nav />
       <Marquee />
       <main
         style={{
-          minHeight: '100vh',
-          background: 'var(--paper)',
           color: 'var(--ink)',
         }}
       >
@@ -156,6 +154,6 @@ export default function AboutPage() {
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

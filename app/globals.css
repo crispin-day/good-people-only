@@ -198,6 +198,18 @@ button { font: inherit; cursor: pointer; }
   50% { opacity: 0.45; transform: scale(0.85); }
 }
 
+/* Sticky footer pattern for inner pages */
+.gpo-page-layout {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+}
+
+.gpo-page-layout > main {
+  flex: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

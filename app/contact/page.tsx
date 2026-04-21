@@ -10,13 +10,11 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <>
+    <div className="gpo-page-layout">
       <Nav />
       <Marquee />
       <main
         style={{
-          minHeight: '100vh',
-          background: 'var(--paper)',
           color: 'var(--ink)',
         }}
       >
@@ -175,6 +173,6 @@ export default function ContactPage() {
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

@@ -4,12 +4,10 @@ import Footer from './components/Footer'
 
 export default function NotFound() {
   return (
-    <>
+    <div className="gpo-page-layout">
       <Nav />
       <main
         style={{
-          minHeight: 'calc(100vh - 72px)',
-          background: 'var(--paper)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -73,6 +71,6 @@ export default function NotFound() {
         </Link>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
