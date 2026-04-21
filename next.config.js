@@ -14,7 +14,7 @@ const nextConfig = {
       },
       {
         source: '/consulting',
-        destination: '/services',
+        destination: '/affiliates',
         permanent: true,
       },
       {

@@ -7,8 +7,9 @@ import { usePathname } from 'next/navigation'
 import styles from './Nav.module.css'
 
 const NAV_LINKS = [
-  { label: 'Management', href: '/management' },
-  { label: 'Label', href: '/label' },
+  { label: 'Management', href: '/roster' },
+  { label: 'Label', href: '/roster' },
+  { label: 'Affiliates', href: '/affiliates' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -22,7 +23,7 @@ export default function Nav() {
       <header className={styles.header}>
         <div className={styles.inner}>
           <Link href="/" className={styles.logo}>
-            <Image src="/logo-circle-black.png" width={36} height={36} alt="Good People Only" />
+            <Image src="/logo-circle-black.png" width={32} height={32} alt="Good People Only" />
             <span className={styles.logoText}>Good People Only</span>
           </Link>
 
@@ -31,7 +32,8 @@ export default function Nav() {
               {NAV_LINKS.map((link) => {
                 const isActive =
                   pathname === link.href ||
-                  (link.href === '/management' && pathname.startsWith('/roster'))
+                  (link.href === '/roster' && pathname.startsWith('/roster')) ||
+                  (link.href === '/affiliates' && pathname.startsWith('/affiliates'))
                 return (
                   <li key={link.label}>
                     <Link

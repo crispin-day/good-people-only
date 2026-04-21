@@ -11,37 +11,15 @@ export default function HomeClient() {
       <Nav />
       <Marquee />
       <div className={styles.heroWrap}>
-        <section className={styles.hero}>
+        <section
+          className={styles.hero}
+          data-hero-layout="stacked"
+          data-hero-theme="paper"
+        >
           <div className={`${styles.tagline} gpo-fadeup`}>
-            <div>SURROUND YOURSELF WITH</div>
+            <span className={styles.overline}>— Surround yourself with</span>
             <div>
               GOOD PEOPLE ONLY<span className={styles.period}>.</span>
-            </div>
-          </div>
-          <div className={`${styles.meta} gpo-fadeup d1`}>
-            <span>EST. TORONTO</span>
-            <span className={styles.metaDot} />
-            <span>MANAGEMENT · LABEL · CONSULTING</span>
-          </div>
-          <div className={`${styles.goodSpaces} gpo-fadeup d2`}>
-            <span className={styles.goodSpacesLabel}>— GOOD SPACES</span>
-            <div className={styles.goodSpacesLinks}>
-              <a
-                href="https://thecabinrecording.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.goodSpacesLink}
-              >
-                THE CABIN RECORDING ↗
-              </a>
-              <a
-                href="https://goodpeoplestudio.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.goodSpacesLink}
-              >
-                GOOD PEOPLE STUDIO ↗
-              </a>
             </div>
           </div>
         </section>

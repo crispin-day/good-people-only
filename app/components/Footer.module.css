@@ -88,6 +88,33 @@
   transform: scaleX(1);
 }
 
+.iconRow {
+  display: flex;
+  gap: 8px;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gray-800);
+  color: var(--paper);
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.iconLink::after {
+  display: none;
+}
+
+.iconLink:hover {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
 .bottom {
   max-width: var(--max-w);
   margin: 0 auto;
