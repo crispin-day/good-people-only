@@ -1,4 +1,4 @@
-import { getArtistsByDivision } from '../../lib/artists'
+import { ARTISTS } from '../../lib/artists'
 import RosterClient from '../roster/RosterClient'
 
 export const metadata = {
@@ -6,8 +6,12 @@ export const metadata = {
   description: 'Good People Record Co. Toronto.',
 }
 
+const LABEL_SLUGS = ['jeremie-albino', 'good-kid', 'benjamin-dakota-rogers', 'glitter-party', 'benja']
+
 export default function LabelPage() {
-  const artists = getArtistsByDivision('Label')
+  const artists = ARTISTS
+    .filter(a => LABEL_SLUGS.includes(a.slug))
+    .sort((a, b) => a.sortOrder - b.sortOrder)
   return (
     <RosterClient
       artists={artists}

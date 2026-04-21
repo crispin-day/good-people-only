@@ -1,4 +1,4 @@
-import { getArtistsByDivision } from '../../lib/artists'
+import { ARTISTS } from '../../lib/artists'
 import RosterClient from '../roster/RosterClient'
 
 export const metadata = {
@@ -7,7 +7,8 @@ export const metadata = {
 }
 
 export default function ManagementPage() {
-  const artists = getArtistsByDivision('Management')
+  // Management tab shows all artists
+  const artists = [...ARTISTS].sort((a, b) => a.sortOrder - b.sortOrder)
   return (
     <RosterClient
       artists={artists}
