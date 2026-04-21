@@ -19,11 +19,12 @@
 }
 
 .tagline {
-  font-family: var(--font-display);
+  /* JetBrains Mono — moved here from nav header per Crispin */
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: clamp(56px, 14vw, 320px);
   line-height: 0.88;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--ink);
   max-width: 100%;
@@ -42,9 +43,8 @@
 
 @media (max-width: 640px) {
   .tagline {
-    /* Each word on its own line — clamp keeps it from overflowing on narrow screens */
     font-size: clamp(28px, 22vw, 56px);
     line-height: 0.92;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.01em;
   }
 }

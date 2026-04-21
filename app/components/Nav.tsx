@@ -24,7 +24,7 @@ export default function Nav() {
         <div className={styles.inner}>
           <Link href="/" className={styles.logo}>
             <Image src="/logo-circle-black.png" width={32} height={32} alt="Good People Only" />
-            <span className={styles.logoText}>Good People Only</span>
+            {/* Wordmark removed per Crispin — logo circle only */}
           </Link>
 
           <nav aria-label="Primary">
