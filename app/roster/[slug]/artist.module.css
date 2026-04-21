@@ -1,0 +1,122 @@
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+.inner {
+  max-width: var(--max-w-read);
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 80px) var(--page-pad-x) clamp(64px, 10vw, 128px);
+}
+
+.backLink {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin-bottom: 40px;
+  position: relative;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.backLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.backLink:hover {
+  color: var(--ink);
+}
+
+.backLink:hover::after {
+  transform: scaleX(1);
+}
+
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 7vw, 72px);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.genre {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin-bottom: 24px;
+}
+
+.bio {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+  margin-bottom: 40px;
+  max-width: 540px;
+}
+
+.socials {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  position: relative;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  color: var(--fg-2);
+  text-decoration: none;
+  transition: color var(--dur-fast);
+}
+
+.socialLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.socialLink:hover {
+  color: var(--ink);
+}
+
+.socialLink:hover::after {
+  transform: scaleX(1);
+}

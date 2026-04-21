@@ -1,0 +1,120 @@
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.top {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 96px) var(--page-pad-x);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.colHeading {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--fg-3-inv);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-md);
+  letter-spacing: var(--tr-tight);
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.brandDesc {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-3-inv);
+  max-width: 240px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  color: var(--fg-2-inv);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--paper);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.link:hover {
+  color: var(--paper);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.bottom {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 20px var(--page-pad-x);
+  border-top: 1px solid var(--gray-800);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottomText {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  color: var(--gray-600);
+}
+
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}

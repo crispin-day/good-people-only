@@ -9,6 +9,7 @@ export interface Artist {
   featured: boolean
   sortOrder: number
   placeholderColor: string
+  imgSrc?: string
   spotifyUrl?: string
   instagramUrl?: string
   youtubeUrl?: string
@@ -25,6 +26,7 @@ export const ARTISTS: Artist[] = [
     featured: true,
     sortOrder: 1,
     placeholderColor: '#1a1a2e',
+    imgSrc: '/artist-good-kid.png',
     spotifyUrl: 'https://open.spotify.com/artist/goodkid',
     instagramUrl: 'https://instagram.com/goodkidband',
   },
@@ -37,6 +39,7 @@ export const ARTISTS: Artist[] = [
     featured: true,
     sortOrder: 2,
     placeholderColor: '#1e1a0e',
+    imgSrc: '/artist-jeremie-albino.png',
     spotifyUrl: 'https://open.spotify.com/artist/jeremiealbino',
     instagramUrl: 'https://instagram.com/jeremiealbino',
   },
@@ -49,6 +52,7 @@ export const ARTISTS: Artist[] = [
     featured: true,
     sortOrder: 3,
     placeholderColor: '#1a120e',
+    imgSrc: '/artist-benjamin-dakota-rogers.png',
     spotifyUrl: 'https://open.spotify.com/artist/benjamindakotarogers',
     instagramUrl: 'https://instagram.com/benjamindakotarogers',
   },

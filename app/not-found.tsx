@@ -1,52 +1,78 @@
 import Link from 'next/link'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 
 export default function NotFound() {
   return (
-    <main
-      className="min-h-screen flex flex-col items-center justify-center"
-      style={{ backgroundColor: 'var(--color-void)' }}
-    >
+    <>
       <Nav />
-
-      <div className="text-center px-5">
+      <main
+        style={{
+          minHeight: 'calc(100vh - 72px)',
+          background: 'var(--paper)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: 'var(--page-pad-x)',
+          textAlign: 'center',
+        }}
+      >
         <p
-          className="font-medium"
           style={{
-            color: 'var(--color-ember)',
-            fontFamily: 'var(--font-heading)',
-            fontSize: '8rem',
-            lineHeight: '1',
-            letterSpacing: '-0.03em',
+            fontFamily: 'var(--font-display)',
+            fontWeight: 700,
+            fontSize: 'clamp(80px, 20vw, 200px)',
+            letterSpacing: '-0.04em',
+            lineHeight: '0.9',
+            color: 'var(--ink)',
           }}
         >
           404
         </p>
+
         <p
-          className="font-medium uppercase mt-4 mb-8"
           style={{
-            color: 'var(--color-bone)',
-            fontFamily: 'var(--font-heading)',
-            fontSize: '14px',
-            letterSpacing: '0.2em',
+            fontFamily: 'var(--font-mono)',
+            fontSize: 'var(--text-xs)',
+            letterSpacing: 'var(--tr-widest)',
+            textTransform: 'uppercase',
+            color: 'var(--fg-3)',
+            marginTop: '24px',
+            marginBottom: '32px',
           }}
         >
           Page Not Found
         </p>
+
+        <p
+          style={{
+            fontFamily: 'var(--font-sans)',
+            fontSize: 'var(--text-base)',
+            lineHeight: '1.55',
+            color: 'var(--fg-2)',
+            maxWidth: '320px',
+            marginBottom: '40px',
+          }}
+        >
+          Nothing here. Head back and find something good.
+        </p>
+
         <Link
           href="/"
-          className="font-medium uppercase"
+          className="gpo-link"
           style={{
-            color: 'var(--color-smoke)',
-            fontFamily: 'var(--font-heading)',
-            fontSize: '12px',
-            letterSpacing: '0.15em',
-            transition: 'color 150ms ease',
+            fontFamily: 'var(--font-mono)',
+            fontSize: 'var(--text-xs)',
+            letterSpacing: 'var(--tr-widest)',
+            textTransform: 'uppercase',
+            color: 'var(--fg-2)',
           }}
         >
           ← Back to Home
         </Link>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   )
 }

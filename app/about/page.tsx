@@ -1,130 +1,161 @@
 import Nav from '../components/Nav'
+import Marquee from '../components/Marquee'
 import Footer from '../components/Footer'
 
 export const metadata = {
   title: 'About | Good People Only',
-  description: 'Boutique artist management founded by Crispin Day in Toronto. We build artists.',
+  description: 'Boutique artist management founded by Crispin Day in Toronto.',
 }
-
-const GOOD_SPACES = [
-  { title: 'Palace Sound', url: '#' },
-  { title: 'Revolution Recording', url: '#' },
-  { title: 'FACTOR Canada', url: '#' },
-  { title: 'Ontario Arts Council', url: '#' },
-]
 
 export default function AboutPage() {
   return (
-    <main
-      className="min-h-screen"
-      style={{
-        backgroundColor: 'var(--color-void)',
-        animation: 'fadein 0.4s ease-in forwards',
-        paddingTop: '120px',
-        paddingBottom: '120px',
-      }}
-    >
+    <>
       <Nav />
+      <Marquee />
+      <main
+        style={{
+          minHeight: '100vh',
+          background: 'var(--paper)',
+          color: 'var(--ink)',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 'var(--max-w)',
+            margin: '0 auto',
+            padding: 'clamp(48px, 8vw, 96px) var(--page-pad-x)',
+          }}
+        >
+          {/* Kicker */}
+          <p
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 'var(--text-xs)',
+              letterSpacing: 'var(--tr-widest)',
+              textTransform: 'uppercase',
+              color: 'var(--fg-3)',
+              marginBottom: '16px',
+            }}
+          >
+            — ABOUT
+          </p>
 
-      <div className="max-w-[1280px] mx-auto px-5 md:px-[60px]">
-        <div className="flex flex-col md:flex-row gap-16 md:gap-24">
-          {/* Left column — Good Spaces */}
-          <div className="md:w-1/3 shrink-0">
-            <div
-              className="mb-6"
-              style={{
-                borderTop: '1px solid rgba(232,228,223,0.2)',
-                borderBottom: '1px solid rgba(232,228,223,0.2)',
-                padding: '12px 0',
-              }}
-            >
+          {/* Title */}
+          <h1
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 700,
+              fontSize: 'clamp(40px, 8vw, 96px)',
+              letterSpacing: '-0.025em',
+              textTransform: 'uppercase',
+              lineHeight: '0.95',
+              color: 'var(--ink)',
+              marginBottom: 'clamp(48px, 6vw, 80px)',
+            }}
+          >
+            WHO WE ARE
+          </h1>
+
+          {/* Two-column grid */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'clamp(160px, 20vw, 260px) 1fr',
+              gap: 'clamp(32px, 6vw, 64px)',
+              alignItems: 'start',
+            }}
+          >
+            <div>
               <p
-                className="font-normal uppercase"
                 style={{
-                  color: 'var(--color-bone)',
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '11px',
-                  letterSpacing: '0.2em',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 'var(--text-xs)',
+                  letterSpacing: 'var(--tr-widest)',
+                  textTransform: 'uppercase',
+                  color: 'var(--fg-3)',
                 }}
               >
-                Good Spaces
+                — STATEMENT
               </p>
             </div>
-            <ul className="flex flex-col gap-3">
-              {GOOD_SPACES.map((space) => (
-                <li key={space.title}>
-                  <a
-                    href={space.url}
-                    className="font-normal hover-bone"
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '14px',
-                    }}
-                  >
-                    {space.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          {/* Right column — About content */}
-          <div className="md:w-2/3">
-            <h1
-              className="font-medium uppercase mb-10"
-              style={{
-                color: 'var(--color-bone)',
-                fontFamily: 'var(--font-heading)',
-                fontSize: '35px',
-                letterSpacing: '-0.02em',
-                lineHeight: '1.1',
-              }}
-            >
-              We don&apos;t chase trends.<br />We build artists.
-            </h1>
+            <div>
+              <p
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'var(--text-md)',
+                  fontWeight: 500,
+                  lineHeight: '1.55',
+                  color: 'var(--fg-1)',
+                  marginBottom: '24px',
+                }}
+              >
+                Good People Only is a Toronto-based artist management company, record label, recording
+                studio, and consulting firm. Founded in 2016 by Crispin Day, we work with artists we
+                believe in — and build everything around them.
+              </p>
 
-            <p
-              className="mb-[26px]"
-              style={{
-                color: 'var(--color-bone)',
-                fontFamily: 'var(--font-body)',
-                fontSize: '18px',
-                lineHeight: '1.6',
-                maxWidth: '600px',
-              }}
-            >
-              Good People Only is a boutique artist management company founded by Crispin Day in Toronto. We are not an agency. We are not a service provider. We are a collective of artists, producers, and creative operators who share a single belief: put the music first, surround yourself with good people, and the rest follows.
-            </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'var(--text-base)',
+                  lineHeight: '1.65',
+                  color: 'var(--fg-2)',
+                  marginBottom: '24px',
+                }}
+              >
+                We started with one idea: good music deserves a home that treats it right. Over the
+                years, that idea has grown into a full-service operation for artists at every stage —
+                from the first songwriting session to a touring career, from an independent single to a
+                long-running label relationship.
+              </p>
 
-            <p
-              className="mb-[26px]"
-              style={{
-                color: 'var(--color-bone)',
-                fontFamily: 'var(--font-body)',
-                fontSize: '18px',
-                lineHeight: '1.6',
-                maxWidth: '600px',
-              }}
-            >
-              Crispin spent a decade as a producer and engineer before moving into management. That background shapes everything: how we talk to labels, how we approach recording budgets, how we read a contract. We know what it costs to make a record because we&apos;ve made them.
-            </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'var(--text-base)',
+                  lineHeight: '1.65',
+                  color: 'var(--fg-2)',
+                  marginBottom: '24px',
+                }}
+              >
+                Crispin spent a decade as a producer and engineer before moving into management. That
+                background shapes everything: how we talk to labels, how we approach recording budgets,
+                how we read a contract. We know what it costs to make a record because we&apos;ve made them.
+              </p>
 
-            <p
-              style={{
-                color: 'var(--color-bone)',
-                fontFamily: 'var(--font-body)',
-                fontSize: '18px',
-                lineHeight: '1.6',
-                maxWidth: '600px',
-              }}
-            >
-              The roster is small by design. Every artist here is a deliberate choice — not a volume play. Genre-agnostic, spanning indie rock, folk, comedy rock, and electronic. What they share is craft, intention, and a willingness to do the work.
-            </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 'var(--text-base)',
+                  lineHeight: '1.65',
+                  color: 'var(--fg-2)',
+                  marginBottom: '48px',
+                }}
+              >
+                The roster is small by design. Every artist here is a deliberate choice — not a volume
+                play. What they share is craft, intention, and a willingness to do the work.
+              </p>
+
+              <blockquote
+                style={{
+                  borderLeft: '2px solid var(--ink)',
+                  paddingLeft: '24px',
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  fontSize: 'var(--text-xl)',
+                  letterSpacing: '-0.01em',
+                  color: 'var(--ink)',
+                  textTransform: 'uppercase',
+                }}
+              >
+                &ldquo;One note is enough.&rdquo;
+              </blockquote>
+            </div>
           </div>
         </div>
-      </div>
-
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }

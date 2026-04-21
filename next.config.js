@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  compiler: {
-    styledComponents: true,
-  },
   async redirects() {
     return [
       {
@@ -22,7 +19,7 @@ const nextConfig = {
       },
       {
         source: '/store',
-        destination: 'https://store.goodpeopleonly.com',
+        destination: 'https://goodpeopleonly.limitedrun.com/',
         permanent: true,
       },
     ]

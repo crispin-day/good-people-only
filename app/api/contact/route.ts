@@ -1,13 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
-    console.warn('[contact] RESEND_API_KEY is not set')
-    return NextResponse.json({ error: 'Email service not configured.' }, { status: 500 })
-  }
-
   let body: { name?: string; email?: string; subject?: string; message?: string }
   try {
     body = await req.json()
@@ -20,20 +13,37 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'All fields are required.' }, { status: 400 })
   }
 
-  const resend = new Resend(apiKey)
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.log('[contact] No RESEND_API_KEY set. Form submission:', { name, email, subject })
+    return NextResponse.json({ ok: true })
+  }
 
   try {
-    await resend.emails.send({
-      from: 'GPO Website <noreply@goodpeopleonly.com>',
-      to: 'info@goodpeopleonly.com',
-      replyTo: email,
-      subject: `[GPO Contact] ${subject}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'GPO Website <noreply@goodpeopleonly.com>',
+        to: 'info@goodpeopleonly.com',
+        reply_to: email,
+        subject: `[GPO Contact] ${subject}`,
+        text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+      }),
     })
+
+    if (!res.ok) {
+      const text = await res.text()
+      console.error('[contact] Resend error:', text)
+      return NextResponse.json({ error: 'Failed to send message.' }, { status: 500 })
+    }
 
     return NextResponse.json({ ok: true })
   } catch (err) {
-    console.error('[contact] Resend error:', err)
+    console.error('[contact] Resend fetch error:', err)
     return NextResponse.json({ error: 'Failed to send message.' }, { status: 500 })
   }
 }

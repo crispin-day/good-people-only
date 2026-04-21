@@ -1,131 +1,100 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Nav from '../components/Nav'
-import SideLabel from '../components/SideLabel'
+import Marquee from '../components/Marquee'
+import Footer from '../components/Footer'
 import { Artist } from '../../lib/artists'
+import styles from './Roster.module.css'
+
+type View = 'list' | 'tiles'
 
 interface RosterClientProps {
   artists: Artist[]
 }
 
 export default function RosterClient({ artists }: RosterClientProps) {
-  const management = artists
-    .filter((a) => a.division === 'Management')
-    .sort((a, b) => a.sortOrder - b.sortOrder)
+  const [view, setView] = useState<View>('list')
 
-  const label = artists
-    .filter((a) => a.division === 'Label')
-    .sort((a, b) => a.sortOrder - b.sortOrder)
+  const sorted = [...artists].sort((a, b) => a.sortOrder - b.sortOrder)
 
   return (
-    <main
-      className="min-h-screen"
-      style={{
-        backgroundColor: 'var(--color-void)',
-        animation: 'fadein 0.4s ease-in forwards',
-        paddingTop: '120px',
-        paddingBottom: '120px',
-      }}
-    >
+    <>
       <Nav />
-      <SideLabel text="GOOD PEOPLE ARTISTS" />
-
-      <div className="max-w-[450px] mx-auto px-5">
-        {/* MANAGEMENT section */}
-        <p
-          className="font-normal uppercase mb-5"
-          style={{
-            color: 'var(--color-smoke)',
-            fontFamily: 'var(--font-heading)',
-            fontSize: '12px',
-            letterSpacing: '0.2em',
-          }}
-        >
-          Management
-        </p>
-
-        {management.map((artist) => (
-          <Link
-            key={artist.slug}
-            href={`/roster/${artist.slug}`}
-            className="block mb-5 transition-all duration-300"
-            style={{ display: 'block' }}
-          >
-            <div
-              className="w-full aspect-square transition-transform duration-300 ease-out"
-              style={{
-                backgroundColor: artist.placeholderColor,
-              }}
-              onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLDivElement).style.transform = 'scale(1.02)'
-              }}
-              onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLDivElement).style.transform = 'scale(1)'
-              }}
-            />
-            <p
-              className="font-normal uppercase text-center"
-              style={{
-                color: 'var(--color-bone)',
-                fontFamily: 'var(--font-heading)',
-                fontSize: '18px',
-                letterSpacing: '0.1em',
-                marginTop: '12px',
-              }}
+      <Marquee />
+      <main>
+        <div className={styles.pageHeader}>
+          <p className={styles.kicker}>— GOOD PEOPLE ARTIST MANAGEMENT</p>
+          <h1 className={styles.title}>THE ROSTER</h1>
+          <p className={styles.subtitle}>
+            A deliberately small group of artists. Genre-agnostic, Toronto-rooted, built for the long game.
+          </p>
+          <div className={styles.viewToggle}>
+            <button
+              className={`${styles.toggleBtn} ${view === 'list' ? styles.active : ''}`}
+              onClick={() => setView('list')}
             >
-              {artist.name}
-            </p>
-          </Link>
-        ))}
-
-        {/* LABEL section */}
-        <p
-          className="font-normal uppercase mt-10 mb-5"
-          style={{
-            color: 'var(--color-smoke)',
-            fontFamily: 'var(--font-heading)',
-            fontSize: '12px',
-            letterSpacing: '0.2em',
-          }}
-        >
-          Label
-        </p>
-
-        {label.map((artist) => (
-          <Link
-            key={artist.slug}
-            href={`/roster/${artist.slug}`}
-            className="block mb-5 transition-all duration-300"
-            style={{ display: 'block' }}
-          >
-            <div
-              className="w-full aspect-square transition-transform duration-300 ease-out"
-              style={{
-                backgroundColor: artist.placeholderColor,
-              }}
-              onMouseEnter={(e) => {
-                ;(e.currentTarget as HTMLDivElement).style.transform = 'scale(1.02)'
-              }}
-              onMouseLeave={(e) => {
-                ;(e.currentTarget as HTMLDivElement).style.transform = 'scale(1)'
-              }}
-            />
-            <p
-              className="font-normal uppercase text-center"
-              style={{
-                color: 'var(--color-bone)',
-                fontFamily: 'var(--font-heading)',
-                fontSize: '18px',
-                letterSpacing: '0.1em',
-                marginTop: '12px',
-              }}
+              LIST
+            </button>
+            <button
+              className={`${styles.toggleBtn} ${view === 'tiles' ? styles.active : ''}`}
+              onClick={() => setView('tiles')}
             >
-              {artist.name}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </main>
+              TILES
+            </button>
+          </div>
+        </div>
+
+        <div className={styles.rosterContent}>
+          {view === 'list' ? (
+            <div className={styles.rosterList}>
+              {sorted.map((artist, i) => (
+                <Link
+                  key={artist.slug}
+                  href={`/roster/${artist.slug}`}
+                  className={styles.rosterRow}
+                >
+                  <span className={styles.rowIndex}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className={styles.rowName}>{artist.name}</span>
+                  <span className={styles.rowMeta}>{artist.genre}</span>
+                  <span className={styles.rowArrow}>→</span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.tilesGrid}>
+              {sorted.map((artist) => (
+                <Link
+                  key={artist.slug}
+                  href={`/roster/${artist.slug}`}
+                  className={styles.tile}
+                >
+                  {artist.imgSrc ? (
+                    <Image
+                      src={artist.imgSrc}
+                      alt={artist.name}
+                      fill
+                      className={styles.tileImg}
+                      sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div
+                      className={styles.tilePlaceholder}
+                      style={{ backgroundColor: artist.placeholderColor }}
+                    />
+                  )}
+                  <div className={styles.tileLabel}>
+                    <span className={styles.tileName}>{artist.name}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </main>
+      <Footer />
+    </>
   )
 }

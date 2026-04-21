@@ -1,8 +1,10 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Nav from '../../components/Nav'
-import SideLabel from '../../components/SideLabel'
+import Footer from '../../components/Footer'
 import { getArtistBySlug, ARTISTS } from '../../../lib/artists'
+import styles from './artist.module.css'
 
 export function generateStaticParams() {
   return ARTISTS.map((artist) => ({ slug: artist.slug }))
@@ -25,92 +27,51 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
   if (!artist) notFound()
 
   const socials = [
-    artist.spotifyUrl ? { label: 'Spotify', url: artist.spotifyUrl } : null,
-    artist.instagramUrl ? { label: 'Instagram', url: artist.instagramUrl } : null,
-    artist.youtubeUrl ? { label: 'YouTube', url: artist.youtubeUrl } : null,
-    artist.websiteUrl ? { label: 'Website', url: artist.websiteUrl } : null,
+    artist.spotifyUrl ? { label: 'Spotify ↗', url: artist.spotifyUrl } : null,
+    artist.instagramUrl ? { label: 'Instagram ↗', url: artist.instagramUrl } : null,
+    artist.youtubeUrl ? { label: 'YouTube ↗', url: artist.youtubeUrl } : null,
+    artist.websiteUrl ? { label: 'Website ↗', url: artist.websiteUrl } : null,
   ].filter((s): s is { label: string; url: string } => s !== null)
 
-  const sideLabelText =
-    artist.division === 'Management'
-      ? 'GOOD PEOPLE ARTISTS MANAGEMENT'
-      : 'GOOD PEOPLE RECORD CO.'
-
   return (
-    <main
-      className="min-h-screen"
-      style={{
-        backgroundColor: 'var(--color-void)',
-        animation: 'fadein 0.4s ease-in forwards',
-        paddingTop: '120px',
-        paddingBottom: '120px',
-      }}
-    >
+    <div className={styles.page}>
       <Nav />
-      <SideLabel text={sideLabelText} />
-
-      <div className="max-w-[600px] mx-auto px-5">
-        {/* Back link */}
-        <Link
-          href="/roster"
-          className="hover-ember font-normal uppercase block mb-10"
-          style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize: '12px',
-            letterSpacing: '0.15em',
-          }}
-        >
+      <div className={styles.inner}>
+        <Link href="/roster" className={styles.backLink}>
           ← ROSTER
         </Link>
 
-        {/* Square placeholder */}
-        <div
-          className="w-full aspect-square"
-          style={{ backgroundColor: artist.placeholderColor, maxWidth: '600px' }}
-        />
+        <div className={styles.imageWrap}>
+          {artist.imgSrc ? (
+            <Image
+              src={artist.imgSrc}
+              alt={artist.name}
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, 680px"
+              priority
+            />
+          ) : (
+            <div
+              className={styles.placeholder}
+              style={{ backgroundColor: artist.placeholderColor }}
+            />
+          )}
+        </div>
 
-        {/* Artist name */}
-        <h1
-          className="font-normal uppercase text-center mt-6"
-          style={{
-            color: 'var(--color-bone)',
-            fontFamily: 'var(--font-heading)',
-            fontSize: '2rem',
-            letterSpacing: '0.2em',
-          }}
-        >
-          {artist.name}
-        </h1>
+        <h1 className={styles.name}>{artist.name}</h1>
+        <p className={styles.genre}>{artist.genre} — {artist.division}</p>
+        <p className={styles.bio}>{artist.shortBio}</p>
 
-        {/* Short bio */}
-        <p
-          className="font-normal text-center mx-auto mt-4"
-          style={{
-            color: 'var(--color-smoke)',
-            fontFamily: 'var(--font-body)',
-            fontSize: '16px',
-            maxWidth: '450px',
-            lineHeight: '1.6',
-          }}
-        >
-          {artist.shortBio}
-        </p>
-
-        {/* Social links */}
         {socials.length > 0 && (
-          <div className="flex items-center justify-center gap-6 mt-6">
+          <div className={styles.socials}>
             {socials.map((social) => (
               <a
                 key={social.label}
                 href={social.url}
+                className={styles.socialLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover-ember font-normal uppercase"
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '12px',
-                  letterSpacing: '0.15em',
-                }}
               >
                 {social.label}
               </a>
@@ -118,6 +79,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
           </div>
         )}
       </div>
-    </main>
+      <Footer />
+    </div>
   )
 }
