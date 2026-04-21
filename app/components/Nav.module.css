@@ -32,6 +32,7 @@
   letter-spacing: var(--tr-widest);
   text-transform: uppercase;
   color: var(--ink);
+  white-space: nowrap;
 }
 
 .navLinks {

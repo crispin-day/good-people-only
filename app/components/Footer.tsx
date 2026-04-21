@@ -7,7 +7,7 @@ export default function Footer() {
         <p className={styles.footerTagline}>SURROUND YOURSELF WITH GOOD PEOPLE ONLY.</p>
       </div>
       <div className={styles.bottomBar}>
-        <span className={styles.bottomText}>c 2026 GOOD PEOPLE ONLY</span>
+        <span className={styles.bottomText}>© 2026 GOOD PEOPLE ONLY</span>
         <span className={styles.bottomText}>TORONTO</span>
       </div>
     </footer>
