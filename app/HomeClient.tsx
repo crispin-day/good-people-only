@@ -10,13 +10,13 @@ export default function HomeClient() {
     <div className={styles.page}>
       <Nav />
       <Marquee />
-      <div className={styles.heroWrap}>
+      <main className={styles.heroWrap}>
         <div className={`${styles.tagline} gpo-fadeup`}>
           <span className={styles.line}>GOOD</span>
           <span className={styles.line}>PEOPLE</span>
           <span className={styles.line}>ONLY<span className={styles.period}>.</span></span>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   )

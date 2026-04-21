@@ -17,13 +17,13 @@ export default function Marquee() {
   const doubled = [...ITEMS, ...ITEMS]
 
   return (
-    <div className={styles.marquee} aria-hidden="true">
-      <div className={styles.track}>
+    <div className={styles.marquee} aria-hidden="true" role="presentation">
+      <div className={styles.track} role="presentation">
         {doubled.map((item, i) => (
-          <>
-            <span key={`item-${i}`} className={styles.item}>{item}</span>
-            <span key={`dot-${i}`} className={styles.dot} />
-          </>
+          <span key={i} className={styles.item} aria-hidden="true">
+            {item}
+            <span className={styles.dot} />
+          </span>
         ))}
       </div>
     </div>
