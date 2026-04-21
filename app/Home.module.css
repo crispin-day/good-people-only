@@ -1,14 +1,13 @@
-/* Full-height page wrapper — footer sticks to bottom on short content */
+/* Full-height page wrapper */
 .page {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  /* Ink background bleeds through any gap below footer */
   background: var(--ink);
 }
 
 .heroWrap {
-  flex: 1; /* grows to fill all space between marquee and footer */
+  flex: 1;
   max-width: var(--max-w);
   margin: 0 auto;
   width: 100%;
@@ -43,8 +42,13 @@
 }
 
 @media (max-width: 640px) {
+  /* On mobile: don't force full viewport height — let content be natural height */
+  .page {
+    min-height: unset;
+  }
+
   .heroWrap {
-    flex: 0 0 auto; /* don't grow on mobile — let content define height */
+    flex: none;
   }
 
   .hero {
