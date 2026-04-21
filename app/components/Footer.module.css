@@ -6,7 +6,7 @@
 .taglineArea {
   max-width: 1280px;
   margin: 0 auto;
-  padding: clamp(80px, 12vw, 160px) var(--page-pad-x);
+  padding: clamp(40px, 8vw, 160px) var(--page-pad-x);
 }
 
 .footerTagline {

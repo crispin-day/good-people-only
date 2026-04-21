@@ -24,14 +24,12 @@
   max-width: 100%;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .hero {
-    padding: 32px var(--page-pad-x) 40px;
+    padding: 28px var(--page-pad-x) 28px;
   }
 
   .tagline {
-    /* On narrow phones, 14vw of 375px is ~53px — still too big per word.
-       Force a size where each word fits on its own line comfortably. */
     font-size: clamp(40px, 11.5vw, 56px);
     line-height: 0.9;
     letter-spacing: -0.03em;
