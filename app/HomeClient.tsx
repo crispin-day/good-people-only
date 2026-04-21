@@ -12,7 +12,9 @@ export default function HomeClient() {
       <Marquee />
       <div className={styles.heroWrap}>
         <div className={`${styles.tagline} gpo-fadeup`}>
-          GOOD PEOPLE ONLY<span className={styles.period}>.</span>
+          <span className={styles.line}>GOOD</span>
+          <span className={styles.line}>PEOPLE</span>
+          <span className={styles.line}>ONLY<span className={styles.period}>.</span></span>
         </div>
       </div>
       <Footer />

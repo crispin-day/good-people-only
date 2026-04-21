@@ -25,9 +25,14 @@
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: var(--ink);
-  overflow-wrap: break-word;
-  word-break: break-word;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.line {
+  display: block;
 }
 
 .period {
@@ -36,8 +41,9 @@
 
 @media (max-width: 640px) {
   .tagline {
-    font-size: clamp(40px, 11.5vw, 56px);
-    line-height: 0.9;
+    /* Each word on its own line — clamp keeps it from overflowing on narrow screens */
+    font-size: clamp(28px, 22vw, 56px);
+    line-height: 0.92;
     letter-spacing: -0.03em;
   }
 }

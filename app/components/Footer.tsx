@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.bottomBar}>
         <span className={styles.bottomText}>© 2026 GOOD PEOPLE ONLY</span>
-        <span className={styles.bottomText}>TORONTO</span>
+        <span className={styles.bottomText}>TORONTO · LOS ANGELES</span>
       </div>
     </footer>
   )
