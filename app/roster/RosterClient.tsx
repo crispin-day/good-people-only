@@ -22,25 +22,25 @@ export default function RosterClient({ artists }: RosterClientProps) {
   return (
     <main className="bg-[#0A0A0A] min-h-screen pt-28 pb-24">
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 mb-14">
+      <div className="max-w-7xl mx-auto px-6 mb-16">
+        <p className="text-[#D4603A] text-[11px] font-medium tracking-[0.25em] uppercase mb-6">Good People Only</p>
         <h1
-          className="text-[#E8E4DF] font-bold uppercase tracking-[-0.03em] leading-none mb-6"
-          style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}
+          className="font-display italic font-light text-[#E8E4DF] leading-none mb-12"
+          style={{ fontSize: 'clamp(4rem, 10vw, 8rem)', textWrap: 'balance' }}
         >
           Roster
         </h1>
-        <div className="h-0.5 w-12 bg-[#D4603A] mb-10" />
 
         {/* Filter tabs */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           {(['All', 'Management', 'Label'] as Filter[]).map((f) => (
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`text-xs font-medium tracking-[0.15em] uppercase px-5 py-2.5 border transition-all duration-200 ${
+              className={`text-[11px] font-medium tracking-[0.18em] uppercase px-6 py-3 border transition-all duration-200 ${
                 activeFilter === f
-                  ? 'border-[#D4603A] text-[#D4603A] bg-[#D4603A]/10'
-                  : 'border-white/10 text-[#9A9590] hover:text-[#E8E4DF] hover:border-white/30'
+                  ? 'border-[#D4603A] text-[#D4603A] bg-[#D4603A]/8'
+                  : 'border-white/10 text-[#9A9590] hover:text-[#E8E4DF] hover:border-white/25'
               }`}
             >
               {f}
@@ -61,29 +61,29 @@ export default function RosterClient({ artists }: RosterClientProps) {
               {/* Image area */}
               <div className="w-full aspect-square overflow-hidden relative">
                 <div
-                  className="w-full h-full transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-[1.04]"
                   style={{ backgroundColor: artist.placeholderColor }}
                 />
                 {/* Name overlay on hover */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end p-6 opacity-0 group-hover:opacity-100">
-                  <span className="text-[#E8E4DF] text-xs font-medium tracking-[0.2em] uppercase">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-400 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                  <span className="text-[#E8E4DF] text-[11px] font-medium tracking-[0.22em] uppercase">
                     View Artist
                   </span>
                 </div>
               </div>
 
               {/* Info */}
-              <div className="p-6 bg-[#0A0A0A] group-hover:bg-[#141414] transition-colors duration-300">
+              <div className="p-5 pb-6 bg-[#0A0A0A] group-hover:bg-[#111111] transition-colors duration-300">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h2 className="text-[#E8E4DF] font-semibold text-lg tracking-[-0.01em] group-hover:text-white transition-colors duration-200">
+                    <h2 className="text-[#E8E4DF] font-semibold text-xl tracking-[-0.02em] group-hover:text-white transition-colors duration-200">
                       {artist.name}
                     </h2>
-                    <p className="text-[#9A9590] text-sm mt-1">{artist.genre}</p>
+                    <p className="text-[#9A9590] text-[13px] mt-1 tracking-[0.01em]">{artist.genre}</p>
                   </div>
-                  <span className={`shrink-0 text-[10px] font-medium tracking-[0.15em] uppercase border px-2 py-1 ${
+                  <span className={`shrink-0 text-[10px] font-medium tracking-[0.15em] uppercase border px-2 py-1 mt-0.5 ${
                     artist.division === 'Management'
-                      ? 'border-[#5B7A8A]/40 text-[#5B7A8A]'
+                      ? 'border-[#E8E4DF]/20 text-[#E8E4DF]/50'
                       : 'border-[#D4603A]/40 text-[#D4603A]'
                   }`}>
                     {artist.division}
