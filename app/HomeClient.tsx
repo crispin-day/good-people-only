@@ -48,7 +48,7 @@ export default function HomeClient() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-          <span className="text-[#E8E4DF] text-sm font-semibold tracking-[0.2em] uppercase">
+          <span className="text-[#E8E4DF] text-[13px] font-semibold tracking-[0.28em] uppercase">
             Good People Only
           </span>
           <div className="hidden md:flex items-center gap-10">
@@ -82,26 +82,22 @@ export default function HomeClient() {
         <div className="absolute inset-0 bg-black/60" />
 
         {/* Content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <h1
-            className="text-[#E8E4DF] font-bold uppercase tracking-[-0.03em] leading-none mb-6"
-            style={{ fontSize: 'clamp(2.5rem, 8vw, 7rem)' }}
+            className="font-display italic font-light text-[#E8E4DF] leading-[0.92] mb-8"
+            style={{ fontSize: 'clamp(3.5rem, 10vw, 9rem)', textWrap: 'balance' }}
           >
             Good People Only
           </h1>
-          <p className="text-[#E8E4DF]/70 text-lg md:text-xl font-light tracking-wide mb-10 max-w-xl mx-auto">
+          <p className="text-[#E8E4DF] text-lg md:text-xl font-light tracking-[0.04em] mb-12 max-w-md mx-auto opacity-80">
             We don&apos;t chase trends. We build artists.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {['Management', 'Record Label', 'Label Services'].map((pill) => (
-              <span
-                key={pill}
-                className="border border-[#E8E4DF]/30 text-[#E8E4DF]/80 text-xs font-medium tracking-[0.15em] uppercase px-5 py-2"
-              >
-                {pill}
-              </span>
-            ))}
-          </div>
+          <a
+            href="/roster"
+            className="inline-block border border-[#E8E4DF]/40 text-[#E8E4DF]/80 hover:text-[#E8E4DF] hover:border-[#E8E4DF]/70 text-[11px] font-medium tracking-[0.2em] uppercase px-8 py-3 transition-all duration-300"
+          >
+            View Roster
+          </a>
         </div>
 
         {/* Scroll indicator */}
@@ -112,12 +108,17 @@ export default function HomeClient() {
       </section>
 
       {/* ARTISTS */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="mb-14">
-          <h2 className="text-[#E8E4DF] text-3xl md:text-4xl font-bold uppercase tracking-[-0.02em] inline-block">
-            Our Artists
-            <div className="h-0.5 w-12 bg-[#D4603A] mt-3" />
-          </h2>
+      <section className="py-28 px-6 max-w-7xl mx-auto">
+        <div className="mb-16 flex items-end justify-between">
+          <div>
+            <p className="text-[#D4603A] text-[11px] font-medium tracking-[0.25em] uppercase mb-4">Artists</p>
+            <h2 className="text-[#E8E4DF] font-bold uppercase tracking-[-0.02em]" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', textWrap: 'balance' }}>
+              Our Roster
+            </h2>
+          </div>
+          <a href="/roster" className="text-[#9A9A9A] hover:text-[#E8E4DF] text-[11px] font-medium tracking-[0.2em] uppercase transition-colors duration-200 hidden md:block">
+            View All →
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
@@ -171,20 +172,21 @@ export default function HomeClient() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
+      <section className="py-36 px-6 text-center border-t border-white/[0.04]">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#D4603A] text-[11px] font-medium tracking-[0.25em] uppercase mb-8">Toronto, Canada</p>
           <h2
-            className="text-[#E8E4DF] font-bold uppercase tracking-[-0.02em] mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
+            className="font-display italic font-light text-[#E8E4DF] leading-[0.95] mb-8"
+            style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', textWrap: 'balance' }}
           >
             Work With Us
           </h2>
-          <p className="text-[#9A9A9A] mb-10 leading-relaxed">
-            Based in Toronto. Working with artists who are in it for the long game.
+          <p className="text-[#9A9A9A] mb-12 leading-relaxed text-base max-w-sm mx-auto">
+            Working with artists who are in it for the long game.
           </p>
           <a
             href="/contact"
-            className="inline-block border border-[#D4603A] text-[#D4603A] hover:bg-[#D4603A] hover:text-[#0A0A0A] text-sm font-medium tracking-[0.15em] uppercase px-10 py-4 transition-all duration-300"
+            className="inline-block border border-[#D4603A] text-[#D4603A] hover:bg-[#D4603A] hover:text-[#0A0A0A] text-[11px] font-semibold tracking-[0.2em] uppercase px-12 py-4 transition-all duration-300"
           >
             Get in Touch
           </a>
@@ -192,15 +194,19 @@ export default function HomeClient() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/5 py-10 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-[#E8E4DF] text-sm font-semibold tracking-[0.2em] uppercase">
+      <footer className="border-t border-white/5 py-12 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <span className="text-[#E8E4DF] text-[12px] font-semibold tracking-[0.28em] uppercase">
             Good People Only
           </span>
-          <span className="text-[#9A9A9A] text-xs">
-            Toronto · goodpeopleonly.com
-          </span>
-          <span className="text-[#9A9A9A] text-xs">
+          <nav className="flex items-center gap-8">
+            {['Roster', 'About', 'Services', 'Contact'].map((item) => (
+              <a key={item} href={`/${item.toLowerCase()}`} className="text-[#9A9A9A] hover:text-[#E8E4DF] text-[11px] font-medium tracking-[0.15em] uppercase transition-colors duration-200">
+                {item}
+              </a>
+            ))}
+          </nav>
+          <span className="text-[#9A9A9A] text-[11px] tracking-[0.05em]">
             © 2026 Good People Only
           </span>
         </div>
