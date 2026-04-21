@@ -7,11 +7,16 @@
   align-items: center;
 }
 
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .track {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  animation: gpo-mq-scroll 24s linear infinite;
+  animation: marquee-scroll 24s linear infinite;
   will-change: transform;
 }
 
