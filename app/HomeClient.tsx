@@ -7,7 +7,7 @@ import styles from './Home.module.css'
 
 export default function HomeClient() {
   return (
-    <>
+    <div className={styles.page}>
       <Nav />
       <Marquee />
       <div className={styles.heroWrap}>
@@ -24,6 +24,6 @@ export default function HomeClient() {
         </section>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }

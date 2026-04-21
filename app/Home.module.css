@@ -1,13 +1,24 @@
+/* Full-height page wrapper — footer sticks to bottom on short content */
+.page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
 .heroWrap {
+  flex: 1; /* grows to fill all space between marquee and footer */
   max-width: var(--max-w);
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: clamp(40px, 7vw, 120px) var(--page-pad-x) clamp(40px, 7vw, 96px);
 }
 
@@ -24,6 +35,10 @@
   max-width: 100%;
 }
 
+.period {
+  color: var(--accent);
+}
+
 @media (max-width: 640px) {
   .hero {
     padding: 28px var(--page-pad-x) 28px;
@@ -34,8 +49,4 @@
     line-height: 0.9;
     letter-spacing: -0.03em;
   }
-}
-
-.period {
-  color: var(--accent);
 }
