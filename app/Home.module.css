@@ -40,7 +40,13 @@
 }
 
 @media (max-width: 640px) {
+  .heroWrap {
+    flex: 0 0 auto; /* don't grow on mobile — let content define height */
+  }
+
   .hero {
+    flex: none;
+    justify-content: flex-start;
     padding: 28px var(--page-pad-x) 28px;
   }
 
