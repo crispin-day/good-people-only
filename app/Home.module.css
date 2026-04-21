@@ -3,6 +3,8 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  /* Ink background bleeds through any gap below footer */
+  background: var(--ink);
 }
 
 .heroWrap {
