@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: flex-start;
   /* Tighter horizontal pad, generous vertical */
-  padding: clamp(64px, 12vw, 160px) clamp(12px, 2vw, 24px);
+  padding: clamp(64px, 12vw, 160px) clamp(10px, 1.6vw, 19px);
   max-width: var(--max-w);
   margin: 0 auto;
   width: 100%;
