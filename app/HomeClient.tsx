@@ -85,7 +85,7 @@ export default function HomeClient() {
       {/* MAIN */}
       <main
         className="bg-[#000000] min-h-screen"
-        style={{ animation: 'fadein 3s' }}
+        style={{ animation: 'fadein 0.4s ease-in forwards' }}
       >
         {/* HERO */}
         <section className="relative h-screen w-full overflow-hidden">
