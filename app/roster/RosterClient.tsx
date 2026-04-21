@@ -65,7 +65,7 @@ export default function RosterClient({ artists }: RosterClientProps) {
                   style={{ backgroundColor: artist.placeholderColor }}
                 />
                 {/* Name overlay on hover */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-400 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-[#E8E4DF] text-[11px] font-medium tracking-[0.22em] uppercase">
                     View Artist
                   </span>

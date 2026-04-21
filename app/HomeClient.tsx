@@ -150,9 +150,7 @@ export default function HomeClient() {
       {/* SERVICES */}
       <section className="py-28 px-6 bg-[#0D0D0D]">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-2">
-            <p className="text-[#D4603A] text-[11px] font-medium tracking-[0.25em] uppercase mb-16">What We Do</p>
-          </div>
+          <p className="text-[#D4603A] text-[11px] font-medium tracking-[0.25em] uppercase mb-16">What We Do</p>
 
           <div className="divide-y divide-white/[0.06]">
             {SERVICES.map((service, i) => (
