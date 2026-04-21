@@ -39,8 +39,7 @@
 
 .period {
   color: var(--accent);
-  letter-spacing: -0.05em; /* pull period closer to Y */
-  margin-left: -0.05em;
+  margin-left: -0.12em; /* compensate for JetBrains Mono glyph spacing */
 }
 
 @media (max-width: 640px) {
