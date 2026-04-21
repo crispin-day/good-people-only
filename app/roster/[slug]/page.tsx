@@ -38,8 +38,13 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
 
   return (
     <main
-      className="bg-[#000000] min-h-screen"
-      style={{ animation: 'fadein 0.4s ease-in forwards', paddingTop: '120px', paddingBottom: '120px' }}
+      className="min-h-screen"
+      style={{
+        backgroundColor: 'var(--color-void)',
+        animation: 'fadein 0.4s ease-in forwards',
+        paddingTop: '120px',
+        paddingBottom: '120px',
+      }}
     >
       <Nav />
       <SideLabel text={sideLabelText} />
@@ -48,8 +53,12 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
         {/* Back link */}
         <Link
           href="/roster"
-          className="text-[#D8D8D8] font-normal uppercase hover:opacity-70 transition-opacity duration-300 block mb-10"
-          style={{ fontSize: '12px', letterSpacing: '0.15em' }}
+          className="hover-ember font-normal uppercase block mb-10"
+          style={{
+            fontFamily: 'var(--font-heading)',
+            fontSize: '12px',
+            letterSpacing: '0.15em',
+          }}
         >
           ← ROSTER
         </Link>
@@ -62,16 +71,27 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
 
         {/* Artist name */}
         <h1
-          className="text-[#D8D8D8] font-normal uppercase text-center mt-6"
-          style={{ fontSize: '2rem', letterSpacing: '0.2em' }}
+          className="font-normal uppercase text-center mt-6"
+          style={{
+            color: 'var(--color-bone)',
+            fontFamily: 'var(--font-heading)',
+            fontSize: '2rem',
+            letterSpacing: '0.2em',
+          }}
         >
           {artist.name}
         </h1>
 
         {/* Short bio */}
         <p
-          className="text-[#D8D8D8] font-normal text-center mx-auto mt-4"
-          style={{ fontSize: '16px', maxWidth: '450px', lineHeight: '1.6' }}
+          className="font-normal text-center mx-auto mt-4"
+          style={{
+            color: 'var(--color-smoke)',
+            fontFamily: 'var(--font-body)',
+            fontSize: '16px',
+            maxWidth: '450px',
+            lineHeight: '1.6',
+          }}
         >
           {artist.shortBio}
         </p>
@@ -85,8 +105,12 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#D8D8D8] font-normal uppercase hover:opacity-70 transition-opacity duration-300"
-                style={{ fontSize: '12px', letterSpacing: '0.15em' }}
+                className="hover-ember font-normal uppercase"
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '12px',
+                  letterSpacing: '0.15em',
+                }}
               >
                 {social.label}
               </a>

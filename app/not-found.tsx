@@ -1,36 +1,52 @@
-// @ts-nocheck
-'use client'
-
-import { useState, useRef } from "react";
-import Burger from "../components/Burger/Burger.js";
-import Menu from "../components/Menu/Menu.js";
-import Logo from "../components/Logo/Logo.js";
-import HeadInfo from "../components/HeadInfo/HeadInfo.js";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../theme.js";
-import { useOnClickOutside } from "../hooks.js";
-import styles from "../styles/About.module.css";
+import Link from 'next/link'
+import Nav from './components/Nav'
 
 export default function NotFound() {
-  const [open, setOpen] = useState(false);
-  const node = useRef<HTMLDivElement>(null);
-  useOnClickOutside(node, () => setOpen(false));
-
   return (
-    <ThemeProvider theme={theme}>
-      <HeadInfo />
-      <div>
-        <div ref={node}>
-          <Menu open={open} setOpen={setOpen} store="" />
-          <Burger open={open} setOpen={setOpen} />
-          <Logo />
-        </div>
-        <div className={styles.container}>
-          <div className={styles.title}>
-            <h2>Page Not Found</h2>
-          </div>
-        </div>
+    <main
+      className="min-h-screen flex flex-col items-center justify-center"
+      style={{ backgroundColor: 'var(--color-void)' }}
+    >
+      <Nav />
+
+      <div className="text-center px-5">
+        <p
+          className="font-medium"
+          style={{
+            color: 'var(--color-ember)',
+            fontFamily: 'var(--font-heading)',
+            fontSize: '8rem',
+            lineHeight: '1',
+            letterSpacing: '-0.03em',
+          }}
+        >
+          404
+        </p>
+        <p
+          className="font-medium uppercase mt-4 mb-8"
+          style={{
+            color: 'var(--color-bone)',
+            fontFamily: 'var(--font-heading)',
+            fontSize: '14px',
+            letterSpacing: '0.2em',
+          }}
+        >
+          Page Not Found
+        </p>
+        <Link
+          href="/"
+          className="font-medium uppercase"
+          style={{
+            color: 'var(--color-smoke)',
+            fontFamily: 'var(--font-heading)',
+            fontSize: '12px',
+            letterSpacing: '0.15em',
+            transition: 'color 150ms ease',
+          }}
+        >
+          ← Back to Home
+        </Link>
       </div>
-    </ThemeProvider>
-  );
+    </main>
+  )
 }

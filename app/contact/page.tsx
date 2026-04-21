@@ -1,35 +1,53 @@
-// @ts-nocheck
-import { createClient } from "contentful";
-import ContactClient from "./ContactClient";
-import HeadInfo from "../../components/HeadInfo/HeadInfo.js";
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
+import ContactForm from './ContactForm'
 
-async function getData() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-  });
-
-  const data = await client.getEntries();
-
-  return {
-    contact: data.items.filter(
-      (item: any) => item.sys.contentType.sys.id === "contact"
-    ),
-    store: data.items.filter(
-      (item: any) => item.sys.contentType.sys.id === "store"
-    ),
-  };
+export const metadata = {
+  title: 'Contact | Good People Only',
+  description: 'Get in touch with Good People Only.',
 }
 
-export const revalidate = 1;
-
-export default async function Contact() {
-  const { contact, store } = await getData();
-
+export default function ContactPage() {
   return (
-    <>
-      <HeadInfo />
-      <ContactClient contact={contact[0]} storeUrl={store[0].fields.url as string} />
-    </>
-  );
+    <main
+      className="min-h-screen"
+      style={{
+        backgroundColor: 'var(--color-void)',
+        animation: 'fadein 0.4s ease-in forwards',
+        paddingTop: '120px',
+        paddingBottom: '120px',
+      }}
+    >
+      <Nav />
+
+      <div className="max-w-[600px] mx-auto px-5">
+        <h1
+          className="font-medium uppercase mb-2"
+          style={{
+            color: 'var(--color-bone)',
+            fontFamily: 'var(--font-heading)',
+            fontSize: '12px',
+            letterSpacing: '0.2em',
+          }}
+        >
+          Get in Touch
+        </h1>
+
+        <a
+          href="mailto:info@goodpeopleonly.com"
+          className="hover-bone block mb-10"
+          style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '14px',
+          }}
+        >
+          info@goodpeopleonly.com
+        </a>
+
+        <ContactForm />
+      </div>
+
+      <Footer />
+    </main>
+  )
 }

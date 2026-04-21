@@ -1,10 +1,26 @@
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
+import { Space_Grotesk, Inter, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 
-const montserrat = Montserrat({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['500', '700'],
+  variable: '--font-heading',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-body',
+  display: 'swap',
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['italic'],
+  variable: '--font-accent',
   display: 'swap',
 })
 
@@ -20,7 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={`${spaceGrotesk.variable} ${inter.variable} ${instrumentSerif.variable}`}>
         {children}
       </body>
     </html>
