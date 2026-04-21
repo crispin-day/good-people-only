@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .bottomText {
@@ -16,5 +18,4 @@
   color: var(--gray-400);
   text-transform: uppercase;
   letter-spacing: var(--tr-wider);
-  white-space: nowrap;
 }

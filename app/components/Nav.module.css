@@ -27,7 +27,7 @@
 
 .logoText {
   font-family: var(--font-mono);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   letter-spacing: var(--tr-widest);
   text-transform: uppercase;
@@ -167,7 +167,7 @@
   opacity: 0.5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navLinks {
     display: none;
   }
