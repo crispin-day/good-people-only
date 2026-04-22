@@ -65,7 +65,7 @@
 .rosterContent {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 var(--page-pad-x);
+  padding: 0 var(--page-pad-x) clamp(48px, 6vw, 80px);
 }
 
 /* List mode */
