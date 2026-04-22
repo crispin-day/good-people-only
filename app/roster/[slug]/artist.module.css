@@ -46,9 +46,8 @@
 }
 
 .imageWrap {
-  width: 100%;
+  flex: 1;
   aspect-ratio: 1;
-  margin-bottom: 40px;
   overflow: hidden;
   position: relative;
 }
@@ -124,40 +123,36 @@
   transform: scaleX(1);
 }
 
-.artistNav {
+.imageRow {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border, #e0dbd3);
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
-.artistNavBtn {
+.navArrow {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tr-widest);
-  text-transform: uppercase;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
   color: var(--fg-3);
   text-decoration: none;
-  transition: color var(--dur-fast) var(--ease-out);
+  border-radius: 50%;
+  transition: color 150ms ease, background 150ms ease;
+  user-select: none;
 }
 
-.artistNavBtn:hover {
+.navArrow:hover {
   color: var(--ink);
+  background: rgba(0,0,0,0.06);
 }
 
-.artistNavName {
-  max-width: 140px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.artistNavBtnDisabled {
+.navArrowGhost {
+  flex-shrink: 0;
   display: block;
-  width: 1px;
+  width: 44px;
+  height: 44px;
 }

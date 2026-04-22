@@ -10,13 +10,16 @@ interface ArtistNavProps {
   prevName: string | null
   nextSlug: string | null
   nextName: string | null
+  position: 'left' | 'right'
 }
 
-export default function ArtistNav({ prevSlug, prevName, nextSlug, nextName }: ArtistNavProps) {
+export default function ArtistNav({ prevSlug, nextSlug, position }: ArtistNavProps) {
   const router = useRouter()
   const touchStartX = useRef<number | null>(null)
 
   useEffect(() => {
+    if (position !== 'left') return // register listeners once
+
     const handleTouchStart = (e: TouchEvent) => {
       touchStartX.current = e.touches[0].clientX
     }
@@ -24,7 +27,7 @@ export default function ArtistNav({ prevSlug, prevName, nextSlug, nextName }: Ar
     const handleTouchEnd = (e: TouchEvent) => {
       if (touchStartX.current === null) return
       const dx = e.changedTouches[0].clientX - touchStartX.current
-      if (Math.abs(dx) < 60) return // min swipe distance
+      if (Math.abs(dx) < 60) return
       if (dx < 0 && nextSlug) router.push(`/roster/${nextSlug}`)
       if (dx > 0 && prevSlug) router.push(`/roster/${prevSlug}`)
       touchStartX.current = null
@@ -43,24 +46,22 @@ export default function ArtistNav({ prevSlug, prevName, nextSlug, nextName }: Ar
       document.removeEventListener('touchend', handleTouchEnd)
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [prevSlug, nextSlug, router])
+  }, [prevSlug, nextSlug, router, position])
+
+  const slug = position === 'left' ? prevSlug : nextSlug
+  const arrow = position === 'left' ? '←' : '→'
+
+  if (!slug) {
+    return <span className={styles.navArrowGhost} aria-hidden="true" />
+  }
 
   return (
-    <div className={styles.artistNav}>
-      {prevSlug ? (
-        <Link href={`/roster/${prevSlug}`} className={styles.artistNavBtn} aria-label={`Previous: ${prevName}`}>
-          ← <span className={styles.artistNavName}>{prevName}</span>
-        </Link>
-      ) : (
-        <span className={styles.artistNavBtnDisabled} />
-      )}
-      {nextSlug ? (
-        <Link href={`/roster/${nextSlug}`} className={styles.artistNavBtn} aria-label={`Next: ${nextName}`}>
-          <span className={styles.artistNavName}>{nextName}</span> →
-        </Link>
-      ) : (
-        <span className={styles.artistNavBtnDisabled} />
-      )}
-    </div>
+    <Link
+      href={`/roster/${slug}`}
+      className={styles.navArrow}
+      aria-label={position === 'left' ? 'Previous artist' : 'Next artist'}
+    >
+      {arrow}
+    </Link>
   )
 }

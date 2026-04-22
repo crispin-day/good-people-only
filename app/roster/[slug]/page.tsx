@@ -48,22 +48,38 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
           ← ROSTER
         </Link>
 
-        <div className={styles.imageWrap}>
-          {artist.imgSrc ? (
-            <Image
-              src={artist.imgSrc}
-              alt={artist.name}
-              fill
-              style={{ objectFit: 'cover', objectPosition: artist.imgPosition || 'center' }}
-              sizes="(max-width: 768px) 100vw, 680px"
-              priority
-            />
-          ) : (
-            <div
-              className={styles.placeholder}
-              style={{ backgroundColor: artist.placeholderColor }}
-            />
-          )}
+        <div className={styles.imageRow}>
+          <ArtistNav
+            prevSlug={prevArtist?.slug ?? null}
+            prevName={prevArtist?.name ?? null}
+            nextSlug={nextArtist?.slug ?? null}
+            nextName={nextArtist?.name ?? null}
+            position="left"
+          />
+          <div className={styles.imageWrap}>
+            {artist.imgSrc ? (
+              <Image
+                src={artist.imgSrc}
+                alt={artist.name}
+                fill
+                style={{ objectFit: 'cover', objectPosition: artist.imgPosition || 'center' }}
+                sizes="(max-width: 768px) 100vw, 680px"
+                priority
+              />
+            ) : (
+              <div
+                className={styles.placeholder}
+                style={{ backgroundColor: artist.placeholderColor }}
+              />
+            )}
+          </div>
+          <ArtistNav
+            prevSlug={prevArtist?.slug ?? null}
+            prevName={prevArtist?.name ?? null}
+            nextSlug={nextArtist?.slug ?? null}
+            nextName={nextArtist?.name ?? null}
+            position="right"
+          />
         </div>
 
         <h1 className={styles.name}>{artist.name}</h1>
@@ -86,12 +102,6 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
           </div>
         )}
 
-        <ArtistNav
-          prevSlug={prevArtist?.slug ?? null}
-          prevName={prevArtist?.name ?? null}
-          nextSlug={nextArtist?.slug ?? null}
-          nextName={nextArtist?.name ?? null}
-        />
       </div>
       <Footer />
     </div>
