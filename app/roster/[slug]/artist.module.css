@@ -47,7 +47,7 @@
 
 .imageWrap {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 4;
   margin-bottom: 40px;
   overflow: hidden;
   position: relative;
