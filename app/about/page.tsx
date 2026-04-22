@@ -135,7 +135,7 @@ export default function AboutPage() {
             maxWidth: 'var(--max-w)',
             margin: '0 auto',
             padding: 'clamp(40px, 6vw, 80px) var(--page-pad-x)',
-            borderTop: '1px solid var(--border-1)',
+
           }}
         >
           <p
