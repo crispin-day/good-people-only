@@ -75,7 +75,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
         </div>
 
         <h1 className={styles.name}>{artist.name}</h1>
-        <p className={styles.genre}>{artist.genre} — {artist.division}</p>
+        <p className={styles.genre}>{artist.genre} - {artist.division}</p>
         <p className={styles.bio}>{artist.shortBio}</p>
 
         {socials.length > 0 && (

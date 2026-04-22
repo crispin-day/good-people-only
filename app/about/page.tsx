@@ -124,7 +124,7 @@ export default function AboutPage() {
                   color: 'var(--fg-2)',
                 }}
               >
-                The model works because the teams that would normally be siloed — management, marketing, label — are in the same conversations from day one.
+                The model works because the teams that would normally be siloed - management, marketing, label - are in the same conversations from day one.
               </p>
             </div>
           </div>
