@@ -49,7 +49,7 @@ export const ARTISTS: Artist[] = [
     name: 'Benjamin Dakota Rogers',
     slug: 'benjamin-dakota-rogers',
     imgSrc: '/artists/benjamin-dakota-rogers.jpg',
-    imgPosition: '50% 85%',
+    imgPosition: '50% 25%',
     shortBio: 'Country-rooted songwriter with a voice that fills rooms and sticks in your chest.',
     genre: 'Country / Americana',
     division: 'Management',
