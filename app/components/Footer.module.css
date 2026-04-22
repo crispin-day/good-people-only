@@ -1,6 +1,9 @@
 .footer {
   background: var(--ink);
   color: var(--paper);
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }
 
 .bottomBar {

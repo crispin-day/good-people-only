@@ -60,11 +60,11 @@
 
 .list:hover .row:hover {
   opacity: 1;
-  background: var(--gray-50);
+  
 }
 
 .row:hover {
-  background: var(--gray-50);
+  
 }
 
 .rowIndex {
