@@ -20,6 +20,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Jeremie Albino',
     slug: 'jeremie-albino',
+    imgSrc: '/artists/jeremie-albino.jpg',
     shortBio: 'Northern Ontario singer-songwriter. Folk, soul, and something harder to name.',
     genre: 'Folk / Soul',
     division: 'Management',
@@ -33,6 +34,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Good Kid',
     slug: 'good-kid',
+    imgSrc: '/artists/good-kid.jpg',
     shortBio: 'Toronto indie pop band with a cinematic sound and sharp songwriting.',
     genre: 'Indie Pop',
     division: 'Management',
@@ -46,6 +48,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Benjamin Dakota Rogers',
     slug: 'benjamin-dakota-rogers',
+    imgSrc: '/artists/benjamin-dakota-rogers.jpg',
     shortBio: 'Country-rooted songwriter with a voice that fills rooms and sticks in your chest.',
     genre: 'Country / Americana',
     division: 'Management',
@@ -59,6 +62,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Trevor Daniel',
     slug: 'trevor-daniel',
+    imgSrc: '/artists/trevor-daniel.jpg',
     shortBio: 'Pop singer-songwriter known for Falling. Viral, earnest, impossible to skip.',
     genre: 'Pop / R&B',
     division: 'Management',
@@ -72,6 +76,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Iluka',
     slug: 'iluka',
+    imgSrc: '/artists/iluka.jpg',
     shortBio: 'Australian-born singer-songwriter. Soulful, cinematic, and entirely her own.',
     genre: 'Indie Pop / Soul',
     division: 'Management',
@@ -86,6 +91,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Glitter Party',
     slug: 'glitter-party',
+    imgSrc: '/artists/glitter-party.jpg',
     shortBio: 'Pure pop energy. The kind of songs you play loud and sing louder.',
     genre: 'Bedroom Pop',
     division: 'Label',
@@ -99,6 +105,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Starbomb',
     slug: 'starbomb',
+    imgSrc: '/artists/starbomb.jpg',
     shortBio: 'Video game parody supergroup. Yes, it is exactly as good as it sounds.',
     genre: 'Comedy / Nerdcore',
     division: 'Label',
@@ -112,6 +119,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Ninja Sex Party',
     slug: 'ninja-sex-party',
+    imgSrc: '/artists/ninja-sex-party.jpg',
     shortBio: 'Comedy rock that somehow absolutely slaps.',
     genre: 'Comedy Rock',
     division: 'Label',
@@ -125,6 +133,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Sister Ray',
     slug: 'sister-ray',
+    imgSrc: '/artists/sister-ray.jpg',
     shortBio: 'Indie rock with teeth. Built for stages, not playlists.',
     genre: 'Indie Rock',
     division: 'Label',
@@ -138,6 +147,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Benja',
     slug: 'benja',
+    imgSrc: '/artists/benja.jpg',
     shortBio: 'Artist. Details incoming.',
     genre: 'Indie Rock',
     division: 'Label',
