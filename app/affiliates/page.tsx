@@ -31,7 +31,7 @@ const AFFILIATES = [
     name: 'Good Merch Only',
     kind: 'Merchandise',
     city: 'Toronto, ON',
-    blurb: 'The official GPO merch operation. Quality goods, no filler.',
+    blurb: 'Full service global merchandising and product development.',
   },
 ]
 
