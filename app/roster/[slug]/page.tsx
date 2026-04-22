@@ -15,10 +15,16 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const artist = getArtistBySlug(slug)
-  if (!artist) return { title: 'Not Found | Good People Only' }
+  if (!artist) return { title: 'Not Found' }
   return {
-    title: `${artist.name} | Good People Only`,
-    description: artist.shortBio,
+    title: artist.name,
+    description: `${artist.shortBio} Represented by Good People Only.`,
+    openGraph: {
+      title: `${artist.name} | Good People Only`,
+      description: `${artist.shortBio} Represented by Good People Only.`,
+      url: `https://www.goodpeopleonly.com/roster/${artist.slug}`,
+      images: artist.imgSrc ? [{ url: `https://www.goodpeopleonly.com${artist.imgSrc}` }] : [],
+    },
   }
 }
 
@@ -39,7 +45,20 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
     artist.websiteUrl ? { label: 'Website ↗', url: artist.websiteUrl } : null,
   ].filter((s): s is { label: string; url: string } => s !== null)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MusicGroup',
+    name: artist.name,
+    description: artist.shortBio,
+    genre: artist.genre,
+    url: `https://www.goodpeopleonly.com/roster/${artist.slug}`,
+    ...(artist.spotifyUrl && { sameAs: [artist.spotifyUrl, ...(artist.instagramUrl ? [artist.instagramUrl] : []), ...(artist.websiteUrl ? [artist.websiteUrl] : [])] }),
+    memberOf: { '@type': 'Organization', name: 'Good People Only', url: 'https://www.goodpeopleonly.com' },
+  }
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <div className={styles.page}>
       <Nav />
       <Marquee />
@@ -97,5 +116,5 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
       </div>
       <Footer />
     </div>
-  )
+    </>)
 }
