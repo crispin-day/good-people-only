@@ -59,11 +59,12 @@ export default function ContactPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+              gridTemplateColumns: 'var(--contact-cols, 1fr 1fr)',
               gap: 'clamp(40px, 6vw, 96px)',
               alignItems: 'start',
             }}
           >
+            <style>{`@media (max-width: 680px) { :root { --contact-cols: 1fr; } }`}</style>
             {/* Left: contact info */}
             <div>
               <a
