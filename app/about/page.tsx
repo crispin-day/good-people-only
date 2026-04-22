@@ -175,7 +175,7 @@ export default function AboutPage() {
               <img
                 src="/partners/ontario-creates-official.png"
                 alt="Ontario Creates"
-                style={{ height: '69px', width: 'auto' }}
+                style={{ height: '76px', width: 'auto' }}
               />
             </a>
           </div>
