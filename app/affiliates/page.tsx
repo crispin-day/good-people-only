@@ -56,7 +56,7 @@ export default function AffiliatesPage() {
         <div className={styles.list}>
           {AFFILIATES.map((affiliate, i) => (
             affiliate.url ? (
-              <a key={affiliate.name} href={affiliate.url} target="_blank" rel="noopener noreferrer" className={styles.row} style={{ textDecoration: 'none' }}>
+              <a key={affiliate.name} href={affiliate.url} target="_blank" rel="noopener noreferrer" className={styles.row} style={{ textDecoration: 'none', background: 'transparent', color: 'inherit' }}>
                 <span className={styles.rowIndex}>{String(i + 1).padStart(2, '0')}</span>
                 <div className={styles.rowMain}>
                   <span className={styles.rowName}>{affiliate.name}</span>
