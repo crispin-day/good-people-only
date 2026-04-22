@@ -14,14 +14,35 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  // No maximumScale — blocks accessibility zoom, and text-size-adjust handles iOS rotation inflation
 }
-
-
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload critical fonts to eliminate FOUT */}
+        <link
+          rel="preload"
+          href="/fonts/Montserrat-Bold-700.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Montserrat-Medium-500.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Montserrat-Regular-400.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>{children}</body>
     </html>
   )
