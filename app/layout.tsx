@@ -3,7 +3,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Good People Only",
-  description: "Artist management, record label, and label services.",
+  description: "Good People Only is a boutique artist management, record label and label services company specializing in DSP strategy, digital marketing and global artist development.",
   formatDetection: {
     telephone: false,
     email: false,
