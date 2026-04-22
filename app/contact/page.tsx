@@ -6,7 +6,8 @@ import ObfuscatedEmail from './ObfuscatedEmail'
 
 export const metadata = {
   title: 'Contact | Good People Only',
-  description: 'Get in touch with Good People Only.',
+  description: 'Contact Good People Only for artist management, label services, distribution, or general inquiries.'
+
 }
 
 export default function ContactPage() {

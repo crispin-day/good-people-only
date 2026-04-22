@@ -2,8 +2,8 @@ import RosterClient from './RosterClient'
 import { ARTISTS } from '../../lib/artists'
 
 export const metadata = {
-  title: 'Roster | Good People Only',
-  description: 'Artists managed and represented by Good People Only.',
+  title: 'Roster',
+  description: 'The Good People Only artist roster: Jeremie Albino, Good Kid, Benjamin Dakota Rogers, Trevor Daniel, Iluka, Glitter Party, Starbomb, Ninja Sex Party, Sister Ray, and Benja.',
 }
 
 export default function RosterPage() {

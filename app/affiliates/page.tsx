@@ -4,8 +4,8 @@ import Footer from '../components/Footer'
 import styles from './Affiliates.module.css'
 
 export const metadata = {
-  title: 'Affiliates | Good People Only',
-  description: 'Sister studios, labels, and distribution partners in the Good People Only orbit.',
+  title: 'Affiliates',
+  description: 'Stay Level Distribution is a cutting-edge global distribution platform built for digitally savvy artists and teams. Part of the Good People Only orbit alongside Stay Level Records, The Cabin Recording, and Good Merch Only.',
 }
 
 const AFFILIATES = [

@@ -3,8 +3,8 @@ import Marquee from '../components/Marquee'
 import Footer from '../components/Footer'
 
 export const metadata = {
-  title: 'About | Good People Only',
-  description: 'Boutique artist management and label services company.',
+  title: 'About',
+  description: 'Good People Only is a boutique artist management, record label and full-service label operation — management, DSP strategy, digital ads, playlist campaigns, and international market development under one roof.',
 }
 
 export default function AboutPage() {
