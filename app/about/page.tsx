@@ -128,6 +128,52 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+        {/* Partner logos */}
+        <div
+          style={{
+            maxWidth: 'var(--max-w)',
+            margin: '0 auto',
+            padding: 'clamp(40px, 6vw, 80px) var(--page-pad-x)',
+            borderTop: '1px solid var(--border-1)',
+          }}
+        >
+          <p
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 'var(--text-xs)',
+              letterSpacing: 'var(--tr-widest)',
+              textTransform: 'uppercase',
+              color: 'var(--fg-3)',
+              marginBottom: '32px',
+            }}
+          >
+            SUPPORTED BY
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'clamp(32px, 5vw, 64px)',
+              flexWrap: 'wrap',
+            }}
+          >
+            <img
+              src="/partners/factor.png"
+              alt="FACTOR — The Foundation Assisting Canadian Talent on Recordings"
+              style={{ height: '40px', width: 'auto', opacity: 0.75 }}
+            />
+            <img
+              src="/partners/ontario-creates.png"
+              alt="Ontario Creates / Ontario Créatif"
+              style={{ height: '36px', width: 'auto', opacity: 0.75 }}
+            />
+            <img
+              src="/partners/canada-wordmark.png"
+              alt="Government of Canada / Gouvernement du Canada"
+              style={{ height: '28px', width: 'auto', opacity: 0.75 }}
+            />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
