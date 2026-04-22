@@ -173,11 +173,13 @@ export default function AboutPage() {
                 style={{ height: '28px', width: 'auto' }}
               />
             </a>
-            <img
-              src="/partners/ontario-creates.png"
-              alt="Ontario Creates / Ontario Creatif"
-              style={{ height: '36px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.85 }}
-            />
+            <a href="https://www.ontariocreates.ca/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/partners/ontario-creates-official.png"
+                alt="Ontario Creates"
+                style={{ height: '36px', width: 'auto', opacity: 0.85 }}
+              />
+            </a>
           </div>
           <p
             style={{
