@@ -129,7 +129,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        {/* Partner logos — FACTOR compliance required */}
+        {/* Partner logos */}
         <div
           style={{
             maxWidth: 'var(--max-w)',
@@ -149,50 +149,36 @@ export default function AboutPage() {
           >
             SUPPORTED BY
           </p>
-          {/* FACTOR first (left), Canada wordmark second — required by FACTOR guide */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: 'clamp(32px, 5vw, 64px)',
               flexWrap: 'wrap',
-              marginBottom: '24px',
             }}
           >
             <a href="https://www.factor.ca/" target="_blank" rel="noopener noreferrer">
               <img
-                src="/partners/factor-logo.svg"
-                alt="FACTOR"
-                style={{ height: '44px', width: 'auto' }}
+                src="/partners/factor-combined.png"
+                alt="FACTOR - The Foundation Assisting Canadian Talent on Recordings"
+                style={{ height: '60px', width: 'auto' }}
               />
             </a>
             <a href="https://www.canada.ca/" target="_blank" rel="noopener noreferrer">
               <img
-                src="/partners/canada.svg"
+                src="/partners/canada-combined.png"
                 alt="Government of Canada / Gouvernement du Canada"
-                style={{ height: '44px', width: 'auto' }}
+                style={{ height: '60px', width: 'auto' }}
               />
             </a>
             <a href="https://www.ontariocreates.ca/" target="_blank" rel="noopener noreferrer">
               <img
                 src="/partners/ontario-creates-official.png"
                 alt="Ontario Creates"
-                style={{ height: '44px', width: 'auto' }}
+                style={{ height: '60px', width: 'auto' }}
               />
             </a>
           </div>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'var(--text-xs)',
-              color: 'var(--fg-3)',
-              lineHeight: '1.6',
-              maxWidth: '560px',
-            }}
-          >
-            This project is funded in part by FACTOR, the Government of Canada and Canada&apos;s private radio broadcasters.<br />
-            Ce projet est financé en partie par FACTOR, le gouvernement du Canada et les radiodiffuseurs privés du Canada.
-          </p>
         </div>
       </main>
       <Footer />
