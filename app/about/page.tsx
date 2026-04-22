@@ -129,13 +129,12 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        {/* Partner logos */}
+        {/* Partner logos — FACTOR compliance required */}
         <div
           style={{
             maxWidth: 'var(--max-w)',
             margin: '0 auto',
             padding: 'clamp(40px, 6vw, 80px) var(--page-pad-x)',
-
           }}
         >
           <p
@@ -150,30 +149,48 @@ export default function AboutPage() {
           >
             SUPPORTED BY
           </p>
+          {/* FACTOR first (left), Canada wordmark second — required by FACTOR guide */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: 'clamp(32px, 5vw, 64px)',
               flexWrap: 'wrap',
+              marginBottom: '24px',
             }}
           >
-            <img
-              src="/partners/factor.png"
-              alt="FACTOR — The Foundation Assisting Canadian Talent on Recordings"
-              style={{ height: '40px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.8 }}
-            />
+            <a href="https://www.factor.ca/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/partners/factor.png"
+                alt="FACTOR - The Foundation Assisting Canadian Talent on Recordings"
+                style={{ height: '40px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.85 }}
+              />
+            </a>
+            <a href="https://www.canada.ca/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/partners/canada.svg"
+                alt="Government of Canada / Gouvernement du Canada"
+                style={{ height: '28px', width: 'auto' }}
+              />
+            </a>
             <img
               src="/partners/ontario-creates.png"
-              alt="Ontario Creates / Ontario Créatif"
-              style={{ height: '36px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.8 }}
-            />
-            <img
-              src="/partners/canada-wordmark.png"
-              alt="Government of Canada / Gouvernement du Canada"
-              style={{ height: '28px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.8 }}
+              alt="Ontario Creates / Ontario Creatif"
+              style={{ height: '36px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.85 }}
             />
           </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'var(--text-xs)',
+              color: 'var(--fg-3)',
+              lineHeight: '1.6',
+              maxWidth: '560px',
+            }}
+          >
+            This project is funded in part by FACTOR, the Government of Canada and Canada&apos;s private radio broadcasters.<br />
+            Ce projet est financé en partie par FACTOR, le gouvernement du Canada et les radiodiffuseurs privés du Canada.
+          </p>
         </div>
       </main>
       <Footer />
