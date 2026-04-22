@@ -157,27 +157,21 @@ export default function AboutPage() {
               flexWrap: 'wrap',
             }}
           >
-            <a href="https://www.factor.ca/" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/partners/factor-combined.png"
-                alt="FACTOR - The Foundation Assisting Canadian Talent on Recordings"
-                style={{ height: '66px', width: 'auto' }}
-              />
-            </a>
-            <a href="https://www.canada.ca/" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/partners/canada-combined.png"
-                alt="Government of Canada / Gouvernement du Canada"
-                style={{ height: '54px', width: 'auto' }}
-              />
-            </a>
-            <a href="https://www.ontariocreates.ca/" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/partners/ontario-creates-official.png"
-                alt="Ontario Creates"
-                style={{ height: '76px', width: 'auto' }}
-              />
-            </a>
+            <img
+              src="/partners/factor-combined.png"
+              alt="FACTOR - The Foundation Assisting Canadian Talent on Recordings"
+              style={{ height: '66px', width: 'auto' }}
+            />
+            <img
+              src="/partners/canada-combined.png"
+              alt="Government of Canada / Gouvernement du Canada"
+              style={{ height: '54px', width: 'auto' }}
+            />
+            <img
+              src="/partners/ontario-creates-official.png"
+              alt="Ontario Creates"
+              style={{ height: '76px', width: 'auto' }}
+            />
           </div>
         </div>
       </main>
