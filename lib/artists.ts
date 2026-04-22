@@ -142,7 +142,7 @@ export const ARTISTS: Artist[] = [
     name: 'Benja',
     slug: 'benja',
     imgSrc: '/artists/benja.jpg',
-    imgPosition: '40% 15%',
+    imgPosition: '50% 35%',
     shortBio: 'Artist. Details incoming.',
     genre: 'Indie Rock',
     division: 'Label',
