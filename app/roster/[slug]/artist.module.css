@@ -121,16 +121,23 @@
 .imageRow {
   position: relative;
   margin-bottom: 40px;
-  width: 100%;
-  max-width: 560px;
+  width: 560px;
 }
 
 .imageWrap {
-  width: 100%;
-  max-width: 560px;
+  width: 560px;
   aspect-ratio: 1;
   overflow: hidden;
   position: relative;
+}
+
+@media (max-width: 680px) {
+  .imageRow {
+    width: 100%;
+  }
+  .imageWrap {
+    width: 100%;
+  }
 }
 
 .navArrow {
