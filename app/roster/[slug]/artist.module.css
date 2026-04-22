@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   background: var(--paper);
+  overflow-x: hidden;
 }
 
 .inner {
@@ -137,6 +138,9 @@
   }
   .imageWrap {
     width: 100%;
+  }
+  .navArrow {
+    display: none;
   }
 }
 
