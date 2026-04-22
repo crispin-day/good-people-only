@@ -132,18 +132,6 @@
   position: relative;
 }
 
-@media (max-width: 680px) {
-  .imageRow {
-    width: 100%;
-  }
-  .imageWrap {
-    width: 100%;
-  }
-  .navArrow {
-    display: none;
-  }
-}
-
 .navArrow {
   position: absolute;
   top: 50%;
@@ -174,4 +162,16 @@
 
 .navArrowRight {
   left: calc(100% + 16px);
+}
+
+@media (max-width: 680px) {
+  .imageRow {
+    width: 100%;
+  }
+  .imageWrap {
+    width: 100%;
+  }
+  .navArrow {
+    display: none;
+  }
 }
