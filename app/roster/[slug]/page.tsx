@@ -5,6 +5,7 @@ import Nav from '../../components/Nav'
 import Marquee from '../../components/Marquee'
 import Footer from '../../components/Footer'
 import { getArtistBySlug, ARTISTS } from '../../../lib/artists'
+import ArtistNav from './ArtistNav'
 import styles from './artist.module.css'
 
 export function generateStaticParams() {
@@ -27,6 +28,10 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
 
   if (!artist) notFound()
 
+  const idx = ARTISTS.findIndex((a) => a.slug === slug)
+  const prevArtist = idx > 0 ? ARTISTS[idx - 1] : null
+  const nextArtist = idx < ARTISTS.length - 1 ? ARTISTS[idx + 1] : null
+
   const socials = [
     artist.spotifyUrl ? { label: 'Spotify ↗', url: artist.spotifyUrl } : null,
     artist.instagramUrl ? { label: 'Instagram ↗', url: artist.instagramUrl } : null,
@@ -43,22 +48,30 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
           ← ROSTER
         </Link>
 
-        <div className={styles.imageWrap}>
-          {artist.imgSrc ? (
-            <Image
-              src={artist.imgSrc}
-              alt={artist.name}
-              fill
-              style={{ objectFit: 'cover' }}
-              sizes="(max-width: 768px) 100vw, 680px"
-              priority
-            />
-          ) : (
-            <div
-              className={styles.placeholder}
-              style={{ backgroundColor: artist.placeholderColor }}
-            />
-          )}
+        <div className={styles.imageRow}>
+          <ArtistNav
+            prevSlug={prevArtist?.slug ?? null}
+            prevName={prevArtist?.name ?? null}
+            nextSlug={nextArtist?.slug ?? null}
+            nextName={nextArtist?.name ?? null}
+          />
+          <div className={styles.imageWrap}>
+            {artist.imgSrc ? (
+              <Image
+                src={artist.imgSrc}
+                alt={artist.name}
+                fill
+                style={{ objectFit: 'cover', objectPosition: artist.imgPosition || 'center' }}
+                sizes="(max-width: 768px) 100vw, 680px"
+                priority
+              />
+            ) : (
+              <div
+                className={styles.placeholder}
+                style={{ backgroundColor: artist.placeholderColor }}
+              />
+            )}
+          </div>
         </div>
 
         <h1 className={styles.name}>{artist.name}</h1>
@@ -80,6 +93,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
             ))}
           </div>
         )}
+
       </div>
       <Footer />
     </div>
