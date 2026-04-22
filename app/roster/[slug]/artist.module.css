@@ -121,10 +121,13 @@
 .imageRow {
   position: relative;
   margin-bottom: 40px;
+  width: 100%;
+  max-width: 560px;
 }
 
 .imageWrap {
   width: 100%;
+  max-width: 560px;
   aspect-ratio: 1;
   overflow: hidden;
   position: relative;
