@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -16,11 +16,18 @@ const NAV_LINKS = [
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
         <div className={styles.inner}>
           <Link href="/" className={styles.logo}>
             <Image src="/logo-circle-black.png" width={32} height={32} alt="Good People Only" />
