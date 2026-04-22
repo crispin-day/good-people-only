@@ -2,6 +2,8 @@ import { ARTISTS, Artist } from '../../lib/artists'
 import RosterClient from '../roster/RosterClient'
 import { getSpotifyArtistImageUrl } from '../../lib/spotify'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Label | Good People Only',
   description: 'Good People Record Co. Toronto.',

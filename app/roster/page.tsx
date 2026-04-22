@@ -2,6 +2,8 @@ import RosterClient from './RosterClient'
 import { ARTISTS, Artist } from '../../lib/artists'
 import { getSpotifyArtistImageUrl } from '../../lib/spotify'
 
+export const dynamic = 'force-dynamic' // fetch Spotify images at request time, not build time
+
 export const metadata = {
   title: 'Roster | Good People Only',
   description: 'Artists managed and represented by Good People Only. Based in Toronto.',
