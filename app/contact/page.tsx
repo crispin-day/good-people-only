@@ -66,103 +66,18 @@ export default function ContactPage() {
           >
             {/* Left: contact info */}
             <div>
-              <p
+              <a
+                href="mailto:contact@goodpeopleonly.com"
+                className="gpo-link"
                 style={{
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 700,
-                  fontSize: 'clamp(28px, 4vw, 48px)',
-                  letterSpacing: '-0.02em',
-                  lineHeight: '1.05',
-                  color: 'var(--ink)',
-                  marginBottom: '48px',
-                  textTransform: 'uppercase',
+                  fontFamily: 'var(--font-sans)',
+                  fontWeight: 500,
+                  fontSize: 'var(--text-md)',
+                  color: 'var(--fg-2)',
                 }}
               >
-                One note is enough.
-              </p>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                <div>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 'var(--text-xs)',
-                      letterSpacing: 'var(--tr-widest)',
-                      textTransform: 'uppercase',
-                      color: 'var(--fg-3)',
-                      marginBottom: '8px',
-                    }}
-                  >
-                    General
-                  </p>
-                  <a
-                    href="mailto:info@goodpeopleonly.com"
-                    className="gpo-link"
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontWeight: 500,
-                      fontSize: 'var(--text-base)',
-                      color: 'var(--fg-2)',
-                    }}
-                  >
-                    info@goodpeopleonly.com
-                  </a>
-                </div>
-
-                <div>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 'var(--text-xs)',
-                      letterSpacing: 'var(--tr-widest)',
-                      textTransform: 'uppercase',
-                      color: 'var(--fg-3)',
-                      marginBottom: '8px',
-                    }}
-                  >
-                    Bookings
-                  </p>
-                  <a
-                    href="mailto:bookings@goodpeopleonly.com"
-                    className="gpo-link"
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontWeight: 500,
-                      fontSize: 'var(--text-base)',
-                      color: 'var(--fg-2)',
-                    }}
-                  >
-                    bookings@goodpeopleonly.com
-                  </a>
-                </div>
-
-                <div>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 'var(--text-xs)',
-                      letterSpacing: 'var(--tr-widest)',
-                      textTransform: 'uppercase',
-                      color: 'var(--fg-3)',
-                      marginBottom: '8px',
-                    }}
-                  >
-                    Studio
-                  </p>
-                  <a
-                    href="mailto:studio@goodpeopleonly.com"
-                    className="gpo-link"
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontWeight: 500,
-                      fontSize: 'var(--text-base)',
-                      color: 'var(--fg-2)',
-                    }}
-                  >
-                    studio@goodpeopleonly.com
-                  </a>
-                </div>
-              </div>
+                contact@goodpeopleonly.com
+              </a>
             </div>
 
             {/* Right: form */}
