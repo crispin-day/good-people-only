@@ -14,24 +14,28 @@ const AFFILIATES = [
     kind: 'Recording studio',
     city: 'Toronto, ON',
     blurb: 'A residential recording studio in Toronto. Live room, isolation booth, vintage chain.',
+    url: 'https://www.instagram.com/thecabinrecording/',
   },
   {
     name: 'Stay Level Records',
     kind: 'Record label',
     city: 'Toronto, ON',
     blurb: 'An imprint partner. Releases from inside and outside the GPO roster.',
+    url: 'https://www.staylevelrecords.com/',
   },
   {
     name: 'Stay Level Distribution',
     kind: 'Distribution',
     city: 'Toronto, ON',
     blurb: 'Global distribution for digitally savvy teams and artists.',
+    url: 'https://www.stayleveldistribution.com/',
   },
   {
     name: 'Good Merch Only',
     kind: 'Merchandise',
     city: 'Toronto, ON',
     blurb: 'Full service global merchandising and product development.',
+    url: 'https://goodmerchonly.com/',
   },
 ]
 
@@ -51,15 +55,27 @@ export default function AffiliatesPage() {
 
         <div className={styles.list}>
           {AFFILIATES.map((affiliate, i) => (
-            <div key={affiliate.name} className={styles.row}>
-              <span className={styles.rowIndex}>{String(i + 1).padStart(2, '0')}</span>
-              <div className={styles.rowMain}>
-                <span className={styles.rowName}>{affiliate.name}</span>
-                <p className={styles.rowBlurb}>{affiliate.blurb}</p>
+            affiliate.url ? (
+              <a key={affiliate.name} href={affiliate.url} target="_blank" rel="noopener noreferrer" className={styles.row} style={{ textDecoration: 'none' }}>
+                <span className={styles.rowIndex}>{String(i + 1).padStart(2, '0')}</span>
+                <div className={styles.rowMain}>
+                  <span className={styles.rowName}>{affiliate.name}</span>
+                  <p className={styles.rowBlurb}>{affiliate.blurb}</p>
+                </div>
+                <span className={styles.rowMeta}>{affiliate.kind}</span>
+                <span className={styles.rowArrow}>↗</span>
+              </a>
+            ) : (
+              <div key={affiliate.name} className={styles.row}>
+                <span className={styles.rowIndex}>{String(i + 1).padStart(2, '0')}</span>
+                <div className={styles.rowMain}>
+                  <span className={styles.rowName}>{affiliate.name}</span>
+                  <p className={styles.rowBlurb}>{affiliate.blurb}</p>
+                </div>
+                <span className={styles.rowMeta}>{affiliate.kind}</span>
+                <span className={styles.rowArrow}>↗</span>
               </div>
-              <span className={styles.rowMeta}>{affiliate.kind}</span>
-              <span className={styles.rowArrow}>↗</span>
-            </div>
+            )
           ))}
         </div>
       </main>
