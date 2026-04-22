@@ -137,26 +137,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  font-size: 20px;
-  color: var(--fg-3);
+  width: 48px;
+  height: 48px;
+  color: var(--ink);
   text-decoration: none;
   border-radius: 50%;
-  transition: color 150ms ease, background 150ms ease;
+  border: 2px solid var(--ink);
+  background: transparent;
+  transition: background 150ms ease, color 150ms ease;
   user-select: none;
   z-index: 1;
 }
 
 .navArrow:hover {
-  color: var(--ink);
-  background: rgba(0,0,0,0.06);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .navArrowLeft {
-  right: calc(100% + 12px);
+  right: calc(100% + 16px);
 }
 
 .navArrowRight {
-  left: calc(100% + 12px);
+  left: calc(100% + 16px);
 }

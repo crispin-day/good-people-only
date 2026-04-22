@@ -12,6 +12,18 @@ interface ArtistNavProps {
   nextName: string | null
 }
 
+const ChevronLeft = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="13,4 7,10 13,16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
+const ChevronRight = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="7,4 13,10 7,16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
 export default function ArtistNav({ prevSlug, nextSlug }: ArtistNavProps) {
   const router = useRouter()
   const touchStartX = useRef<number | null>(null)
@@ -49,12 +61,12 @@ export default function ArtistNav({ prevSlug, nextSlug }: ArtistNavProps) {
     <>
       {prevSlug && (
         <Link href={`/roster/${prevSlug}`} className={`${styles.navArrow} ${styles.navArrowLeft}`} aria-label="Previous artist">
-          ←
+          <ChevronLeft />
         </Link>
       )}
       {nextSlug && (
         <Link href={`/roster/${nextSlug}`} className={`${styles.navArrow} ${styles.navArrowRight}`} aria-label="Next artist">
-          →
+          <ChevronRight />
         </Link>
       )}
     </>
