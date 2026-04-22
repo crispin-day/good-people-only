@@ -123,3 +123,41 @@
 .socialLink:hover::after {
   transform: scaleX(1);
 }
+
+.artistNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border, #e0dbd3);
+}
+
+.artistNavBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.artistNavBtn:hover {
+  color: var(--ink);
+}
+
+.artistNavName {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artistNavBtnDisabled {
+  display: block;
+  width: 1px;
+}

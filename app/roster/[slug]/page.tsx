@@ -5,6 +5,7 @@ import Nav from '../../components/Nav'
 import Marquee from '../../components/Marquee'
 import Footer from '../../components/Footer'
 import { getArtistBySlug, ARTISTS } from '../../../lib/artists'
+import ArtistNav from './ArtistNav'
 import styles from './artist.module.css'
 
 export function generateStaticParams() {
@@ -26,6 +27,10 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
   const artist = getArtistBySlug(slug)
 
   if (!artist) notFound()
+
+  const idx = ARTISTS.findIndex((a) => a.slug === slug)
+  const prevArtist = idx > 0 ? ARTISTS[idx - 1] : null
+  const nextArtist = idx < ARTISTS.length - 1 ? ARTISTS[idx + 1] : null
 
   const socials = [
     artist.spotifyUrl ? { label: 'Spotify ↗', url: artist.spotifyUrl } : null,
@@ -80,6 +85,13 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
             ))}
           </div>
         )}
+
+        <ArtistNav
+          prevSlug={prevArtist?.slug ?? null}
+          prevName={prevArtist?.name ?? null}
+          nextSlug={nextArtist?.slug ?? null}
+          nextName={nextArtist?.name ?? null}
+        />
       </div>
       <Footer />
     </div>
