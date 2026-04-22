@@ -2,6 +2,7 @@ import Nav from '../components/Nav'
 import Marquee from '../components/Marquee'
 import Footer from '../components/Footer'
 import ContactForm from './ContactForm'
+import ObfuscatedEmail from './ObfuscatedEmail'
 
 export const metadata = {
   title: 'Contact | Good People Only',
@@ -67,18 +68,14 @@ export default function ContactPage() {
             <style>{`@media (max-width: 680px) { :root { --contact-cols: 1fr; } }`}</style>
             {/* Left: contact info */}
             <div>
-              <a
-                href="mailto:contact@goodpeopleonly.com"
-                className="gpo-link"
+              <ObfuscatedEmail
                 style={{
                   fontFamily: 'var(--font-sans)',
                   fontWeight: 500,
                   fontSize: 'var(--text-md)',
                   color: 'var(--fg-2)',
                 }}
-              >
-                contact@goodpeopleonly.com
-              </a>
+              />
             </div>
 
             {/* Right: form */}
