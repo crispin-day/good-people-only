@@ -25,7 +25,7 @@ const AFFILIATES = [
     name: 'Stay Level Distribution',
     kind: 'Distribution',
     city: 'Toronto, ON',
-    blurb: 'Global digital + physical distribution for independent artists.',
+    blurb: 'Global distribution for digitally savvy teams and artists.',
   },
   {
     name: 'Good Merch Only',
