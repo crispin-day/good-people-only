@@ -45,12 +45,7 @@
   transform: scaleX(1);
 }
 
-.imageWrap {
-  flex: 1;
-  aspect-ratio: 1;
-  overflow: hidden;
-  position: relative;
-}
+
 
 .placeholder {
   width: 100%;
@@ -124,25 +119,33 @@
 }
 
 .imageRow {
-  display: flex;
-  align-items: center;
-  gap: 24px;
+  position: relative;
   margin-bottom: 40px;
 }
 
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+}
+
 .navArrow {
-  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
-  font-size: 22px;
+  font-size: 20px;
   color: var(--fg-3);
   text-decoration: none;
   border-radius: 50%;
   transition: color 150ms ease, background 150ms ease;
   user-select: none;
+  z-index: 1;
 }
 
 .navArrow:hover {
@@ -150,9 +153,10 @@
   background: rgba(0,0,0,0.06);
 }
 
-.navArrowGhost {
-  flex-shrink: 0;
-  display: block;
-  width: 44px;
-  height: 44px;
+.navArrowLeft {
+  right: calc(100% + 12px);
+}
+
+.navArrowRight {
+  left: calc(100% + 12px);
 }

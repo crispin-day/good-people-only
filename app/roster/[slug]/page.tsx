@@ -54,7 +54,6 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
             prevName={prevArtist?.name ?? null}
             nextSlug={nextArtist?.slug ?? null}
             nextName={nextArtist?.name ?? null}
-            position="left"
           />
           <div className={styles.imageWrap}>
             {artist.imgSrc ? (
@@ -73,13 +72,6 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
               />
             )}
           </div>
-          <ArtistNav
-            prevSlug={prevArtist?.slug ?? null}
-            prevName={prevArtist?.name ?? null}
-            nextSlug={nextArtist?.slug ?? null}
-            nextName={nextArtist?.name ?? null}
-            position="right"
-          />
         </div>
 
         <h1 className={styles.name}>{artist.name}</h1>

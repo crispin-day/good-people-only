@@ -10,16 +10,13 @@ interface ArtistNavProps {
   prevName: string | null
   nextSlug: string | null
   nextName: string | null
-  position: 'left' | 'right'
 }
 
-export default function ArtistNav({ prevSlug, nextSlug, position }: ArtistNavProps) {
+export default function ArtistNav({ prevSlug, nextSlug }: ArtistNavProps) {
   const router = useRouter()
   const touchStartX = useRef<number | null>(null)
 
   useEffect(() => {
-    if (position !== 'left') return // register listeners once
-
     const handleTouchStart = (e: TouchEvent) => {
       touchStartX.current = e.touches[0].clientX
     }
@@ -46,22 +43,20 @@ export default function ArtistNav({ prevSlug, nextSlug, position }: ArtistNavPro
       document.removeEventListener('touchend', handleTouchEnd)
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [prevSlug, nextSlug, router, position])
-
-  const slug = position === 'left' ? prevSlug : nextSlug
-  const arrow = position === 'left' ? '←' : '→'
-
-  if (!slug) {
-    return <span className={styles.navArrowGhost} aria-hidden="true" />
-  }
+  }, [prevSlug, nextSlug, router])
 
   return (
-    <Link
-      href={`/roster/${slug}`}
-      className={styles.navArrow}
-      aria-label={position === 'left' ? 'Previous artist' : 'Next artist'}
-    >
-      {arrow}
-    </Link>
+    <>
+      {prevSlug && (
+        <Link href={`/roster/${prevSlug}`} className={`${styles.navArrow} ${styles.navArrowLeft}`} aria-label="Previous artist">
+          ←
+        </Link>
+      )}
+      {nextSlug && (
+        <Link href={`/roster/${nextSlug}`} className={`${styles.navArrow} ${styles.navArrowRight}`} aria-label="Next artist">
+          →
+        </Link>
+      )}
+    </>
   )
 }
