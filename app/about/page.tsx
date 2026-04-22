@@ -85,12 +85,10 @@ export default function AboutPage() {
                   fontWeight: 500,
                   lineHeight: '1.55',
                   color: 'var(--fg-1)',
-                  marginBottom: '24px',
+                  marginBottom: '28px',
                 }}
               >
-                Good People Only is a Toronto-based artist management company, record label, recording
-                studio, and consulting firm. Founded in 2016 by Crispin Day, we work with artists we
-                believe in — and build everything around them.
+                Good People Only is a boutique artist management and label services company.
               </p>
 
               <p
@@ -102,10 +100,7 @@ export default function AboutPage() {
                   marginBottom: '24px',
                 }}
               >
-                We started with one idea: good music deserves a home that treats it right. Over the
-                years, that idea has grown into a full-service operation for artists at every stage —
-                from the first songwriting session to a touring career, from an independent single to a
-                long-running label relationship.
+                Since 2016, three things have been built under one roof: artist management, record label, and a full label services engine. In practice that means day-to-day artist management sitting next to the people running DSP strategy, digital ads, playlist campaigns, and international market development, alongside in-house recording, release coordination, and distribution partnerships. Not a referral network. One operation.
               </p>
 
               <p
@@ -117,9 +112,7 @@ export default function AboutPage() {
                   marginBottom: '24px',
                 }}
               >
-                Crispin spent a decade as a producer and engineer before moving into management. That
-                background shapes everything: how we talk to labels, how we approach recording budgets,
-                how we read a contract. We know what it costs to make a record because we&apos;ve made them.
+                The roster is small by design. Artists here aren&apos;t volume; they&apos;re choices. What they share is craft and a willingness to do the work. GPO has moved artists from first sessions to headline touring, independent singles to long-running label relationships, niche online audiences to real rooms in real cities across North America, the UK, Europe, LATAM and Southeast Asia.
               </p>
 
               <p
@@ -128,27 +121,10 @@ export default function AboutPage() {
                   fontSize: 'var(--text-base)',
                   lineHeight: '1.65',
                   color: 'var(--fg-2)',
-                  marginBottom: '48px',
                 }}
               >
-                The roster is small by design. Every artist here is a deliberate choice — not a volume
-                play. What they share is craft, intention, and a willingness to do the work.
+                The model works because the teams that would normally be siloed — management, marketing, label — are in the same conversations from day one.
               </p>
-
-              <blockquote
-                style={{
-                  borderLeft: '2px solid var(--ink)',
-                  paddingLeft: '24px',
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 700,
-                  fontSize: 'var(--text-xl)',
-                  letterSpacing: '-0.01em',
-                  color: 'var(--ink)',
-                  textTransform: 'uppercase',
-                }}
-              >
-                &ldquo;One note is enough.&rdquo;
-              </blockquote>
             </div>
           </div>
         </div>
