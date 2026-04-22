@@ -17,7 +17,7 @@ export default function LabelPage() {
     <RosterClient
       artists={filtered}
       pageTitle="THE LABEL"
-      kicker="· GOOD PEOPLE RECORD CO."
+      kicker="GOOD PEOPLE RECORD CO."
     />
   )
 }

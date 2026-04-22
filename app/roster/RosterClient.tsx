@@ -17,7 +17,7 @@ interface RosterClientProps {
   kicker?: string
 }
 
-export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker = '· GOOD PEOPLE ARTIST MANAGEMENT' }: RosterClientProps) {
+export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker = 'GOOD PEOPLE ARTIST MANAGEMENT' }: RosterClientProps) {
   const [view, setView] = useState<View>('list')
 
   const sorted = [...artists].sort((a, b) => a.sortOrder - b.sortOrder)

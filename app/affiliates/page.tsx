@@ -42,7 +42,7 @@ export default function AffiliatesPage() {
       <Marquee />
       <main>
         <div className={styles.pageHeader}>
-          <p className={styles.kicker}>— AFFILIATES</p>
+          <p className={styles.kicker}>AFFILIATES</p>
           <h1 className={styles.title}>WHO WE WORK WITH.</h1>
           <p className={styles.subtitle}>
             Sister studios, labels, and distribution partners in the GOOD PEOPLE ONLY orbit. Separate companies, shared standards.

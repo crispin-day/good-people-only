@@ -35,7 +35,7 @@ export default function AboutPage() {
               marginBottom: '16px',
             }}
           >
-            — ABOUT
+            ABOUT
           </p>
 
           {/* Title */}
@@ -73,7 +73,7 @@ export default function AboutPage() {
                   color: 'var(--fg-3)',
                 }}
               >
-                — STATEMENT
+                STATEMENT
               </p>
             </div>
 

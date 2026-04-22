@@ -13,7 +13,7 @@ export default function ManagementPage() {
     <RosterClient
       artists={all}
       pageTitle="MANAGEMENT"
-      kicker="· GOOD PEOPLE ARTIST MANAGEMENT"
+      kicker="GOOD PEOPLE ARTIST MANAGEMENT"
     />
   )
 }

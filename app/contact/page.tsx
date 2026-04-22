@@ -36,7 +36,7 @@ export default function ContactPage() {
               marginBottom: '16px',
             }}
           >
-            — CONTACT
+            CONTACT
           </p>
 
           {/* Title */}
