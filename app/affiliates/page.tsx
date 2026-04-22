@@ -13,7 +13,7 @@ const AFFILIATES = [
     name: 'The Cabin Recording',
     kind: 'Recording studio',
     city: 'Toronto, ON',
-    blurb: 'A residential recording studio in Toronto. Live room, isolation booths, vintage chain.',
+    blurb: 'A residential recording studio in Toronto. Live room, isolation booth, vintage chain.',
   },
   {
     name: 'Stay Level Records',
@@ -57,7 +57,7 @@ export default function AffiliatesPage() {
                 <span className={styles.rowName}>{affiliate.name}</span>
                 <p className={styles.rowBlurb}>{affiliate.blurb}</p>
               </div>
-              <span className={styles.rowMeta}>{affiliate.kind} · {affiliate.city}</span>
+              <span className={styles.rowMeta}>{affiliate.kind}</span>
               <span className={styles.rowArrow}>↗</span>
             </div>
           ))}
