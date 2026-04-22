@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         from: 'GPO Website <noreply@goodpeopleonly.com>',
-        to: 'info@goodpeopleonly.com',
+        to: 'contact@goodpeopleonly.com',
         reply_to: email,
         subject: `[GPO Contact] ${subject}`,
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
