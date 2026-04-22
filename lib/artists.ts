@@ -10,6 +10,7 @@ export interface Artist {
   sortOrder: number
   placeholderColor: string
   imgSrc?: string
+  imgPosition?: string
   spotifyUrl?: string
   instagramUrl?: string
   youtubeUrl?: string
@@ -34,6 +35,7 @@ export const ARTISTS: Artist[] = [
     name: 'Good Kid',
     slug: 'good-kid',
     imgSrc: '/artists/good-kid.jpg',
+    imgPosition: '50% 35%',
     shortBio: 'Toronto indie pop band with a cinematic sound and sharp songwriting.',
     genre: 'Indie Pop',
     division: 'Management',

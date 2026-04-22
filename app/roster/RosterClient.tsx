@@ -80,6 +80,7 @@ export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker
                       fill
                       className={styles.tileImg}
                       sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      style={artist.imgPosition ? { objectPosition: artist.imgPosition } : undefined}
                     />
                   ) : (
                     <div
