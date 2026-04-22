@@ -161,17 +161,17 @@ export default function AboutPage() {
             <img
               src="/partners/factor.png"
               alt="FACTOR — The Foundation Assisting Canadian Talent on Recordings"
-              style={{ height: '40px', width: 'auto', opacity: 0.75 }}
+              style={{ height: '40px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.8 }}
             />
             <img
               src="/partners/ontario-creates.png"
               alt="Ontario Creates / Ontario Créatif"
-              style={{ height: '36px', width: 'auto', opacity: 0.75 }}
+              style={{ height: '36px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.8 }}
             />
             <img
               src="/partners/canada-wordmark.png"
               alt="Government of Canada / Gouvernement du Canada"
-              style={{ height: '28px', width: 'auto', opacity: 0.75 }}
+              style={{ height: '28px', width: 'auto', filter: 'invert(1)', mixBlendMode: 'multiply', opacity: 0.8 }}
             />
           </div>
         </div>
