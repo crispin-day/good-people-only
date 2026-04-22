@@ -30,13 +30,19 @@ export default function ArtistNav({ prevSlug, nextSlug }: ArtistNavProps) {
 
   useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
-      touchStartX.current = e.touches[0].clientX
+      const x = e.touches[0].clientX
+      // Ignore edge swipes (iOS back/forward gesture zone)
+      if (x < 30 || x > window.innerWidth - 30) {
+        touchStartX.current = null
+        return
+      }
+      touchStartX.current = x
     }
 
     const handleTouchEnd = (e: TouchEvent) => {
       if (touchStartX.current === null) return
       const dx = e.changedTouches[0].clientX - touchStartX.current
-      if (Math.abs(dx) < 60) return
+      if (Math.abs(dx) < 60) { touchStartX.current = null; return }
       if (dx < 0 && nextSlug) router.push(`/roster/${nextSlug}`)
       if (dx > 0 && prevSlug) router.push(`/roster/${prevSlug}`)
       touchStartX.current = null
