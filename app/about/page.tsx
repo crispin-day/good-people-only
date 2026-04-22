@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 
 export const metadata = {
   title: 'About | Good People Only',
-  description: 'Boutique artist management founded by Crispin Day in Toronto.',
+  description: 'Boutique artist management and label services company.',
 }
 
 export default function AboutPage() {

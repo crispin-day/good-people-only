@@ -31,7 +31,7 @@ export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker
           <p className={styles.kicker}>{kicker}</p>
           <h1 className={styles.title}>{pageTitle}</h1>
           <p className={styles.subtitle}>
-            A deliberately small group of artists. Genre-agnostic, Toronto-rooted, built for the long game.
+            A deliberately small group of artists. Built for the long game.
           </p>
           <div className={styles.viewToggle}>
             <button

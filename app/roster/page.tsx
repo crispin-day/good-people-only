@@ -3,7 +3,7 @@ import { ARTISTS } from '../../lib/artists'
 
 export const metadata = {
   title: 'Roster | Good People Only',
-  description: 'Artists managed and represented by Good People Only. Based in Toronto.',
+  description: 'Artists managed and represented by Good People Only.',
 }
 
 export default function RosterPage() {
