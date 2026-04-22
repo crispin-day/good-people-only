@@ -183,11 +183,6 @@
   right: 0;
   padding: 20px 16px 16px;
   background: linear-gradient(to top, rgba(10, 10, 10, 0.75) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity var(--dur-base) var(--ease-out);
-}
-
-.tile:hover .tileLabel {
   opacity: 1;
 }
 
