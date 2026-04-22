@@ -55,10 +55,11 @@ export default function AboutPage() {
           </h1>
 
           {/* Two-column grid */}
+          <style>{`@media (max-width: 680px) { :root { --about-cols: 1fr; } }`}</style>
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'clamp(160px, 20vw, 260px) 1fr',
+              gridTemplateColumns: 'var(--about-cols, clamp(160px, 20vw, 260px) 1fr)',
               gap: 'clamp(32px, 6vw, 64px)',
               alignItems: 'start',
             }}
