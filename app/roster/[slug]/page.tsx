@@ -49,7 +49,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
               src={artist.imgSrc}
               alt={artist.name}
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', objectPosition: artist.imgPosition || 'center' }}
               sizes="(max-width: 768px) 100vw, 680px"
               priority
             />
