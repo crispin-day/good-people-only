@@ -161,21 +161,21 @@ export default function AboutPage() {
               <img
                 src="/partners/factor-combined.png"
                 alt="FACTOR - The Foundation Assisting Canadian Talent on Recordings"
-                style={{ height: '60px', width: 'auto' }}
+                style={{ height: '66px', width: 'auto' }}
               />
             </a>
             <a href="https://www.canada.ca/" target="_blank" rel="noopener noreferrer">
               <img
                 src="/partners/canada-combined.png"
                 alt="Government of Canada / Gouvernement du Canada"
-                style={{ height: '60px', width: 'auto' }}
+                style={{ height: '54px', width: 'auto' }}
               />
             </a>
             <a href="https://www.ontariocreates.ca/" target="_blank" rel="noopener noreferrer">
               <img
                 src="/partners/ontario-creates-official.png"
                 alt="Ontario Creates"
-                style={{ height: '60px', width: 'auto' }}
+                style={{ height: '69px', width: 'auto' }}
               />
             </a>
           </div>
