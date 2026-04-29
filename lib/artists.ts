@@ -18,6 +18,7 @@ export interface Artist {
   tourUrl?: string
   longBio?: string
   keywords?: string[]
+  extraLinks?: { label: string; url: string }[]
 }
 
 export const ARTISTS: Artist[] = [
@@ -117,6 +118,9 @@ Having grown up with a Dad who was a songwriter and guitar-maker, ILUKA was taug
     slug: 'glitter-party',
     imgSrc: '/artists/glitter-party.jpg',
     shortBio: 'Pure pop energy. The kind of songs you play loud and sing louder.',
+    longBio: `Glitter Party is the solo project of musician Sam Cohen, a 25 year old from Toronto, Ontario. Sam writes, records and mixes his songs at home in his bedroom studio, where he has stockpiled an impressive array of old synthesizers, unique guitars, and dusty tape machines. Glitter Party's music encapsulates the optimism of youth, filtered through a hazy nostalgia lamenting about the fears of growing up, and yearning for a simpler time, of summertime and young love.
+
+Glitter Party is also a producer and drummer who has built a breakout audience through his viral, Motown-style drum videos on Instagram. Blending technical precision with playful, era-specific recreations, his content has driven rapid growth from a niche following to tens of thousands of highly engaged fans. That momentum has translated into real-world traction, including sold-out sample packs and streaming success across collaborative releases. Positioned at the intersection of content and craft, Glitter Party is turning social virality into a scalable music career.`,
     genre: 'Bedroom Pop',
     division: 'Label',
     featured: false,
@@ -125,7 +129,9 @@ Having grown up with a Dad who was a songwriter and guitar-maker, ILUKA was taug
     spotifyUrl: 'https://open.spotify.com/artist/0aap0g0NB08EJrS6FMDrdB',
     instagramUrl: 'https://www.instagram.com/glitterpartyyy/',
     websiteUrl: 'https://www.glitterparty.ca/',
-    keywords: ['Glitter Party', 'bedroom pop', 'Canadian pop', 'indie pop', 'Good People Only'],
+    tourUrl: 'https://www.bandsintown.com/a/15636645-glitter-party',
+    extraLinks: [{ label: 'Drum Packs ↗', url: 'https://bluedrums.sellfy.store/' }],
+    keywords: ['Glitter Party', 'Sam Cohen', 'bedroom pop', 'Canadian pop', 'indie pop', 'drum packs', 'Good People Only'],
   },
   {
     name: 'Starbomb',

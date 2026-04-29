@@ -132,6 +132,17 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
                 Tour Dates ↗
               </a>
             )}
+            {artist.extraLinks?.map((link) => (
+              <a
+                key={link.label}
+                href={link.url}
+                className={styles.socialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         )}
 
