@@ -155,6 +155,8 @@
   cursor: pointer;
   text-decoration: none;
   display: block;
+  transform: translateZ(0);
+  isolation: isolate;
 }
 
 .tileImg {
