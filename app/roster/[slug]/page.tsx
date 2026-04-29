@@ -11,13 +11,37 @@ export function generateStaticParams() {
   return ARTISTS.map((artist) => ({ slug: artist.slug }))
 }
 
+const SITE_URL = 'https://goodpeopleonly.com'
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const artist = getArtistBySlug(slug)
   if (!artist) return { title: 'Not Found | Good People Only' }
+
+  const description = artist.seoDescription || artist.shortBio
+  const pageUrl = `${SITE_URL}/roster/${artist.slug}`
+  const imageUrl = artist.imgSrc ? `${SITE_URL}${artist.imgSrc}` : `${SITE_URL}/og-default.jpg`
+
   return {
     title: `${artist.name} | Good People Only`,
-    description: artist.shortBio,
+    description,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${artist.name} | Good People Only`,
+      description,
+      url: pageUrl,
+      siteName: 'Good People Only',
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: artist.name }],
+      type: 'profile',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${artist.name} | Good People Only`,
+      description,
+      images: [imageUrl],
+    },
   }
 }
 
@@ -34,8 +58,28 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
     artist.websiteUrl ? { label: 'Website ↗', url: artist.websiteUrl } : null,
   ].filter((s): s is { label: string; url: string } => s !== null)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MusicGroup',
+    name: artist.name,
+    description: artist.seoDescription || artist.shortBio,
+    url: `${SITE_URL}/roster/${artist.slug}`,
+    ...(artist.imgSrc ? { image: `${SITE_URL}${artist.imgSrc}` } : {}),
+    ...(artist.spotifyUrl ? { sameAs: [
+      artist.spotifyUrl,
+      ...(artist.instagramUrl ? [artist.instagramUrl] : []),
+      ...(artist.websiteUrl ? [artist.websiteUrl] : []),
+      ...(artist.youtubeUrl ? [artist.youtubeUrl] : []),
+    ]} : {}),
+    genre: artist.genre,
+  }
+
   return (
     <div className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <Marquee />
       <div className={styles.inner}>

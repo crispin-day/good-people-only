@@ -4,6 +4,7 @@ export interface Artist {
   name: string
   slug: string
   shortBio: string
+  seoDescription?: string
   genre: string
   division: Division
   featured: boolean
@@ -33,10 +34,12 @@ export const ARTISTS: Artist[] = [
     instagramUrl: 'https://instagram.com/jeremiealbino',
     websiteUrl: 'https://jeremiealbino.com',
     tourUrl: 'https://jeremiealbino.com/tour',
+    seoDescription: 'Jeremie Albino is a folk and soul singer-songwriter from Northern Ontario, Canada. His debut album Our Time In The Sun (2025), produced by Dan Auerbach of The Black Keys for Easy Eye Sound, blends Southern psychedelia and blues-rock storytelling. Represented by Good People Only Management.',
   },
   {
     name: 'Good Kid',
     slug: 'good-kid',
+    seoDescription: 'Good Kid is a Toronto indie pop band known for their cinematic sound and sharp songwriting. Represented by Good People Only Management.',
     imgSrc: '/artists/good-kid.jpg',
     imgPosition: '50% 35%',
     shortBio: 'Toronto indie pop band with a cinematic sound and sharp songwriting.',
@@ -51,6 +54,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Benjamin Dakota Rogers',
     slug: 'benjamin-dakota-rogers',
+    seoDescription: 'Benjamin Dakota Rogers is a Canadian country and Americana singer-songwriter with a powerful voice rooted in folk tradition. Represented by Good People Only Management.',
     imgSrc: '/artists/benjamin-dakota-rogers.jpg',
     imgPosition: '50% 0%',
     shortBio: 'Country-rooted songwriter with a voice that fills rooms and sticks in your chest.',
@@ -65,6 +69,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Trevor Daniel',
     slug: 'trevor-daniel',
+    seoDescription: 'Trevor Daniel is a pop and R&B singer-songwriter best known for his viral hit Falling. Represented by Good People Only Management.',
     imgSrc: '/artists/trevor-daniel.jpg',
     shortBio: 'Pop singer-songwriter known for Falling. Viral, earnest, impossible to skip.',
     genre: 'Pop / R&B',
@@ -78,6 +83,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Iluka',
     slug: 'iluka',
+    seoDescription: 'Iluka is an Australian-born indie pop and soul singer-songwriter known for her soulful, cinematic sound. Represented by Good People Only Management.',
     imgSrc: '/artists/iluka.jpg',
     shortBio: 'Australian-born singer-songwriter. Soulful, cinematic, and entirely her own.',
     genre: 'Indie Pop / Soul',
@@ -92,6 +98,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Glitter Party',
     slug: 'glitter-party',
+    seoDescription: 'Glitter Party is a bedroom pop artist signed to Good People Only Label, known for energetic, hook-driven pop songs.',
     imgSrc: '/artists/glitter-party.jpg',
     shortBio: 'Pure pop energy. The kind of songs you play loud and sing louder.',
     genre: 'Bedroom Pop',
@@ -105,6 +112,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Starbomb',
     slug: 'starbomb',
+    seoDescription: 'Starbomb is a comedy and nerdcore music supergroup signed to Good People Only Label, known for video game parody songs.',
     imgSrc: '/artists/starbomb.jpg',
     shortBio: 'Video game parody supergroup. Yes, it is exactly as good as it sounds.',
     genre: 'Comedy / Nerdcore',
@@ -118,6 +126,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Ninja Sex Party',
     slug: 'ninja-sex-party',
+    seoDescription: 'Ninja Sex Party is a comedy rock duo signed to Good People Only Label, known for humorous and irreverent songs.',
     imgSrc: '/artists/ninja-sex-party.jpg',
     shortBio: 'Comedy rock that somehow absolutely slaps.',
     genre: 'Comedy Rock',
@@ -131,6 +140,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Sister Ray',
     slug: 'sister-ray',
+    seoDescription: 'Sister Ray is an indie rock band signed to Good People Only Label, built for live performance with a raw and powerful sound.',
     imgSrc: '/artists/sister-ray.jpg',
     shortBio: 'Indie rock with teeth. Built for stages, not playlists.',
     genre: 'Indie Rock',
@@ -144,6 +154,7 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Benja',
     slug: 'benja',
+    seoDescription: 'Benja is an indie rock artist signed to Good People Only Label.',
     imgSrc: '/artists/benja.jpg',
     shortBio: 'Artist. Details incoming.',
     genre: 'Indie Rock',
