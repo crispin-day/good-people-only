@@ -135,11 +135,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
           </div>
         )}
 
-        {artist.longBio ? (
-          <ShowMoreBio shortBio={artist.shortBio} longBio={artist.longBio} />
-        ) : (
-          <p className={styles.bio}>{artist.shortBio}</p>
-        )}
+        <ShowMoreBio bio={artist.longBio ?? artist.shortBio} />
 
       </div>
       <Footer />
