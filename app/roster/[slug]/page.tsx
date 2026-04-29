@@ -63,7 +63,6 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
 
         <h1 className={styles.name}>{artist.name}</h1>
         <p className={styles.genre}>{artist.genre} — {artist.division}</p>
-        <p className={styles.bio}>{artist.shortBio}</p>
 
         {socials.length > 0 && (
           <div className={styles.socials}>
@@ -78,8 +77,22 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
                 {social.label}
               </a>
             ))}
+            {artist.tourUrl && (
+              <a
+                href={artist.tourUrl}
+                className={styles.socialLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Tour Dates ↗
+              </a>
+            )}
           </div>
         )}
+
+        {artist.shortBio.split('\n\n').map((paragraph, i) => (
+          <p key={i} className={styles.bio}>{paragraph}</p>
+        ))}
       </div>
       <Footer />
     </div>
