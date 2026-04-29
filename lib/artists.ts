@@ -165,8 +165,8 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     slug: 'benja',
     imgSrc: '/artists/benja.jpg',
     imgPosition: '50% 35%',
-    shortBio: 'Artist. Details incoming.',
-    genre: 'Indie Rock',
+    shortBio: 'A prismatic tour, a lo-fi mist, an open experiment: Benja blends bedroom-infused indiepop with the soulful production of R&B.',
+    genre: 'Indie Pop / R&B',
     division: 'Label',
     featured: false,
     sortOrder: 10,
@@ -174,7 +174,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/36Bs5vvvt4AfdIvApt1Rid',
     instagramUrl: 'https://www.instagram.com/benjabenja___/',
     websiteUrl: 'https://www.benjabenjabenja.com/',
-    keywords: ['Benja', 'indie rock', 'Good People Only'],
+    keywords: ['Benja', 'indie pop', 'R&B', 'bedroom pop', 'lo-fi', 'Good People Only'],
   },
 ]
 
