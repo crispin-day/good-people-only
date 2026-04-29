@@ -6,6 +6,7 @@ import Marquee from '../../components/Marquee'
 import Footer from '../../components/Footer'
 import { getArtistBySlug, ARTISTS } from '../../../lib/artists'
 import ArtistNav from './ArtistNav'
+import ShowMoreBio from './ShowMoreBio'
 import styles from './artist.module.css'
 
 export function generateStaticParams() {
@@ -134,9 +135,11 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
           </div>
         )}
 
-        {artist.shortBio.split('\n\n').map((paragraph, i) => (
-          <p key={i} className={styles.bio}>{paragraph}</p>
-        ))}
+        {artist.longBio ? (
+          <ShowMoreBio shortBio={artist.shortBio} longBio={artist.longBio} />
+        ) : (
+          <p className={styles.bio}>{artist.shortBio}</p>
+        )}
 
       </div>
       <Footer />

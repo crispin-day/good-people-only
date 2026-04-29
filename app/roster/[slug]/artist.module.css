@@ -78,8 +78,36 @@
   font-size: var(--text-md);
   line-height: var(--lh-relaxed);
   color: var(--fg-2);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   max-width: 540px;
+}
+
+.longBioCollapsed {
+  overflow: hidden;
+  height: 0;
+  visibility: hidden;
+}
+
+.longBioExpanded {
+  visibility: visible;
+}
+
+.showMoreBtn {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tr-widest);
+  text-transform: uppercase;
+  color: var(--fg-3);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 32px;
+  transition: color var(--dur-fast);
+}
+
+.showMoreBtn:hover {
+  color: var(--ink);
 }
 
 .socials {
