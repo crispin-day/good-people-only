@@ -16,6 +16,7 @@ export interface Artist {
   youtubeUrl?: string
   websiteUrl?: string
   tourUrl?: string
+  keywords?: string[]
 }
 
 export const ARTISTS: Artist[] = [
@@ -35,6 +36,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     instagramUrl: 'https://instagram.com/jeremiealbino',
     websiteUrl: 'https://jeremiealbino.com/',
     tourUrl: 'https://jeremiealbino.com/tour',
+    keywords: ['Jeremie Albino', 'folk soul singer', 'Easy Eye Sound', 'Dan Auerbach', 'Our Time In The Sun', 'Canadian folk artist', 'Northern Ontario musician', 'Good People Only'],
   },
   {
     name: 'Good Kid',
@@ -50,6 +52,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/38SKxCyfrmNWqWunb9wGHP',
     instagramUrl: 'https://instagram.com/goodkidband',
     websiteUrl: 'https://goodkidofficial.com/',
+    keywords: ['Good Kid', 'Good Kid band', 'Toronto indie pop', 'cinematic pop', 'Canadian indie band', 'Good People Only'],
   },
   {
     name: 'Benjamin Dakota Rogers',
@@ -65,6 +68,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/255w1O3tp19jnUZPI6cMVL',
     instagramUrl: 'https://instagram.com/benjamindakotarogers',
     websiteUrl: 'https://www.benjamindakotarogers.com/',
+    keywords: ['Benjamin Dakota Rogers', 'country singer', 'Americana', 'Canadian country', 'songwriter', 'Good People Only'],
   },
   {
     name: 'Trevor Daniel',
@@ -79,6 +83,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     instagramUrl: 'https://instagram.com/iamtrevordaniel',
     spotifyUrl: 'https://open.spotify.com/artist/7uaIm6Pw7xplS8Dy06V6pT',
     websiteUrl: 'https://trevordanielofficial.com/',
+    keywords: ['Trevor Daniel', 'Falling Trevor Daniel', 'pop R&B singer', 'viral pop', 'Good People Only'],
   },
   {
     name: 'Iluka',
@@ -93,6 +98,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/1QiAR2OBtc5ZsYQ5bPnpdO',
     instagramUrl: 'https://instagram.com/ilukamusic',
     websiteUrl: 'https://ilukamusic.com',
+    keywords: ['Iluka', 'Iluka music', 'indie pop soul', 'Australian singer', 'cinematic pop', 'Good People Only'],
   },
   {
     name: 'Glitter Party',
@@ -107,6 +113,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/0aap0g0NB08EJrS6FMDrdB',
     instagramUrl: 'https://www.instagram.com/glitterpartyyy/',
     websiteUrl: 'https://www.glitterparty.ca/',
+    keywords: ['Glitter Party', 'bedroom pop', 'Canadian pop', 'indie pop', 'Good People Only'],
   },
   {
     name: 'Starbomb',
@@ -121,6 +128,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/1DLBs2535MM32RYqirYYY4',
     youtubeUrl: 'https://www.youtube.com/@egoraptor',
     websiteUrl: 'https://www.starbomb.com/',
+    keywords: ['Starbomb', 'video game parody music', 'nerdcore', 'Egoraptor', 'comedy rap', 'Good People Only'],
   },
   {
     name: 'Ninja Sex Party',
@@ -135,6 +143,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/3jsyANBBy6gOZUSQhiGclx',
     youtubeUrl: 'https://youtube.com/ninjasexparty',
     websiteUrl: 'https://www.ninjasexparty.com/',
+    keywords: ['Ninja Sex Party', 'NSP', 'comedy rock', 'YouTube music', 'Good People Only'],
   },
   {
     name: 'Sister Ray',
@@ -149,6 +158,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/40rYcgQG8MPbjZDOfDMzyC',
     instagramUrl: 'https://www.instagram.com/sisterray780/',
     websiteUrl: 'https://www.sisterraymusic.com/',
+    keywords: ['Sister Ray', 'indie rock', 'Canadian indie', 'Good People Only'],
   },
   {
     name: 'Benja',
@@ -164,6 +174,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/36Bs5vvvt4AfdIvApt1Rid',
     instagramUrl: 'https://www.instagram.com/benjabenja___/',
     websiteUrl: 'https://www.benjabenjabenja.com/',
+    keywords: ['Benja', 'indie rock', 'Good People Only'],
   },
 ]
 

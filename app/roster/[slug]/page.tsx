@@ -16,14 +16,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const artist = getArtistBySlug(slug)
   if (!artist) return { title: 'Not Found' }
+  const metaDesc = `${artist.shortBio.split('\n\n')[0].slice(0, 155)} — Represented by Good People Only.`
   return {
     title: artist.name,
-    description: `${artist.shortBio} Represented by Good People Only.`,
+    description: metaDesc,
+    keywords: artist.keywords ?? [artist.name, artist.genre, 'Good People Only'],
+    alternates: {
+      canonical: `https://www.goodpeopleonly.com/roster/${artist.slug}`,
+    },
     openGraph: {
+      type: 'profile',
       title: `${artist.name} | Good People Only`,
-      description: `${artist.shortBio} Represented by Good People Only.`,
+      description: metaDesc,
       url: `https://www.goodpeopleonly.com/roster/${artist.slug}`,
-      images: artist.imgSrc ? [{ url: `https://www.goodpeopleonly.com${artist.imgSrc}` }] : [],
+      images: artist.imgSrc ? [{ url: `https://www.goodpeopleonly.com${artist.imgSrc}`, width: 800, height: 800, alt: artist.name }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${artist.name} | Good People Only`,
+      description: metaDesc,
+      images: artist.imgSrc ? [`https://www.goodpeopleonly.com${artist.imgSrc}`] : [],
     },
   }
 }
