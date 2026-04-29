@@ -11,7 +11,6 @@
   max-width: var(--max-w-read);
   margin: 0 auto;
   padding: clamp(48px, 8vw, 80px) var(--page-pad-x) clamp(64px, 10vw, 128px);
-  overflow-x: clip;
 }
 
 .backLink {
