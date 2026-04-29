@@ -46,6 +46,9 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     imgSrc: '/artists/good-kid.jpg',
     imgPosition: '50% 35%',
     shortBio: 'Toronto indie pop band with a cinematic sound and sharp songwriting.',
+    longBio: `Blending the punchy riffs of J-rock, the immediacy of indie rock, and the raw edge of pop-punk, Good Kid have spent the last few years quietly building something larger than a typical band trajectory. Entirely independent, they've amassed hundreds of millions of streams across their catalogue, a fiercely participatory fan community, and a reputation as one of the most creator-friendly projects in modern guitar music. They've made their entire discography Content ID-free and DMCA-free, empowering creators across Twitch, YouTube, and more to use their songs without fear of takedowns. Their songs now soundtrack everything from community-made animations to major gaming broadcasts, becoming part of the internet's shared vocabulary.
+
+Recorded in Los Angeles with Grammy-winning producer John Congleton (St. Vincent, Wallows, Lana Del Rey), the band's debut album Can We Hang Out Sometime? delivers the high-energy hooks and inventive riffs that have become a hallmark of their sound, while boldly pushing into new territory. Longtime fans will find the signature Good Kid bangers they've come to love, but also hear the band exploring fresh textures, rhythms, and sonic twists, in their grittiest offering yet.`,
     genre: 'Indie Pop',
     division: 'Management',
     featured: true,
@@ -54,6 +57,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/38SKxCyfrmNWqWunb9wGHP',
     instagramUrl: 'https://instagram.com/goodkidband',
     websiteUrl: 'https://goodkidofficial.com/',
+    tourUrl: 'https://goodkidofficial.com/tour',
     keywords: ['Good Kid', 'Good Kid band', 'Toronto indie pop', 'cinematic pop', 'Canadian indie band', 'Good People Only'],
   },
   {
@@ -62,6 +66,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     imgSrc: '/artists/benjamin-dakota-rogers.jpg',
     imgPosition: '50% 0%',
     shortBio: 'Country-rooted songwriter with a voice that fills rooms and sticks in your chest.',
+    longBio: `Benjamin Dakota Rogers returns with This Ol' Way, his third full-length album; a raw, soul-twisting dive into the grit and grace of Americana-bluegrass. Rooted in folk tradition and evocative storytelling, these songs explore love, longing, and the bittersweet lessons found in every choice we make. Written and self-produced entirely by Rogers, the album blends fresh cuts penned over the last year with long-held tracks finally brought to life. Mixing by Mike Darolfi and mastering by Kristian Montano give the album its refined edge, enhancing its raw energy without sacrificing its adventurous spirit. A must-spin for fans of Tyler Childers, Colter Wall, and the outlaw spirit of country past. Gritty, haunting, and undeniably authentic, this album is Benjamin Dakota Rogers at his finest.`,
     genre: 'Country / Americana',
     division: 'Management',
     featured: true,
@@ -70,6 +75,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/255w1O3tp19jnUZPI6cMVL',
     instagramUrl: 'https://instagram.com/benjamindakotarogers',
     websiteUrl: 'https://www.benjamindakotarogers.com/',
+    tourUrl: 'https://www.benjamindakotarogers.com/tour',
     keywords: ['Benjamin Dakota Rogers', 'country singer', 'Americana', 'Canadian country', 'songwriter', 'Good People Only'],
   },
   {
@@ -92,6 +98,9 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     slug: 'iluka',
     imgSrc: '/artists/iluka.jpg',
     shortBio: 'Australian-born singer-songwriter. Soulful, cinematic, and entirely her own.',
+    longBio: `ILUKA is an Australian-born, now American-based singer/songwriter who is known for her soulful vocals and her Dolly meets Stevie visual style. As fans have noted, there's the pop sensibility of Adele; the growl of Joplin; the lyrical alchemy of Stevie Nicks. It's impossible not to be drawn in.
+
+Having grown up with a Dad who was a songwriter and guitar-maker, ILUKA was taught the basics of songwriting from her earliest years, spending hours on the balcony of her Blue Mountains home honing the craft. At 7 years old, she began recording her songs on a 12-track recording desk with her Dad and by 15 she had albums worth of recorded material. This early education, the passing-down of emotion and storytelling from one generation to another, gave ILUKA's music its spark, the seed that's still growing to this day. Having left Australia, she's now armed with her White Falcon Gretsch guitar and readier than ever to embark on her most authentic and exciting musical chapter.`,
     genre: 'Indie Pop / Soul',
     division: 'Management',
     featured: false,
@@ -100,6 +109,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/1QiAR2OBtc5ZsYQ5bPnpdO',
     instagramUrl: 'https://instagram.com/ilukamusic',
     websiteUrl: 'https://ilukamusic.com',
+    tourUrl: 'https://www.ilukamusic.com/tour',
     keywords: ['Iluka', 'Iluka music', 'indie pop soul', 'Australian singer', 'cinematic pop', 'Good People Only'],
   },
   {
@@ -122,6 +132,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     slug: 'starbomb',
     imgSrc: '/artists/starbomb.jpg',
     shortBio: 'Video game parody supergroup. Yes, it is exactly as good as it sounds.',
+    longBio: `Starbomb is a space-based (yes, really) synthpop/hip-hop supergroup consisting of Arin "Egoraptor" Hanson of Game Grumps, and Dan "Danny Sexbang" Avidan and Brian "Ninja Brian" Wecht of Ninja Sex Party. Starbomb's focus is to write humorous raps about pop culture, mostly video games. Also their focus is to make good music. Mostly the second one. But the first one's important too. So maybe both equally.`,
     genre: 'Comedy / Nerdcore',
     division: 'Label',
     featured: false,
@@ -137,6 +148,17 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     slug: 'ninja-sex-party',
     imgSrc: '/artists/ninja-sex-party.jpg',
     shortBio: 'Comedy rock that somehow absolutely slaps.',
+    longBio: `From humble beginnings in New York's improv circuit, to their current regimen of rocking international stages, Ninja Sex Party (NSP) has become a force to be reckoned with in the comedy music landscape. Founded in 2009 by Dan Avidan (Danny Sexbang) and theoretical physicist-turned-musician Brian Wecht (Ninja Brian), the duo seamlessly blends humor with rock and synth pop, delivering side-splitting tales of romance, mythical quests, and of course, the occasional (very, very, very tasteful) joke of an intimate nature.
+
+What sets NSP apart? Perhaps it's Danny's hypersexual yet hopelessly romantic persona as he tries to serenade women, or maybe it's Ninja Brian's silent, lethal demeanor coupled with an unexpected tenderness. Their journey, which began with small gigs and blossomed into worldwide tours, has seen them release nine studio albums, collaborate with a universe of talented artists, and accumulate a YouTube following exceeding 1.3 million subscribers.
+
+2018's Cool Patrol, the band's fourth original album, was a shining example of NSP's growth, where epic rock anthems like "Danny Don't You Know" not only sat alongside their extensive catalog of both covers and originals, but also outshone them, paving the way for a new batch of classic comedy songs. In 2024, NSP released These Nuts, their first original album since 2020, with a fresh batch of their signature comedic anthems. Whether they're pondering existential questions like "Who invented space?" (answer: Albert Einstein), courting oblivious mermaids, or navigating heretofore unexplored innuendos, NSP ensures their fans are both laughing and rocking out.
+
+NSP's diverse skill set has seen them build monumental success throughout their over 15 year career, collaborating with YouTube personalities, actors, legendary 80's bands, and even a few spots on Conan O'Brien. Over the course of their history, NSP has defied the odds - breaking into the billboard Top 10 multiple times as an independent artist, and topping the Comedy album charts time and time again. When most bands would hang up the cape and mask, NSP has kept their spandex on, soaring higher with every new release. The band has played sold out shows all over North America, Europe, Australia, and New Zealand. They were Billboard's #1 selling comedy act in 2018, and have amassed over 400 million views on Youtube.
+
+Beyond the stage and studio, NSP is also two thirds of Starbomb, a comedy hip-hop group that merges video game culture with a signature comedic flair. But at the core of all their endeavors - Starbomb, NSP, and beyond - is a genuine love for music, humor, and their ever-supportive fan base.
+
+Today, Ninja Sex Party stands as a celebration of comedy, rock, and the belief that a Jewish superhero and his ninja sidekick can take over the world, one hilarious song at a time.`,
     genre: 'Comedy Rock',
     division: 'Label',
     featured: false,
@@ -145,6 +167,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
     spotifyUrl: 'https://open.spotify.com/artist/3jsyANBBy6gOZUSQhiGclx',
     youtubeUrl: 'https://youtube.com/ninjasexparty',
     websiteUrl: 'https://www.ninjasexparty.com/',
+    tourUrl: 'https://www.ninjasexparty.com/tour',
     keywords: ['Ninja Sex Party', 'NSP', 'comedy rock', 'YouTube music', 'Good People Only'],
   },
   {
