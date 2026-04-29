@@ -4,6 +4,7 @@ export interface Artist {
   name: string
   slug: string
   shortBio: string
+  longBio?: string
   seoDescription?: string
   genre: string
   division: Division
@@ -25,6 +26,7 @@ export const ARTISTS: Artist[] = [
     slug: 'jeremie-albino',
     imgSrc: '/artists/jeremie-albino.jpg',
     shortBio: 'Easy Eye Sound recording artist Jeremie Albino is a folk/soul singer-songwriter from Northern Ontario, hailed for emotionally-nuanced storytelling and electrifying live performances. His debut album Our Time In The Sun (2025), produced by Dan Auerbach of The Black Keys, blends Southern psychedelia and blues-rock to tell tales of love, struggle, and a life defined by work — the culmination of a journey from busking the streets of Toronto to sharing stages with Orville Peck and Sierra Ferrell.',
+    longBio: 'Easy Eye Sound has announced the label debut of Jeremie Albino, a singular voice hailed for emotionally-nuanced storytelling and electrifying, livewire and passionate performances. The culmination of a remarkable journey — from busking on the streets of Toronto, to sharing stages with artists like Orville Peck and Sierra Ferrell — Albino embarks on his next chapter with Our Time In The Sun, released in November 2025. The twelve song collection finds him joining forces with Dan Auerbach — lead singer of The Black Keys, founder of Easy Eye Sound, and GRAMMY®-winning producer — after a chance encounter with Albino\'s music that left Auerbach mesmerized. "The first time I saw Jeremie it was just him and his acoustic. His voice was amazing. I instantly loved his style and charisma — I didn\'t know it could just be so real," he remembers. "When we brought him in the studio, it was a dream session. He\'s so talented, comfortable with who he is — he\'s able to put everyone in the room at ease and bring people together with his music." Our Time In The Sun consists of sharp, observant, and deeply-felt originals defined by clever turns of phrase, tapping into Southern psychedelia and the blues-rock of the 60s to tell tales of love gone sour, struggling with the bottle, and a life defined by work.',
     genre: 'Folk / Soul',
     division: 'Management',
     featured: true,
