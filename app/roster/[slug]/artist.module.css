@@ -84,9 +84,11 @@
 }
 
 .bioWrap {
-  margin-bottom: 32px;
+  max-width: 540px;
+  margin-bottom: 8px;
 }
 
+/* Collapsed: clamp to 2 lines. All text stays in DOM for SEO. */
 .bioClamped {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -96,6 +98,7 @@
 
 .bioFull {
   /* expanded — no clamp */
+  display: block;
 }
 
 .showMoreBtn {
@@ -202,7 +205,7 @@
   left: calc(100% + 16px);
 }
 
-@media (max-width: 680px), (max-height: 500px) {
+@media (max-width: 900px), (max-height: 500px) {
   .imageRow {
     width: 100%;
   }

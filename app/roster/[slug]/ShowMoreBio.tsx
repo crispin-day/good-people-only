@@ -11,6 +11,7 @@ export default function ShowMoreBio({ bio }: ShowMoreBioProps) {
 
   return (
     <div className={styles.bioWrap}>
+      {/* All text always in DOM — search engines index everything. */}
       <div className={expanded ? styles.bioFull : styles.bioClamped}>
         {bio.split('\n\n').filter(Boolean).map((para, i) => (
           <p key={i} className={styles.bio}>{para}</p>
