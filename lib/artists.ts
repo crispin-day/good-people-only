@@ -16,8 +16,8 @@ export interface Artist {
   youtubeUrl?: string
   websiteUrl?: string
   tourUrl?: string
-  keywords?: string[]
   longBio?: string
+  keywords?: string[]
 }
 
 export const ARTISTS: Artist[] = [
