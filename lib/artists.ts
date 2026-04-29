@@ -15,6 +15,7 @@ export interface Artist {
   instagramUrl?: string
   youtubeUrl?: string
   websiteUrl?: string
+  tourUrl?: string
 }
 
 export const ARTISTS: Artist[] = [
@@ -22,7 +23,9 @@ export const ARTISTS: Artist[] = [
     name: 'Jeremie Albino',
     slug: 'jeremie-albino',
     imgSrc: '/artists/jeremie-albino.jpg',
-    shortBio: 'Northern Ontario singer-songwriter. Folk, soul, and something harder to name.',
+    shortBio: `Easy Eye Sound has just announced the label debut of Jeremie Albino, a singular voice hailed for emotionally-nuanced storytelling and electrifying, livewire and passionate performances. The culmination of a remarkable journey - from busking on the streets of Toronto, to sharing stages with artists like Orville Peck and Sierra Ferrell - Albino embarks on his next chapter with Our Time In The Sun, released in November 2025. The twelve song collection finds him joining forces with Dan Auerbach - lead singer of The Black Keys, founder of Easy Eye Sound, and GRAMMY®-winning producer - after a chance encounter with Albino's music that left Auerbach mesmerized. "The first time I saw Jeremie it was just him and his acoustic. His voice was amazing. I instantly loved his style and charisma — I didn't know it could just be so real," he remembers of first hearing Albino. "When we brought him in the studio, it was a dream session. He's so talented, comfortable with who he is — he's able to put everyone in the room at ease and bring people together with his music."
+
+Our Time In the Sun consists of sharp, observant, and deeply-felt originals defined by clever turns of phrase - tapping into Southern psychedelia and the blues-rock of the 60s to tell tales of love gone sour, struggling with the bottle, and a life defined by work.`,
     genre: 'Folk / Soul',
     division: 'Management',
     featured: true,
@@ -31,6 +34,7 @@ export const ARTISTS: Artist[] = [
     spotifyUrl: 'https://open.spotify.com/artist/69fOAbSc6FEOFmvvMzlNgY',
     instagramUrl: 'https://instagram.com/jeremiealbino',
     websiteUrl: 'https://jeremiealbino.com/',
+    tourUrl: 'https://jeremiealbino.com/tour',
   },
   {
     name: 'Good Kid',
