@@ -130,6 +130,8 @@
   aspect-ratio: 1;
   overflow: hidden;
   position: relative;
+  transform: translateZ(0);
+  isolation: isolate;
 }
 
 .navArrow {
