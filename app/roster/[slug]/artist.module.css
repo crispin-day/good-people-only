@@ -122,6 +122,7 @@
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  margin-bottom: 24px;
 }
 
 .socialLink {
