@@ -71,41 +71,30 @@
 
 .socials {
   display: flex;
-  gap: 24px;
+  gap: 6px;
   flex-wrap: wrap;
   /* Gap before bio content */
   margin-bottom: 28px;
 }
 
 .socialLink {
-  position: relative;
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
   font-weight: 400;
-  font-size: var(--text-sm);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
   color: var(--fg-3);
   text-decoration: none;
-  transition: color var(--dur-fast);
-}
-
-.socialLink::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--dur-base) var(--ease-out);
+  border: 1px solid var(--border-1);
+  border-radius: 2px;
+  padding: 4px 8px;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+  white-space: nowrap;
 }
 
 .socialLink:hover {
-  color: var(--fg-2);
-}
-
-.socialLink:hover::after {
-  transform: scaleX(1);
+  color: var(--ink);
+  border-color: var(--ink);
 }
 
 /* ── Bio / content block ── */
@@ -156,7 +145,7 @@
 
 .imageRow {
   position: relative;
-  margin-bottom: 56px;
+  margin-bottom: 32px;
   width: min(560px, 100%);
 }
 
