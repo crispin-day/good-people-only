@@ -71,30 +71,41 @@
 
 .socials {
   display: flex;
-  gap: 6px;
+  gap: 24px;
   flex-wrap: wrap;
   /* Gap before bio content */
   margin-bottom: 28px;
 }
 
 .socialLink {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
+  position: relative;
+  font-family: var(--font-sans);
   font-weight: 400;
-  letter-spacing: var(--tr-wider);
-  text-transform: uppercase;
+  font-size: var(--text-sm);
   color: var(--fg-3);
   text-decoration: none;
-  border: 1px solid var(--border-1);
-  border-radius: 2px;
-  padding: 4px 8px;
-  transition: color var(--dur-fast), border-color var(--dur-fast);
-  white-space: nowrap;
+  transition: color var(--dur-fast);
+}
+
+.socialLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
 }
 
 .socialLink:hover {
-  color: var(--ink);
-  border-color: var(--ink);
+  color: var(--fg-2);
+}
+
+.socialLink:hover::after {
+  transform: scaleX(1);
 }
 
 /* ── Bio / content block ── */
@@ -145,7 +156,7 @@
 
 .imageRow {
   position: relative;
-  margin-bottom: 32px;
+  margin-bottom: 56px;
   width: min(560px, 100%);
 }
 
