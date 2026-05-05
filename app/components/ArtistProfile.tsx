@@ -8,6 +8,18 @@ import BioExpander from '../roster/[slug]/BioExpander'
 import { Artist } from '../../lib/artists'
 import styles from '../roster/[slug]/artist.module.css'
 
+const ChevronLeft = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="13,4 7,10 13,16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
+const ChevronRight = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="7,4 13,10 7,16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
 interface ArtistProfileProps {
   artist: Artist
   prevSlug: string | null
@@ -35,8 +47,19 @@ export default function ArtistProfile({ artist, prevSlug, nextSlug, base, backLa
           {backLabel}
         </Link>
 
+        {/* Keyboard + swipe only — no rendered output */}
+        <ArtistNav prevSlug={prevSlug} nextSlug={nextSlug} base={base} />
+
+        {/* [← prev] [IMAGE] [next →] — arrows flank the image as flex siblings */}
         <div className={styles.imageRow}>
-          <ArtistNav prevSlug={prevSlug} nextSlug={nextSlug} base={base} />
+          {prevSlug ? (
+            <Link href={`${base}/${prevSlug}`} className={styles.navArrow} aria-label="Previous artist">
+              <ChevronLeft />
+            </Link>
+          ) : (
+            <span className={styles.navArrowSpacer} aria-hidden />
+          )}
+
           <div className={styles.imageWrap}>
             {artist.imgSrc ? (
               <Image
@@ -54,6 +77,14 @@ export default function ArtistProfile({ artist, prevSlug, nextSlug, base, backLa
               />
             )}
           </div>
+
+          {nextSlug ? (
+            <Link href={`${base}/${nextSlug}`} className={styles.navArrow} aria-label="Next artist">
+              <ChevronRight />
+            </Link>
+          ) : (
+            <span className={styles.navArrowSpacer} aria-hidden />
+          )}
         </div>
 
         <h1 className={styles.name}>{artist.name}</h1>

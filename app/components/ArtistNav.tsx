@@ -1,9 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import styles from './ArtistNav.module.css'
 
 interface ArtistNavProps {
   prevSlug: string | null
@@ -11,18 +9,7 @@ interface ArtistNavProps {
   base: string
 }
 
-const ChevronLeft = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polyline points="13,4 7,10 13,16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
-
-const ChevronRight = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polyline points="7,4 13,10 7,16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
-
+/** Keyboard + swipe navigation only — renders nothing. */
 export default function ArtistNav({ prevSlug, nextSlug, base }: ArtistNavProps) {
   const router = useRouter()
   const touchStartX = useRef<number | null>(null)
@@ -55,16 +42,5 @@ export default function ArtistNav({ prevSlug, nextSlug, base }: ArtistNavProps) 
     }
   }, [prevSlug, nextSlug, base, router])
 
-  return (
-    <>
-      {prevSlug
-        ? <Link href={`${base}/${prevSlug}`} className={styles.navArrow} aria-label="Previous artist"><ChevronLeft /></Link>
-        : <span className={styles.navArrowSpacer} aria-hidden />
-      }
-      {nextSlug
-        ? <Link href={`${base}/${nextSlug}`} className={styles.navArrow} aria-label="Next artist"><ChevronRight /></Link>
-        : <span className={styles.navArrowSpacer} aria-hidden />
-      }
-    </>
-  )
+  return null
 }
