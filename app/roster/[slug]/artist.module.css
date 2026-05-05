@@ -61,6 +61,19 @@
   min-width: 0;
 }
 
+/* Text block aligned to the left edge of the image (not the arrows) */
+.textBlock {
+  padding-left: calc(40px + 16px); /* arrow width + gap */
+  padding-right: calc(40px + 16px);
+}
+
+@media (max-width: 600px) {
+  .textBlock {
+    padding-left: calc(32px + 8px);
+    padding-right: calc(32px + 8px);
+  }
+}
+
 /* Arrow buttons flanking the image */
 .navArrow {
   display: flex;

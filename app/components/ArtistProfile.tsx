@@ -87,40 +87,42 @@ export default function ArtistProfile({ artist, prevSlug, nextSlug, base, backLa
           )}
         </div>
 
-        <h1 className={styles.name}>{artist.name}</h1>
-        <p className={styles.genre}>{artist.genre}</p>
+        <div className={styles.textBlock}>
+          <h1 className={styles.name}>{artist.name}</h1>
+          <p className={styles.genre}>{artist.genre}</p>
 
-        {socials.length > 0 && (
-          <div className={styles.socials}>
-            {socials.map((social) => (
-              <a
-                key={social.label}
-                href={social.url}
-                className={styles.socialLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {social.label}
-              </a>
-            ))}
-            {artist.tourUrl && (
-              <a
-                href={artist.tourUrl}
-                className={styles.socialLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Tour Dates ↗
-              </a>
-            )}
-          </div>
-        )}
+          {socials.length > 0 && (
+            <div className={styles.socials}>
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.url}
+                  className={styles.socialLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.label}
+                </a>
+              ))}
+              {artist.tourUrl && (
+                <a
+                  href={artist.tourUrl}
+                  className={styles.socialLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tour Dates ↗
+                </a>
+              )}
+            </div>
+          )}
 
-        {artist.longBio ? (
-          <BioExpander shortBio={artist.shortBio} longBio={artist.longBio} />
-        ) : (
-          <p className={styles.bio}>{artist.shortBio}</p>
-        )}
+          {artist.longBio ? (
+            <BioExpander shortBio={artist.shortBio} longBio={artist.longBio} />
+          ) : (
+            <p className={styles.bio}>{artist.shortBio}</p>
+          )}
+        </div>
       </div>
       <Footer />
     </div>
