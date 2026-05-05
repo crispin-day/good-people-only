@@ -6,11 +6,9 @@ export const metadata = {
   description: 'Good People Record Co.',
 }
 
-const LABEL_SLUGS = ['jeremie-albino', 'good-kid', 'benjamin-dakota-rogers', 'glitter-party', 'benja']
-
 export default function LabelPage() {
   const filtered = ARTISTS
-    .filter(a => LABEL_SLUGS.includes(a.slug))
+    .filter(a => a.division === 'Label')
     .sort((a, b) => a.sortOrder - b.sortOrder)
 
   return (

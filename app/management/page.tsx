@@ -7,11 +7,13 @@ export const metadata = {
 }
 
 export default function ManagementPage() {
-  const all = [...ARTISTS].sort((a, b) => a.sortOrder - b.sortOrder)
+  const mgmtArtists = ARTISTS
+    .filter(a => a.division === 'Management')
+    .sort((a, b) => a.sortOrder - b.sortOrder)
 
   return (
     <RosterClient
-      artists={all}
+      artists={mgmtArtists}
       pageTitle="MANAGEMENT"
       kicker="GOOD PEOPLE ARTIST MANAGEMENT"
     />
