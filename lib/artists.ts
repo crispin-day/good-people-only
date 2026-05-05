@@ -6,6 +6,8 @@ export interface Artist {
   shortBio: string
   genre: string
   division: Division
+  /** All divisions this artist appears under — defaults to [division] if omitted */
+  divisions?: Division[]
   featured: boolean
   sortOrder: number
   placeholderColor: string
@@ -32,6 +34,7 @@ export const ARTISTS: Artist[] = [
 Our Time In the Sun consists of sharp, observant, and deeply-felt originals defined by clever turns of phrase - tapping into Southern psychedelia and the blues-rock of the 60s to tell tales of love gone sour, struggling with the bottle, and a life defined by work.`,
     genre: 'Folk / Soul',
     division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: true,
     sortOrder: 1,
     placeholderColor: '#1e1a0e',
@@ -52,6 +55,7 @@ Our Time In the Sun consists of sharp, observant, and deeply-felt originals defi
 Recorded in Los Angeles with Grammy-winning producer John Congleton (St. Vincent, Wallows, Lana Del Rey), the band's debut album Can We Hang Out Sometime? delivers the high-energy hooks and inventive riffs that have become a hallmark of their sound, while boldly pushing into new territory. Longtime fans will find the signature Good Kid bangers they've come to love, but also hear the band exploring fresh textures, rhythms, and sonic twists, in their grittiest offering yet.`,
     genre: 'Indie Pop',
     division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: true,
     sortOrder: 2,
     placeholderColor: '#1a1a2e',
@@ -70,6 +74,7 @@ Recorded in Los Angeles with Grammy-winning producer John Congleton (St. Vincent
     longBio: `Benjamin Dakota Rogers returns with This Ol' Way, his third full-length album; a raw, soul-twisting dive into the grit and grace of Americana-bluegrass. Rooted in folk tradition and evocative storytelling, these songs explore love, longing, and the bittersweet lessons found in every choice we make. Written and self-produced entirely by Rogers, the album blends fresh cuts penned over the last year with long-held tracks finally brought to life. Mixing by Mike Darolfi and mastering by Kristian Montano give the album its refined edge, enhancing its raw energy without sacrificing its adventurous spirit. A must-spin for fans of Tyler Childers, Colter Wall, and the outlaw spirit of country past. Gritty, haunting, and undeniably authentic, this album is Benjamin Dakota Rogers at his finest.`,
     genre: 'Country / Americana',
     division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: true,
     sortOrder: 3,
     placeholderColor: '#1a120e',
@@ -86,6 +91,7 @@ Recorded in Los Angeles with Grammy-winning producer John Congleton (St. Vincent
     shortBio: 'Pop singer-songwriter known for Falling. Viral, earnest, impossible to skip.',
     genre: 'Pop / R&B',
     division: 'Management',
+    divisions: ['Management'],
     featured: false,
     sortOrder: 4,
     placeholderColor: '#1a1520',
@@ -104,6 +110,7 @@ Recorded in Los Angeles with Grammy-winning producer John Congleton (St. Vincent
 Having grown up with a Dad who was a songwriter and guitar-maker, ILUKA was taught the basics of songwriting from her earliest years, spending hours on the balcony of her Blue Mountains home honing the craft. At 7 years old, she began recording her songs on a 12-track recording desk with her Dad and by 15 she had albums worth of recorded material. This early education, the passing-down of emotion and storytelling from one generation to another, gave ILUKA's music its spark, the seed that's still growing to this day. Having left Australia, she's now armed with her White Falcon Gretsch guitar and readier than ever to embark on her most authentic and exciting musical chapter.`,
     genre: 'Indie Pop / Soul',
     division: 'Management',
+    divisions: ['Management'],
     featured: false,
     sortOrder: 5,
     placeholderColor: '#180e20',
@@ -123,6 +130,7 @@ Having grown up with a Dad who was a songwriter and guitar-maker, ILUKA was taug
 Glitter Party is also a producer and drummer who has built a breakout audience through his viral, Motown-style drum videos on Instagram. Blending technical precision with playful, era-specific recreations, his content has driven rapid growth from a niche following to tens of thousands of highly engaged fans. That momentum has translated into real-world traction, including sold-out sample packs and streaming success across collaborative releases. Positioned at the intersection of content and craft, Glitter Party is turning social virality into a scalable music career.`,
     genre: 'Bedroom Pop',
     division: 'Label',
+    divisions: ['Management', 'Label'],
     featured: false,
     sortOrder: 6,
     placeholderColor: '#1a0e1a',
@@ -141,6 +149,7 @@ Glitter Party is also a producer and drummer who has built a breakout audience t
     longBio: `Starbomb is a space-based (yes, really) synthpop/hip-hop supergroup consisting of Arin "Egoraptor" Hanson of Game Grumps, and Dan "Danny Sexbang" Avidan and Brian "Ninja Brian" Wecht of Ninja Sex Party. Starbomb's focus is to write humorous raps about pop culture, mostly video games. Also their focus is to make good music. Mostly the second one. But the first one's important too. So maybe both equally.`,
     genre: 'Comedy / Nerdcore',
     division: 'Label',
+    divisions: ['Management'],
     featured: false,
     sortOrder: 7,
     placeholderColor: '#0a1a0a',
@@ -167,6 +176,7 @@ Beyond the stage and studio, NSP is also two thirds of Starbomb, a comedy hip-ho
 Today, Ninja Sex Party stands as a celebration of comedy, rock, and the belief that a Jewish superhero and his ninja sidekick can take over the world, one hilarious song at a time.`,
     genre: 'Comedy Rock',
     division: 'Label',
+    divisions: ['Management'],
     featured: false,
     sortOrder: 8,
     placeholderColor: '#0e0e1a',
@@ -188,6 +198,7 @@ Recorded in Brooklyn, New York, Coyes worked with frequent collaborator and prod
 Born and raised in the Alberta prairies of Sturgeon County, and now based in Toronto, the 25-year-old artist earned widespread attention with their acclaimed debut effort, Communion and follow up EP, Teeth. Backed by ginla's Joe Manzoli and Jon Nellen, both of whom previously played with Adrianne Lenker and Lorely Rodriguez (Empress Of), the record was an unvarnished portrait of heartbreak, and the mundane realizations of how the experiences that comprise your past instruct how you move through the world. The album was longlisted for the 2022 Polaris Prize, and across both releases they have been featured in Pitchfork, Audiotree, Paste, NPR, The Guardian, Line of Best Fit and more, along with tours supporting Hurray For The Riff Raff, and appearances at Pitchfork Festival in Paris and London, Primavera Weekender. If the tracks on Communion were fueled with an intentional sense of urgency, for their songwriting to serve as a vehicle for excavating revelations in motion, Believer yearns in a different direction. It rings with the certainty that self-assurance is cultivated through the cracks of discomfort.`,
     genre: 'Indie Rock',
     division: 'Label',
+    divisions: ['Management', 'Label'],
     featured: false,
     sortOrder: 9,
     placeholderColor: '#1a0e0e',
@@ -205,6 +216,7 @@ Born and raised in the Alberta prairies of Sturgeon County, and now based in Tor
     shortBio: 'A prismatic tour, a lo-fi mist, an open experiment: Benja blends bedroom-infused indiepop with the soulful production of R&B.',
     genre: 'Indie Pop / R&B',
     division: 'Label',
+    divisions: ['Management', 'Label'],
     featured: false,
     sortOrder: 10,
     placeholderColor: '#141414',
@@ -220,7 +232,9 @@ export function getArtistBySlug(slug: string): Artist | undefined {
 }
 
 export function getArtistsByDivision(division: Division): Artist[] {
-  return ARTISTS.filter((a) => a.division === division).sort((a, b) => a.sortOrder - b.sortOrder)
+  return ARTISTS
+    .filter((a) => (a.divisions ?? [a.division]).includes(division))
+    .sort((a, b) => a.sortOrder - b.sortOrder)
 }
 
 export function getFeaturedArtists(): Artist[] {

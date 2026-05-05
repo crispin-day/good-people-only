@@ -15,9 +15,10 @@ interface RosterClientProps {
   artists: Artist[]
   pageTitle?: string
   kicker?: string
+  slugBase?: string
 }
 
-export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker = 'GOOD PEOPLE ARTIST MANAGEMENT' }: RosterClientProps) {
+export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker = 'GOOD PEOPLE ARTIST MANAGEMENT', slugBase = '/roster' }: RosterClientProps) {
   const [view, setView] = useState<View>('list')
 
   const sorted = [...artists].sort((a, b) => a.sortOrder - b.sortOrder)
@@ -55,7 +56,7 @@ export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker
               {sorted.map((artist, i) => (
                 <Link
                   key={artist.slug}
-                  href={`/roster/${artist.slug}`}
+                  href={`${slugBase}/${artist.slug}`}
                   className={styles.rosterRow}
                 >
                   <span className={styles.rowIndex}>{String(i + 1).padStart(2, '0')}</span>
@@ -70,7 +71,7 @@ export default function RosterClient({ artists, pageTitle = 'THE ROSTER', kicker
               {sorted.map((artist) => (
                 <Link
                   key={artist.slug}
-                  href={`/roster/${artist.slug}`}
+                  href={`${slugBase}/${artist.slug}`}
                   className={styles.tile}
                 >
                   {artist.imgSrc ? (
