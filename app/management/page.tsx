@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ManagementPage() {
   const mgmtArtists = ARTISTS
-    .filter(a => a.division === 'Management')
+    .filter(a => a.divisions.includes('Management'))
     .sort((a, b) => a.sortOrder - b.sortOrder)
 
   return (

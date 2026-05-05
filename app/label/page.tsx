@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function LabelPage() {
   const filtered = ARTISTS
-    .filter(a => a.division === 'Label')
+    .filter(a => a.divisions.includes('Label'))
     .sort((a, b) => a.sortOrder - b.sortOrder)
 
   return (

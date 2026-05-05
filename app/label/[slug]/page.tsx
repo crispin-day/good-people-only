@@ -3,7 +3,7 @@ import { getArtistBySlug, ARTISTS } from '../../../lib/artists'
 import ArtistProfile from '../../components/ArtistProfile'
 
 const SITE_URL = 'https://goodpeopleonly.com'
-const LABEL_ARTISTS = ARTISTS.filter(a => a.division === 'Label').sort((a, b) => a.sortOrder - b.sortOrder)
+const LABEL_ARTISTS = ARTISTS.filter(a => a.divisions.includes('Label')).sort((a, b) => a.sortOrder - b.sortOrder)
 
 export function generateStaticParams() {
   return LABEL_ARTISTS.map((artist) => ({ slug: artist.slug }))
@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const artist = getArtistBySlug(slug)
-  if (!artist || artist.division !== 'Label') return { title: 'Not Found | Good People Only' }
+  if (!artist || !artist.divisions.includes('Label')) return { title: 'Not Found | Good People Only' }
 
   const description = artist.seoDescription || artist.shortBio
   const pageUrl = `${SITE_URL}/label/${artist.slug}`
@@ -43,7 +43,7 @@ export default async function LabelArtistPage({ params }: { params: Promise<{ sl
   const { slug } = await params
   const artist = getArtistBySlug(slug)
 
-  if (!artist || artist.division !== 'Label') notFound()
+  if (!artist || !artist.divisions.includes('Label')) notFound()
 
   const idx = LABEL_ARTISTS.findIndex(a => a.slug === slug)
   const prevArtist = idx > 0 ? LABEL_ARTISTS[idx - 1] : null

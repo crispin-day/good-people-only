@@ -3,7 +3,7 @@ import { getArtistBySlug, ARTISTS } from '../../../lib/artists'
 import ArtistProfile from '../../components/ArtistProfile'
 
 const SITE_URL = 'https://goodpeopleonly.com'
-const MGMT_ARTISTS = ARTISTS.filter(a => a.division === 'Management').sort((a, b) => a.sortOrder - b.sortOrder)
+const MGMT_ARTISTS = ARTISTS.filter(a => a.divisions.includes('Management')).sort((a, b) => a.sortOrder - b.sortOrder)
 
 export function generateStaticParams() {
   return MGMT_ARTISTS.map((artist) => ({ slug: artist.slug }))
@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const artist = getArtistBySlug(slug)
-  if (!artist || artist.division !== 'Management') return { title: 'Not Found | Good People Only' }
+  if (!artist || !artist.divisions.includes('Management')) return { title: 'Not Found | Good People Only' }
 
   const description = artist.seoDescription || artist.shortBio
   const pageUrl = `${SITE_URL}/management/${artist.slug}`
@@ -43,7 +43,7 @@ export default async function ManagementArtistPage({ params }: { params: Promise
   const { slug } = await params
   const artist = getArtistBySlug(slug)
 
-  if (!artist || artist.division !== 'Management') notFound()
+  if (!artist || !artist.divisions.includes('Management')) notFound()
 
   const idx = MGMT_ARTISTS.findIndex(a => a.slug === slug)
   const prevArtist = idx > 0 ? MGMT_ARTISTS[idx - 1] : null

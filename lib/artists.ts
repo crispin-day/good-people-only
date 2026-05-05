@@ -7,7 +7,10 @@ export interface Artist {
   longBio?: string
   seoDescription?: string
   genre: string
+  /** Primary division (for canonical URLs, display, etc.) */
   division: Division
+  /** All divisions this artist appears under */
+  divisions: Division[]
   featured: boolean
   sortOrder: number
   placeholderColor: string
@@ -29,6 +32,7 @@ export const ARTISTS: Artist[] = [
     longBio: 'Easy Eye Sound has announced the label debut of Jeremie Albino, a singular voice hailed for emotionally-nuanced storytelling and electrifying, livewire and passionate performances. The culmination of a remarkable journey — from busking on the streets of Toronto, to sharing stages with artists like Orville Peck and Sierra Ferrell — Albino embarks on his next chapter with Our Time In The Sun, released in November 2025. The twelve song collection finds him joining forces with Dan Auerbach — lead singer of The Black Keys, founder of Easy Eye Sound, and GRAMMY®-winning producer — after a chance encounter with Albino\'s music that left Auerbach mesmerized. "The first time I saw Jeremie it was just him and his acoustic. His voice was amazing. I instantly loved his style and charisma — I didn\'t know it could just be so real," he remembers. "When we brought him in the studio, it was a dream session. He\'s so talented, comfortable with who he is — he\'s able to put everyone in the room at ease and bring people together with his music." Our Time In The Sun consists of sharp, observant, and deeply-felt originals defined by clever turns of phrase, tapping into Southern psychedelia and the blues-rock of the 60s to tell tales of love gone sour, struggling with the bottle, and a life defined by work.',
     genre: 'Folk / Soul',
     division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: true,
     sortOrder: 1,
     placeholderColor: '#1e1a0e',
@@ -36,17 +40,18 @@ export const ARTISTS: Artist[] = [
     instagramUrl: 'https://instagram.com/jeremiealbino',
     websiteUrl: 'https://jeremiealbino.com',
     tourUrl: 'https://jeremiealbino.com/tour',
-    seoDescription: 'Jeremie Albino is a folk and soul singer-songwriter from Northern Ontario, Canada. His debut album Our Time In The Sun (2025), produced by Dan Auerbach of The Black Keys for Easy Eye Sound, blends Southern psychedelia and blues-rock storytelling. Represented by Good People Only Management.',
+    seoDescription: 'Jeremie Albino is a folk and soul singer-songwriter from Northern Ontario, Canada. His debut album Our Time In The Sun (2025), produced by Dan Auerbach of The Black Keys for Easy Eye Sound, blends Southern psychedelia and blues-rock storytelling. Represented by Good People Only.',
   },
   {
     name: 'Good Kid',
     slug: 'good-kid',
-    seoDescription: 'Good Kid is a Toronto indie pop band known for their cinematic sound and sharp songwriting. Represented by Good People Only Management.',
+    seoDescription: 'Good Kid is a Toronto indie pop band known for their cinematic sound and sharp songwriting. Represented by Good People Only.',
     imgSrc: '/artists/good-kid.jpg',
     imgPosition: '50% 35%',
     shortBio: 'Toronto indie pop band with a cinematic sound and sharp songwriting.',
     genre: 'Indie Pop',
     division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: true,
     sortOrder: 2,
     placeholderColor: '#1a1a2e',
@@ -56,12 +61,13 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Benjamin Dakota Rogers',
     slug: 'benjamin-dakota-rogers',
-    seoDescription: 'Benjamin Dakota Rogers is a Canadian country and Americana singer-songwriter with a powerful voice rooted in folk tradition. Represented by Good People Only Management.',
+    seoDescription: 'Benjamin Dakota Rogers is a Canadian country and Americana singer-songwriter with a powerful voice rooted in folk tradition. Represented by Good People Only.',
     imgSrc: '/artists/benjamin-dakota-rogers.jpg',
     imgPosition: '50% 0%',
     shortBio: 'Country-rooted songwriter with a voice that fills rooms and sticks in your chest.',
     genre: 'Country / Americana',
     division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: true,
     sortOrder: 3,
     placeholderColor: '#1a120e',
@@ -76,6 +82,7 @@ export const ARTISTS: Artist[] = [
     shortBio: 'Pop singer-songwriter known for Falling. Viral, earnest, impossible to skip.',
     genre: 'Pop / R&B',
     division: 'Management',
+    divisions: ['Management'],
     featured: false,
     sortOrder: 4,
     placeholderColor: '#1a1520',
@@ -90,6 +97,7 @@ export const ARTISTS: Artist[] = [
     shortBio: 'Australian-born singer-songwriter. Soulful, cinematic, and entirely her own.',
     genre: 'Indie Pop / Soul',
     division: 'Management',
+    divisions: ['Management'],
     featured: false,
     sortOrder: 5,
     placeholderColor: '#180e20',
@@ -100,11 +108,12 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Glitter Party',
     slug: 'glitter-party',
-    seoDescription: 'Glitter Party is a bedroom pop artist signed to Good People Only Label, known for energetic, hook-driven pop songs.',
+    seoDescription: 'Glitter Party is a bedroom pop artist represented by Good People Only.',
     imgSrc: '/artists/glitter-party.jpg',
     shortBio: 'Pure pop energy. The kind of songs you play loud and sing louder.',
     genre: 'Bedroom Pop',
-    division: 'Label',
+    division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: false,
     sortOrder: 6,
     placeholderColor: '#1a0e1a',
@@ -114,11 +123,12 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Starbomb',
     slug: 'starbomb',
-    seoDescription: 'Starbomb is a comedy and nerdcore music supergroup signed to Good People Only Label, known for video game parody songs.',
+    seoDescription: 'Starbomb is a comedy and nerdcore music supergroup represented by Good People Only Management.',
     imgSrc: '/artists/starbomb.jpg',
     shortBio: 'Video game parody supergroup. Yes, it is exactly as good as it sounds.',
     genre: 'Comedy / Nerdcore',
-    division: 'Label',
+    division: 'Management',
+    divisions: ['Management'],
     featured: false,
     sortOrder: 7,
     placeholderColor: '#0a1a0a',
@@ -128,11 +138,12 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Ninja Sex Party',
     slug: 'ninja-sex-party',
-    seoDescription: 'Ninja Sex Party is a comedy rock duo signed to Good People Only Label, known for humorous and irreverent songs.',
+    seoDescription: 'Ninja Sex Party is a comedy rock duo represented by Good People Only Management.',
     imgSrc: '/artists/ninja-sex-party.jpg',
     shortBio: 'Comedy rock that somehow absolutely slaps.',
     genre: 'Comedy Rock',
-    division: 'Label',
+    division: 'Management',
+    divisions: ['Management'],
     featured: false,
     sortOrder: 8,
     placeholderColor: '#0e0e1a',
@@ -142,11 +153,12 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Sister Ray',
     slug: 'sister-ray',
-    seoDescription: 'Sister Ray is an indie rock band signed to Good People Only Label, built for live performance with a raw and powerful sound.',
+    seoDescription: 'Sister Ray is an indie rock band represented by Good People Only.',
     imgSrc: '/artists/sister-ray.jpg',
     shortBio: 'Indie rock with teeth. Built for stages, not playlists.',
     genre: 'Indie Rock',
-    division: 'Label',
+    division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: false,
     sortOrder: 9,
     placeholderColor: '#1a0e0e',
@@ -156,11 +168,12 @@ export const ARTISTS: Artist[] = [
   {
     name: 'Benja',
     slug: 'benja',
-    seoDescription: 'Benja is an indie rock artist signed to Good People Only Label.',
+    seoDescription: 'Benja is an artist represented by Good People Only.',
     imgSrc: '/artists/benja.jpg',
     shortBio: 'Artist. Details incoming.',
     genre: 'Indie Rock',
-    division: 'Label',
+    division: 'Management',
+    divisions: ['Management', 'Label'],
     featured: false,
     sortOrder: 10,
     placeholderColor: '#141414',
@@ -173,7 +186,7 @@ export function getArtistBySlug(slug: string): Artist | undefined {
 }
 
 export function getArtistsByDivision(division: Division): Artist[] {
-  return ARTISTS.filter((a) => a.division === division).sort((a, b) => a.sortOrder - b.sortOrder)
+  return ARTISTS.filter((a) => a.divisions.includes(division)).sort((a, b) => a.sortOrder - b.sortOrder)
 }
 
 export function getFeaturedArtists(): Artist[] {
