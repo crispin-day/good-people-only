@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import Nav from '../../components/Nav'
 import Marquee from '../../components/Marquee'
 import Footer from '../../components/Footer'
-import { getArtistBySlug, ARTISTS } from '../../../lib/artists'
+import { getArtistBySlug, ARTISTS, getArtistsByDivision } from '../../../lib/artists'
 import ArtistNav from './ArtistNav'
 import ShowMoreBio from './ShowMoreBio'
 import styles from './artist.module.css'
@@ -41,15 +41,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-export default async function ArtistPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ArtistPage({ params, searchParams }: { params: Promise<{ slug: string }>, searchParams: Promise<{ from?: string }> }) {
   const { slug } = await params
+  const { from } = await searchParams
   const artist = getArtistBySlug(slug)
 
   if (!artist) notFound()
 
-  const idx = ARTISTS.findIndex((a) => a.slug === slug)
-  const prevArtist = idx > 0 ? ARTISTS[idx - 1] : null
-  const nextArtist = idx < ARTISTS.length - 1 ? ARTISTS[idx + 1] : null
+  const navList = from === 'label' ? getArtistsByDivision('Label') : ARTISTS
+  const idx = navList.findIndex((a) => a.slug === slug)
+  const prevArtist = idx > 0 ? navList[idx - 1] : null
+  const nextArtist = idx < navList.length - 1 ? navList[idx + 1] : null
 
   const socials = [
     artist.spotifyUrl ? { label: 'Spotify ↗', url: artist.spotifyUrl } : null,
@@ -86,6 +88,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
             prevName={prevArtist?.name ?? null}
             nextSlug={nextArtist?.slug ?? null}
             nextName={nextArtist?.name ?? null}
+            context={from}
           />
           <div className={styles.imageWrap}>
             {artist.imgSrc ? (

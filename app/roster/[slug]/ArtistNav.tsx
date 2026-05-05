@@ -10,6 +10,7 @@ interface ArtistNavProps {
   prevName: string | null
   nextSlug: string | null
   nextName: string | null
+  context?: string
 }
 
 const ChevronLeft = () => (
@@ -24,7 +25,7 @@ const ChevronRight = () => (
   </svg>
 )
 
-export default function ArtistNav({ prevSlug, nextSlug }: ArtistNavProps) {
+export default function ArtistNav({ prevSlug, nextSlug, context }: ArtistNavProps) {
   const router = useRouter()
   const touchStartX = useRef<number | null>(null)
 
@@ -43,14 +44,14 @@ export default function ArtistNav({ prevSlug, nextSlug }: ArtistNavProps) {
       if (touchStartX.current === null) return
       const dx = e.changedTouches[0].clientX - touchStartX.current
       if (Math.abs(dx) < 60) { touchStartX.current = null; return }
-      if (dx < 0 && nextSlug) router.push(`/roster/${nextSlug}`)
-      if (dx > 0 && prevSlug) router.push(`/roster/${prevSlug}`)
+      if (dx < 0 && nextSlug) router.push(context ? `/roster/${nextSlug}?from=${context}` : `/roster/${nextSlug}`)
+      if (dx > 0 && prevSlug) router.push(context ? `/roster/${prevSlug}?from=${context}` : `/roster/${prevSlug}`)
       touchStartX.current = null
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft' && prevSlug) router.push(`/roster/${prevSlug}`)
-      if (e.key === 'ArrowRight' && nextSlug) router.push(`/roster/${nextSlug}`)
+      if (e.key === 'ArrowLeft' && prevSlug) router.push(context ? `/roster/${prevSlug}?from=${context}` : `/roster/${prevSlug}`)
+      if (e.key === 'ArrowRight' && nextSlug) router.push(context ? `/roster/${nextSlug}?from=${context}` : `/roster/${nextSlug}`)
     }
 
     document.addEventListener('touchstart', handleTouchStart, { passive: true })
@@ -61,17 +62,17 @@ export default function ArtistNav({ prevSlug, nextSlug }: ArtistNavProps) {
       document.removeEventListener('touchend', handleTouchEnd)
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [prevSlug, nextSlug, router])
+  }, [prevSlug, nextSlug, router, context])
 
   return (
     <>
       {prevSlug && (
-        <Link href={`/roster/${prevSlug}`} className={`${styles.navArrow} ${styles.navArrowLeft}`} aria-label="Previous artist">
+        <Link href={context ? `/roster/${prevSlug}?from=${context}` : `/roster/${prevSlug}`} className={`${styles.navArrow} ${styles.navArrowLeft}`} aria-label="Previous artist">
           <ChevronLeft />
         </Link>
       )}
       {nextSlug && (
-        <Link href={`/roster/${nextSlug}`} className={`${styles.navArrow} ${styles.navArrowRight}`} aria-label="Next artist">
+        <Link href={context ? `/roster/${nextSlug}?from=${context}` : `/roster/${nextSlug}`} className={`${styles.navArrow} ${styles.navArrowRight}`} aria-label="Next artist">
           <ChevronRight />
         </Link>
       )}
