@@ -16,6 +16,7 @@ export default function LabelPage() {
       artists={filtered}
       pageTitle="THE LABEL"
       kicker="GOOD PEOPLE RECORD CO."
+      slugBase="/label"
     />
   )
 }

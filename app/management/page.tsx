@@ -16,6 +16,7 @@ export default function ManagementPage() {
       artists={mgmtArtists}
       pageTitle="MANAGEMENT"
       kicker="GOOD PEOPLE ARTIST MANAGEMENT"
+      slugBase="/management"
     />
   )
 }
