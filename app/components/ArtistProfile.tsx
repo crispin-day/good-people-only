@@ -35,23 +35,25 @@ export default function ArtistProfile({ artist, prevSlug, nextSlug, base, backLa
           {backLabel}
         </Link>
 
-        <div className={styles.imageWrap}>
+        <div className={styles.imageRow}>
           <ArtistNav prevSlug={prevSlug} nextSlug={nextSlug} base={base} />
-          {artist.imgSrc ? (
-            <Image
-              src={artist.imgSrc}
-              alt={artist.name}
-              fill
-              style={{ objectFit: 'cover', objectPosition: artist.imgPosition || 'center' }}
-              sizes="(max-width: 768px) 100vw, 680px"
-              priority
-            />
-          ) : (
-            <div
-              className={styles.placeholder}
-              style={{ backgroundColor: artist.placeholderColor }}
-            />
-          )}
+          <div className={styles.imageWrap}>
+            {artist.imgSrc ? (
+              <Image
+                src={artist.imgSrc}
+                alt={artist.name}
+                fill
+                style={{ objectFit: 'cover', objectPosition: artist.imgPosition || 'center' }}
+                sizes="(max-width: 768px) calc(100vw - 112px), 560px"
+                priority
+              />
+            ) : (
+              <div
+                className={styles.placeholder}
+                style={{ backgroundColor: artist.placeholderColor }}
+              />
+            )}
+          </div>
         </div>
 
         <h1 className={styles.name}>{artist.name}</h1>

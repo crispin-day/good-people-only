@@ -8,7 +8,7 @@ import styles from './ArtistNav.module.css'
 interface ArtistNavProps {
   prevSlug: string | null
   nextSlug: string | null
-  base: string // e.g. '/label' or '/management'
+  base: string
 }
 
 const ChevronLeft = () => (
@@ -57,16 +57,14 @@ export default function ArtistNav({ prevSlug, nextSlug, base }: ArtistNavProps) 
 
   return (
     <>
-      {prevSlug && (
-        <Link href={`${base}/${prevSlug}`} className={`${styles.navArrow} ${styles.navArrowLeft}`} aria-label="Previous artist">
-          <ChevronLeft />
-        </Link>
-      )}
-      {nextSlug && (
-        <Link href={`${base}/${nextSlug}`} className={`${styles.navArrow} ${styles.navArrowRight}`} aria-label="Next artist">
-          <ChevronRight />
-        </Link>
-      )}
+      {prevSlug
+        ? <Link href={`${base}/${prevSlug}`} className={styles.navArrow} aria-label="Previous artist"><ChevronLeft /></Link>
+        : <span className={styles.navArrowSpacer} aria-hidden />
+      }
+      {nextSlug
+        ? <Link href={`${base}/${nextSlug}`} className={styles.navArrow} aria-label="Next artist"><ChevronRight /></Link>
+        : <span className={styles.navArrowSpacer} aria-hidden />
+      }
     </>
   )
 }

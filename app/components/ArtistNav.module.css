@@ -1,11 +1,8 @@
 .navArrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -20,19 +17,9 @@
   color: var(--paper);
 }
 
-.navArrowLeft {
-  left: -20px;
-}
-
-.navArrowRight {
-  right: -20px;
-}
-
-@media (max-width: 600px) {
-  .navArrowLeft {
-    left: 8px;
-  }
-  .navArrowRight {
-    right: 8px;
-  }
+/* Invisible placeholder so image stays centred when only one arrow exists */
+.navArrowSpacer {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
 }
